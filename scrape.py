@@ -1,0 +1,467 @@
+from selenium.webdriver.common.by import By
+import time
+import glob
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support.select import Select
+from selenium.webdriver.support import expected_conditions as EC
+from helpers import login_sanim, login_arzeshafzoodeh,\
+    login_mostaghelat, login_codeghtesadi, \
+    maybe_make_dir, input_info, merge_multiple_excel_sheets, \
+    remove_excel_files, init_driver, \
+    log_it, is_updated_to_download, \
+    is_updated_to_save, rename_files, merge_multiple_html_files, merge_multiple_excel_files
+from download_helpers import download_1000_parvandeh, download_excel
+from constants import get_dict_years
+import threading
+from watchdog_186 import watch_over, is_downloaded
+
+
+n_retries = 0
+first_list = [4, 5, 6, 7, 8, 9, 10, 21, 22, 23, 24]
+second_list = [14, 15, 16, 17]
+time_out_1 = 2080
+time_out_2 = 2080
+timeout_fifteen = 15
+excel_file_names = ['Excel.xlsx', 'Excel(1).xlsx', 'Excel(2).xlsx']
+badvi_file_names = ['جزئیات اعتراضات و شکایات.html']
+
+
+download_button_ezhar = '/html/body/form/div[2]/div/div[2]/main/div[2]/div/div/div/div/div/div/div[2]/div[1]/div[2]/button[3]'
+download_button_rest = '/html/body/form/div[2]/div/div[2]/main/div[2]/div/div/div/div/font/div/div/div[2]/div[1]/div[2]/button[2]'
+menu_nav_1 = '//*[@id="t_MenuNav_1_1i"]'
+menu_nav_2 = '/html/body/form/header/div[2]/div/ul/li[2]/div/div/div[2]/ul/li[1]/div/span[1]/a'
+# menu_nav_2 = '/html/body/form/header/div[2]/div/ul/li[2]/div/div/ul/li[1]/div/span[1]/a'
+year_button_1 = '//*[@id="P1100_TAX_YEAR_CONTAINER"]/div[2]/div/div'
+year_button_2 = '/html/body/div[7]/div[2]/div[1]/button'
+year_button_3 = '/html/body/div[7]/div[2]/div[2]/div/div[3]/ul/li'
+year_button_4 = '/html/body/div[3]/div/ul/li[8]/div/span[1]/button'
+switch_to_data = '/html/body/div[6]/div[2]/div[2]/div/div/div/div[2]/label/span'
+download_excel_btn_1 = '/html/body/div[6]/div[2]/ul/li[1]/span[1]'
+download_excel_btn_2 = '/html/body/div[6]/div[3]/div/button[2]'
+input_1 = '/html/body/span/span/span[1]/input'
+td_1 = '/html/body/form/div[2]/div/div[2]/main/div[2]/div/div/div/div/font/div/div/div[2]/div[2]/div[5]/div[1]/div/div[3]/table/tbody/tr[2]'
+td_2 = '/html/body/form/div[2]/div/div[2]/main/div[2]/div/div/div/div/font/div[2]/div/div[2]/div[2]/div[5]/div[1]/div/div[2]/table/tbody/tr[2]'
+td_3 = '/html/body/form/div[2]/div/div[2]/main/div[2]/div/div/div/div/div[2]/div/div[2]/div[2]/div[5]/div[1]/div/div[2]/table/tbody/tr[2]'
+year_button_5 = '/html/body/div[6]/div[3]/div/button[2]'
+year_button_6 = '/html/body/form/div[2]/div/div[2]/main/div[2]/div/div/div/div/div/div/div[2]/div[1]/div[1]/div[3]/div/button'
+td_4 = '/html/body/form/div[2]/div/div[2]/main/div[2]/div/div/div/div/div/div/div[2]/div[2]/div[5]/div[1]/div/div[1]/table/tr/th[8]/a'
+td_5 = '/html/body/form/div[2]/div/div[2]/main/div[2]/div/div/div/div/div[1]/div/div/div/div[2]/div/span/span[1]/span/span[2]'
+td_6 = '/html/body/form/div[2]/div/div[2]/main/div[2]/div/div/div/div/font/div[1]/div/div/div/div[2]/div/span/span[1]/span/span[1]'
+td_ezhar = '/html/body/form/div[2]/div/div[2]/main/div[2]/div/div/div/div/div/div/div[2]/div[2]/div[5]/div[1]/div/div[2]/table/tbody/tr[2]/td[%s]/a'
+
+
+def retry(func):
+    def try_it(Cls):
+        global n_retries
+        try:
+            result = func(Cls)
+            return result
+
+        except Exception as e:
+            n_retries += 1
+            print(e)
+            if n_retries < 50:
+                print('trying again')
+                Cls.driver.close()
+                path = Cls.path
+                report_type = Cls.report_type
+                year = Cls.year
+                time.sleep(3)
+                x = Scrape(path, report_type, year)
+                x.scrape_sanim()
+
+    return try_it
+
+
+class Scrape:
+
+    def __init__(self, path=None, report_type=None, year=None, driver_type='firefox'):
+        self.path = path
+        self.report_type = report_type
+        self.year = year
+        self.driver_type = driver_type
+
+    def scrape_codeghtesadi(self, path=None, return_df=True):
+        self.driver = init_driver(
+            pathsave=path, driver_type=self.driver_type)
+        self.path = path
+        self.driver = login_codeghtesadi(self.driver)
+        WebDriverWait(self.driver, 8).until(EC.presence_of_element_located(
+            (By.XPATH, '/html/body/form/table/tbody/tr[2]/td[1]/a[2]/div')))
+        self.driver.find_element(
+            By.XPATH, '/html/body/form/table/tbody/tr[2]/td[1]/a[2]/div').click()
+        WebDriverWait(self.driver, 8).until(EC.presence_of_element_located(
+            (By.XPATH, '/html/body/form/table/tbody/tr[2]/td[2]/span[2]/div[2]/table/tbody/tr/td[2]/div/span')))
+        self.driver.find_element(
+            By.XPATH, '/html/body/form/table/tbody/tr[2]/td[2]/span[2]/div[2]/table/tbody/tr/td[2]/div/span').click()
+
+        WebDriverWait(self.driver, 8).until(EC.presence_of_element_located(
+            (By.XPATH, '/html/body/form/table/tbody/tr[2]/td[2]/span[2]/div[2]/table/tbody/tr/td[2]/div/div/a[1]')))
+        self.driver.find_element(
+            By.XPATH, '/html/body/form/table/tbody/tr[2]/td[2]/span[2]/div[2]/table/tbody/tr/td[2]/div/div/a[1]').click()
+
+        WebDriverWait(self.driver, 8).until(EC.presence_of_element_located(
+            (By.XPATH, '/html/body/form/table/tbody/tr[2]/td[2]/span[2]/div/a')))
+        self.driver.find_element(
+            By.XPATH, '/html/body/form/table/tbody/tr[2]/td[2]/span[2]/div/a').click()
+
+        time.sleep(10)
+
+        file_list = glob.glob(self.path + "/*" + '.xls.part')
+
+        while len(file_list) != 0:
+
+            time.sleep(1)
+            file_list = glob.glob(self.path + "/*" + '.xls.part')
+
+        merge_multiple_excel_sheets(self.path, dest=self.path)
+
+    def scrape_mostaghelat(self, path=None, return_df=True):
+        self.driver = init_driver(
+            pathsave=path, driver_type=self.drive_type)
+        self.path = path
+        self.driver = login_mostaghelat(self.driver)
+        time.sleep(1)
+        WebDriverWait(self.driver, 8).until(EC.presence_of_element_located(
+            (By.XPATH, '/html/body/form/div[4]/div[1]/ul[1]/li[10]/a/span')))
+        self.driver.find_element(
+            By.XPATH, '/html/body/form/div[4]/div[1]/ul[1]/li[10]/a/span').click()
+
+        WebDriverWait(self.driver, 8).until(EC.presence_of_element_located(
+            (By.XPATH, '/html/body/form/div[4]/div[1]/ul[1]/li[10]/ul/li[14]/a/i[2]')))
+        self.driver.find_element(
+            By.XPATH, '/html/body/form/div[4]/div[1]/ul[1]/li[10]/ul/li[14]/a/i[2]').click()
+
+        def mostagh(i):
+            sel = Select(self.driver.find_element(By.ID, 'Dro_S_TaxOffice'))
+            sel.select_by_index(i)
+            WebDriverWait(self.driver, 8).until(EC.presence_of_element_located(
+                (By.ID, 'Btn_Search')))
+            self.driver.find_element(
+                By.ID, 'Btn_Search').click()
+            time.sleep(8)
+            try:
+                if(self.driver.find_element(By.ID, 'ContentPlaceHolder1_Btn_Export')):
+                    self.driver.find_element(
+                        By.ID, 'ContentPlaceHolder1_Btn_Export').click()
+            except Exception as e:
+                print(e)
+
+        for i in range(1, 37):
+            try:
+                t1 = threading.Thread(target=mostagh, args=(i,))
+                t2 = threading.Thread(target=watch_over, args=(self.path))
+                t1.start()
+                t2.start()
+                t1.join()
+                t2.join()
+            except Exception as e:
+                print(e)
+                continue
+
+        df = merge_multiple_excel_files(self.path, self.path)
+
+        if return_df:
+            return df
+
+    def scrape_arzeshafzoodeh(self, path=None, return_df=True):
+        self.driver = init_driver(
+            pathsave=path, driver_type=self.drive_type)
+        self.path = path
+        self.driver = login_arzeshafzoodeh(self.driver)
+        WebDriverWait(self.driver, 8).until(EC.presence_of_element_located(
+            (By.XPATH, '/html/body/form/div[3]/table/tbody/tr[2]/td/div/table/tbody/tr[10]/td/div/ul/li[10]/a/span')))
+        self.driver.find_element(
+            By.XPATH, '/html/body/form/div[3]/table/tbody/tr[2]/td/div/table/tbody/tr[10]/td/div/ul/li[10]/a/span').click()
+        WebDriverWait(self.driver, 8).until(EC.presence_of_element_located(
+            (By.XPATH, '/html/body/form/div[3]/table/tbody/tr[2]/td/div/table/tbody/tr[10]/td/div/ul/li[10]/div/ul/li[16]/a/span')))
+        self.driver.find_element(
+            By.XPATH, '/html/body/form/div[3]/table/tbody/tr[2]/td/div/table/tbody/tr[10]/td/div/ul/li[10]/div/ul/li[16]/a/span').click()
+
+        WebDriverWait(self.driver, 8).until(EC.presence_of_element_located(
+            (By.ID, 'ctl00_ContentPlaceHolder1_chkAuditStatus_2')))
+        self.driver.find_element(
+            By.ID, 'ctl00_ContentPlaceHolder1_chkAuditStatus_2').click()
+        WebDriverWait(self.driver, 8).until(EC.presence_of_element_located(
+            (By.ID, 'ctl00_ContentPlaceHolder1_chkAuditStatus_3')))
+        self.driver.find_element(
+            By.ID, 'ctl00_ContentPlaceHolder1_chkAuditStatus_3').click()
+
+        def arzesh(i):
+            WebDriverWait(self.driver, 8).until(EC.presence_of_element_located(
+                (By.ID, 'ctl00_ContentPlaceHolder1_frm_year')))
+            sel = Select(self.driver.find_element(
+                By.ID, 'ctl00_ContentPlaceHolder1_frm_year'))
+            sel.select_by_index(i)
+
+            WebDriverWait(self.driver, 8).until(EC.presence_of_element_located(
+                (By.ID, 'ctl00_ContentPlaceHolder1_frm_period')))
+            sel = Select(self.driver.find_element(
+                By.ID, 'ctl00_ContentPlaceHolder1_frm_period'))
+            sel.select_by_index(0)
+
+            WebDriverWait(self.driver, 8).until(EC.presence_of_element_located(
+                (By.ID, 'ctl00_ContentPlaceHolder1_To_year')))
+            sel = Select(self.driver.find_element(
+                By.ID, 'ctl00_ContentPlaceHolder1_To_year'))
+            sel.select_by_index(i)
+
+            WebDriverWait(self.driver, 8).until(EC.presence_of_element_located(
+                (By.ID, 'ctl00_ContentPlaceHolder1_To_period')))
+            sel = Select(self.driver.find_element(
+                By.ID, 'ctl00_ContentPlaceHolder1_To_period'))
+            sel.select_by_index(3)
+
+            WebDriverWait(self.driver, 8).until(EC.presence_of_element_located(
+                (By.ID, 'ctl00_ContentPlaceHolder1_Button3')))
+            time.sleep(10)
+            self.driver.find_element(
+                By.ID, 'ctl00_ContentPlaceHolder1_Button3').click()
+
+        for i in range(0, 15):
+
+            t1 = threading.Thread(target=arzesh, args=(i,))
+            t2 = threading.Thread(target=watch_over)
+            t1.start()
+            t2.start()
+            t1.join()
+            t2.join()
+
+        file_list = glob.glob(self.path + "/*" + '.xls.part')
+
+        while len(file_list) != 0:
+
+            time.sleep(1)
+            file_list = glob.glob(self.path + "/*" + '.xls.part')
+
+        time.sleep(1)
+        dest = os.path.join(self.path, 'temp')
+        rename_files(self.path, dest=dest)
+        df_arzesh = merge_multiple_html_files(path=dest)
+
+        if return_df:
+            return df_arzesh
+
+    @retry
+    def scrape_sanim(self):
+        self.driver = init_driver(
+            pathsave=path, driver_type=self.drive_type)
+        global excel_file_names
+
+        self.driver = login_sanim(self.driver)
+
+        if self.report_type == 'ezhar':
+            download_button = download_button_ezhar
+        else:
+            download_button = download_button_rest
+
+        # انتخاب منوی گزارشات اصلی
+
+        self.driver.find_element(
+            By.XPATH, '/html/body/form/header/div[2]/div/ul/li[2]/span/span').click()
+        time.sleep(1)
+        self.driver.find_element(
+            By.XPATH, '/html/body/form/header/div[2]/div/ul/li[2]/button').click()
+        if self.report_type != 'tabsare_100':
+
+            if (self.report_type == 'ezhar'):
+                td_number = 4
+            elif (self.report_type == 'hesabrasi_darjarian_before5'):
+                td_number = 5
+            elif (self.report_type == 'hesabrasi_darjarian_after5'):
+                td_number = 6
+            elif (self.report_type == 'hesabrasi_takmil_shode'):
+                td_number = 7
+            elif (self.report_type == 'tashkhis_sader_shode'):
+                td_number = 8
+            elif (self.report_type == 'tashkhis_eblagh_shode'):
+                td_number = 9
+            elif (self.report_type == 'tashkhis_eblagh_nashode'):
+                td_number = 10
+            elif (self.report_type == 'ghatee_sader_shode'):
+                td_number = 21
+            elif (self.report_type == 'ghatee_eblagh_shode'):
+                td_number = 22
+            elif (self.report_type == 'ejraee_sader_shode'):
+                td_number = 23
+            elif (self.report_type == 'ejraee_eblagh_shode'):
+                td_number = 24
+            elif (self.report_type == 'badvi_darjarian_dadrasi'):
+                td_number = 15
+            elif (self.report_type == 'badvi_takmil_shode'):
+                td_number = 16
+            elif (self.report_type == 'tajdidnazer_darjarian_dadrasi'):
+                td_number = 17
+            elif (self.report_type == 'tajdidnazar_takmil_shode'):
+                td_number = 18
+
+            if (self.report_type == '1000_parvande'):
+
+                download_1000_parvandeh(
+                    self.driver, self.report_type, self.year, self.path)
+
+            else:
+                # انتخاب منوی اول از گزارشات اصلی
+                WebDriverWait(self.driver, 20).until(
+                    EC.presence_of_element_located((By.XPATH, menu_nav_2)))
+                self.driver.find_element(By.XPATH, menu_nav_2).click()
+
+                # انتخاب سال عملکرد
+                # WebDriverWait(self.driver, 8).until(EC.presence_of_element_located((By.XPATH, year_button_1)))
+                # self.driver.find_element(By.XPATH,year_button_1).click()
+                time.sleep(4)
+                WebDriverWait(self.driver, 8).until(
+                    EC.presence_of_element_located((By.ID, 'P1100_TAX_YEAR')))
+                self.driver.find_element(By.ID, 'P1100_TAX_YEAR').click()
+
+                time.sleep(3)
+                WebDriverWait(self.driver, 8).until(EC.presence_of_element_located(
+                    (By.XPATH, '/html/body/div[7]/div[2]/div[1]/input')))
+                self.driver.find_element(
+                    By.XPATH, '/html/body/div[7]/div[2]/div[1]/input').send_keys(self.year)
+
+                WebDriverWait(self.driver, 8).until(
+                    EC.presence_of_element_located((By.XPATH, year_button_2)))
+                self.driver.find_element(By.XPATH, year_button_2).click()
+
+                time.sleep(3)
+
+                WebDriverWait(self.driver, 8).until(
+                    EC.presence_of_element_located((By.XPATH, year_button_3)))
+                self.driver.find_element(By.XPATH, year_button_3).click()
+
+                #################################################################################################################################
+
+                time.sleep(3)
+
+                WebDriverWait(self.driver, 20).until(
+                    EC.presence_of_element_located((By.XPATH, '%s/td[4]/a' % td_2)))
+                self.driver.find_element(
+                    By.XPATH, '%s/td[%s]/a' % (td_2, td_number)).click()
+
+                time.sleep(4)
+
+                # دریافت اظهارنامه ها و تشخیص های صادر شده
+                exists_in_first_list = first_list.count(td_number)
+
+                if (exists_in_first_list):
+
+                    # print(check_if_up_to_date('%s\%s' % (self.path, excel_file_names[0])))
+
+                    if not (is_updated_to_download('%s\%s' % (self.path, excel_file_names[0]))):
+                        # if(uptodate.count(self.path + '\Excel.xlsx') == 0):
+                        print('updating for report_type=%s and year=%s' %
+                              (self.report_type, self.year))
+                        # WebDriverWait(self.driver, time_out_1).until(EC.presence_of_element_located((By.XPATH, '%s/td[4]/a' % td_1)))
+                        # self.driver.find_element(By.XPATH, '%s/td[5]/a' % td_1).click()
+                        if (self.report_type != 'ezhar'):
+                            WebDriverWait(self.driver, timeout_fifteen).until(
+                                EC.presence_of_element_located((By.XPATH, '%s/td[4]/a' % td_1)))
+                            self.driver.find_element(
+                                By.XPATH, '%s/td[4]/a' % td_1).click()
+
+                        else:
+                            WebDriverWait(self.driver, timeout_fifteen).until(
+                                EC.presence_of_element_located((By.XPATH, td_ezhar % 5)))
+                            self.driver.find_element(
+                                By.XPATH, td_ezhar % 5).click()
+
+                        time.sleep(4)
+                        WebDriverWait(self.driver, time_out_2).until(
+                            EC.presence_of_element_located((By.XPATH, download_button)))
+                        self.driver.find_element(
+                            By.XPATH, download_button).click()
+
+                        print(
+                            '*******************************************************************************************')
+                        download_excel(path=self.path, report_type=self.report_type,
+                                       type_of_excel='Hoghoghi', no_files_in_path=0, excel_file=excel_file_names[0])
+                        self.driver.back()
+
+                    if not (is_updated_to_download('%s\%s' % (self.path, excel_file_names[1]))):
+                        print('updating for report_type=%s and year=%s' %
+                              (self.report_type, self.year))
+                        if (self.report_type != 'ezhar'):
+                            WebDriverWait(self.driver, timeout_fifteen).until(
+                                EC.presence_of_element_located((By.XPATH, '%s/td[3]/a' % td_1)))
+                            self.driver.find_element(
+                                By.XPATH, '%s/td[3]/a' % td_1).click()
+
+                        else:
+                            WebDriverWait(self.driver, timeout_fifteen).until(
+                                EC.presence_of_element_located((By.XPATH, td_ezhar % 4)))
+                            self.driver.find_element(
+                                By.XPATH, td_ezhar % 4).click()
+
+                        time.sleep(4)
+                        WebDriverWait(self.driver, time_out_1).until(
+                            EC.presence_of_element_located((By.XPATH, download_button)))
+                        self.driver.find_element(
+                            By.XPATH, download_button).click()
+
+                        print(
+                            '*******************************************************************************************')
+
+                        download_excel(path=self.path, report_type=self.report_type,
+                                       type_of_excel='Haghighi', no_files_in_path=0, excel_file=excel_file_names[1])
+                        self.driver.back()
+
+                    if not (is_updated_to_download('%s\%s' % (self.path, excel_file_names[2]))):
+                        print('updating for report_type=%s and year=%s' %
+                              (self.report_type, self.year))
+                        if (self.report_type != 'ezhar'):
+                            WebDriverWait(self.driver, timeout_fifteen).until(
+                                EC.presence_of_element_located((By.XPATH, '%s/td[7]/a' % td_1)))
+                            self.driver.find_element(
+                                By.XPATH, '%s/td[7]/a' % td_1).click()
+                        else:
+                            WebDriverWait(self.driver, timeout_fifteen).until(
+                                EC.presence_of_element_located((By.XPATH, td_ezhar % 8)))
+                            self.driver.find_element(
+                                By.XPATH, td_ezhar % 8).click()
+
+                        time.sleep(4)
+                        WebDriverWait(self.driver, time_out_1).until(
+                            EC.presence_of_element_located((By.XPATH, download_button)))
+                        self.driver.find_element(
+                            By.XPATH, download_button).click()
+
+                        print(
+                            '*******************************************************************************************')
+
+                        download_excel(path=self.path, report_type=self.report_type,
+                                       type_of_excel='Arzesh Afzoode', no_files_in_path=0, excel_file=excel_file_names[2])
+                        self.driver.back()
+
+                # if there is only one report and no distinction between haghighi, hoghoghi and arzesh afzoode
+                else:
+
+                    time.sleep(3)
+                    WebDriverWait(self.driver, time_out_2).until(
+                        EC.presence_of_element_located((By.XPATH, year_button_6)))
+                    self.driver.find_element(By.XPATH, year_button_6).click()
+                    time.sleep(1)
+                    WebDriverWait(self.driver, time_out_2).until(
+                        EC.presence_of_element_located((By.XPATH, year_button_4)))
+                    self.driver.find_element(By.XPATH, year_button_4).click()
+                    time.sleep(0.5)
+                    WebDriverWait(self.driver, time_out_2).until(
+                        EC.presence_of_element_located((By.XPATH, switch_to_data)))
+                    self.driver.find_element(By.XPATH, switch_to_data).click()
+                    time.sleep(0.5)
+                    WebDriverWait(self.driver, time_out_2).until(
+                        EC.presence_of_element_located((By.XPATH, download_excel_btn_1)))
+                    self.driver.find_element(
+                        By.XPATH, download_excel_btn_1).click()
+                    time.sleep(0.5)
+                    WebDriverWait(self.driver, time_out_2).until(
+                        EC.presence_of_element_located((By.XPATH, download_excel_btn_2)))
+                    self.driver.find_element(
+                        By.XPATH, download_excel_btn_2).click()
+                    download_excel(path=self.path, report_type=self.report_type,
+                                   type_of_excel=self.report_type, no_files_in_path=0, excel_file=badvi_file_names[0])
+
+        # else:
+
+        time.sleep(180)
+        self.driver.close()
