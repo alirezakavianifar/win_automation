@@ -16,12 +16,13 @@ import openpyxl
 import datetime as dt
 from datetime import datetime
 from functools import wraps
+import functools as ft
 import math
 from tqdm import tqdm
 import pyodbc
 from constants import geck_location, set_gecko_prefs, get_remote_sql_con, get_sql_con, get_str_help, get_comm_reports, get_heiat, get_lst_reports, \
     get_all_years, get_common_years, get_str_years, get_years, get_common_reports, get_comm_years, get_heiat_reports, get_server_namesV2
-from sql_queries import get_sql_mashaghelsonati, get_sql_mashaghelsonati_ghatee, \
+from sql_queries import get_sql_mashaghelsonati, get_sql_mashaghelsonati_ghatee, get_sql_mashaghelsonati_tashkhisEblaghNoGhatee, \
     get_sql_mashaghelsonati_ghateeEblaghNashode, get_sql_mashaghelsonati_tashkhisEblaghNashode, \
     get_sql_mashaghelsonati_amadeersalbeheiat, \
     sql_delete, create_sql_table, insert_into
@@ -35,6 +36,7 @@ report_type = 0
 log_folder_name = 'C:\ezhar-temp'
 log_excel_name = 'excel.xlsx'
 log_dir = os.path.join(log_folder_name, log_excel_name)
+saved_folder = geck_location(set_save_dir=False)
 
 
 def retry(func):
@@ -101,21 +103,6 @@ def remove_excel_files(files=None, pathsave=None):
             os.remove(f)
 
 
-def drop_into_db(table_name, columns, values):
-    # Deleting previous table
-    delete_table = sql_delete(table_name)
-    connect_to_sql(sql_query=delete_table,
-                   connect_type='dropping sql table')
-    # Creating new table
-    sql_create_table = create_sql_table(
-        table_name, columns)
-    connect_to_sql(sql_create_table, connect_type='creating sql table')
-    # Inserting data into table
-    sql_query = insert_into(table_name, columns)
-    connect_to_sql(sql_query, df_values=values,
-                   connect_type='inserting into sql table')
-
-
 def merge_multiple_excel_sheets(path, dest, return_df=False, delete_after_merge=False, postfix='.xls', db_save=False, table=None):
     lst = []
     file_list = glob.glob(path + "/*" + postfix)
@@ -179,27 +166,47 @@ def merge_multiple_html_files(path, return_df=False, delete_after_merge=True):
         del final_df
 
 
-def merge_multiple_excel_files(path, dest, excel_name='merged', delete_after_merge=True, return_df=False):
+def merge_multiple_excel_files(path, dest, excel_name='merged', table_name='default',
+                               delete_after_merge=True, return_df=False,
+                               postfix='xlsx', postfix_after_merge='xlsx', drop_to_sql=False, append_to_prev=False):
 
-    dest = dest + '/' + str(excel_name) + '.xlsx'
+    # dest = dest + '/' + str(excel_name) + postfix
+    dest = os.path.join(dest, excel_name)
+    maybe_make_dir([dest])
+    dest = os.path.join(dest, table_name +
+                        '.' + postfix_after_merge)
 
-# csv files in the path
-    file_list = glob.glob(path + "/*.xlsx")
+    # csv files in the path
+    file_list = glob.glob(path + "/*.%s" % postfix)
 
-    excel_files = glob.glob(os.path.join(path, "*.xlsx"))
+    excel_files = glob.glob(os.path.join(path, "*.%s" % postfix))
     merge_excels = []
 
     for f in excel_files:
-        df = pd.read_excel(f)
-        merge_excels.append(df)
+        try:
+            df = pd.read_excel(f)
+            merge_excels.append(df)
+        except Exception as e:
+            save_excel(f, log=False)
+            df = pd.read_excel(f)
+            merge_excels.append(df)
 
     # Merge all dataframes into one
     final_df_all_fine_grained = pd.concat(merge_excels)
+    final_df_all_fine_grained = final_df_all_fine_grained.astype('str')
+    final_df_all_fine_grained['تاریخ بروزرسانی'] = get_update_date()
 
     if delete_after_merge:
         remove_excel_files(files=file_list)
 
-    final_df_all_fine_grained.csv(dest, index=False)
+    if drop_to_sql:
+
+        drop_into_db(table_name=table_name,
+                     columns=final_df_all_fine_grained.columns.tolist(),
+                     values=final_df_all_fine_grained.values.tolist(),
+                     append_to_prev=append_to_prev)
+
+    final_df_all_fine_grained.to_excel(dest, index=False)
 
     print('merging was done successfully')
     if return_df:
@@ -335,6 +342,9 @@ def make_dir_if_not_exists(paths):
 def check_if_up_to_date(func):
     @wraps(func)
     def try_it(*args, **kwargs):
+        if kwargs['log'] == False:
+            result = func(*args, **kwargs)
+            return result
         current_date = int(get_update_date())
         func_name = func.__name__
         if func_name == 'is_updated_to_save':
@@ -382,6 +392,9 @@ def log_it(func):
 
     @wraps(func)
     def try_it(*args, **kwargs):
+        if kwargs['log'] == False:
+            result = func(*args, **kwargs)
+            return result
         print('log_it initialized')
         d1 = datetime.now()
         type_of = func.__name__
@@ -446,7 +459,7 @@ def is_updated_to_save(path):
 
 @check_if_up_to_date
 @log_it
-def save_excel(excel_file):
+def save_excel(excel_file, log=True):
     irismash = xw.Book(excel_file)
     irismash.save()
     irismash.app.quit()
@@ -751,6 +764,13 @@ class Login:
         self.driver.close()
 
 
+def login_tgju(driver):
+    driver.get("https://www.tgju.org/")
+    driver.implicitly_wait(20)
+    
+    return driver
+    
+
 def login_arzeshafzoodeh(driver):
     driver.get("http://10.2.16.131/frmManagerLogin2.aspx")
     driver.implicitly_wait(20)
@@ -828,22 +848,25 @@ def get_tblreports_date(tblnames, years=['1395', '1396', '1397', '1398', '1399']
     return lst
 
 
-def get_mashaghelsonati(mashaghel_type, date=None, eblagh=True):
+def get_mashaghelsonati(mashaghel_type, date=None, eblagh=True, save_on_folder=False, saved_folder=saved_folder, save_how='db'):
 
     i = 0
     j = 24
 
+# Specify sql query
     if (mashaghel_type == "tashkhis" and eblagh == False):
         sql_query = get_sql_mashaghelsonati_tashkhisEblaghNashode()
     elif (mashaghel_type == "ghatee" and eblagh == False):
         sql_query = get_sql_mashaghelsonati_ghateeEblaghNashode()
     elif mashaghel_type == "tashkhis":
-        sql_query = get_sql_mashaghelsonati()
+        # sql_query = get_sql_mashaghelsonati()
+        sql_query = get_sql_mashaghelsonati_tashkhisEblaghNoGhatee()
     elif mashaghel_type == "heiat":
         sql_query = get_sql_mashaghelsonati_amadeersalbeheiat(date=date)
     elif mashaghel_type == "ghatee":
         sql_query = get_sql_mashaghelsonati_ghatee()
 
+    # Go through each server one by one
     servers = get_server_namesV2()
     all_df = []
 
@@ -852,56 +875,107 @@ def get_mashaghelsonati(mashaghel_type, date=None, eblagh=True):
             server=servers[i][1], database='MASHAGHEL', username='mash', password='123456'), read_from_sql=True, connect_type='',  return_df=True)
         all_df.append(df)
         i += 1
-
+    # merge all dfs
     df_all = pd.concat(all_df)
+    df_all['تاریخ بروزرسانی'] = get_update_date()
 
+    # preprocess and create final df
     if mashaghel_type == 'heiat':
-        agg_heiat = df_all.groupby(
-            ['کد اداره', 'شهرستان']).size()
-        agg_heiat['تاریخ بروزرسانی'] = get_update_date()
-        agg_heiat = agg_heiat.reset_index()
-        agg_heiat.rename(
-            columns={0: 'تعداد آماده ارسال به هیات'}, inplace=True)
-        return agg_heiat
 
-    # df_all.to_excel(r'C:\ezhar-temp\test.xlsx')
+        agg_heiat = df_all.groupby(
+            ['کد اداره', 'شهرستان', 'تاریخ بروزرسانی']).size()
+        agg_heiat = agg_heiat.reset_index()
+        agg_heiat['تاریخ بروزرسانی'] = get_update_date()
+
+        agg_heiat.rename(
+            columns={0: 'تعداد آماده ارسال به هیات مشاغل سنتی'}, inplace=True)
+        # if save_on_folder:
+        #     file_name = 'amade_ersal_beheiat_details.xlsx'
+        #     output_dir = os.path.join(saved_folder, file_name)
+        #     df_all.to_excel(output_dir)
+        #     file_name = 'amade_ersal_beheiat_agg.xlsx'
+        #     output_dir = os.path.join(saved_folder, file_name)
+        #     agg_heiat.to_excel(output_dir)
+        if save_how == 'db':
+            drop_into_db(table_name='tblAmadeErsalBeHeiatMashSonati',
+                         columns=df_all.columns.tolist(),
+                         values=df_all.values.tolist(),
+                         append_to_prev=False)
+        agg_heiat = agg_heiat.rename(columns={'کد اداره': 'نام اداره سنتی'})
+        return df_all, agg_heiat
 
     if (check_if_col_exists(df_all, 'تاريخ ثبت برگ تشخيص')):
         df_all['ماه صدور تشخیص'] = df_all['تاريخ ثبت برگ تشخيص'].str.slice(
             0, 6).astype('int64')
+
         if eblagh:
             df_all['ماه ابلاغ تشخیص'] = df_all['تاريخ ابلاغ برگ تشخيص'].str.slice(
                 0, 6)
+            if date is not None:
+                df_all = df_all.loc[df_all['ماه ابلاغ تشخیص'].astype(
+                    'int64') < date]
             # df_all_sodor = df_all.loc[df_all['ماه صدور تشخیص'] == '%s%s' % (year, month) ]
             # df_all_eblagh = df_all.loc[df_all['ماه ابلاغ تشخیص'] == '%s%s' % (year, month) ]
             agg_tashkhis_sodor = df_all.groupby(
-                ['کد اداره', 'شهرستان', 'ماه صدور تشخیص']).size()
+                ['کد اداره', 'شهرستان', 'ماه صدور تشخیص', 'تاریخ بروزرسانی']).size()
             agg_tashkhis_eblagh = df_all.groupby(
-                ['کد اداره', 'شهرستان', 'ماه ابلاغ تشخیص']).size()
+                ['کد اداره', 'شهرستان', 'تاریخ بروزرسانی']).size()
             agg_tashkhis_sodor = agg_tashkhis_sodor.reset_index(level=0)
-            agg_tashkhis_eblagh = agg_tashkhis_eblagh.reset_index(level=0)
+            agg_tashkhis_eblagh = agg_tashkhis_eblagh.reset_index()
             agg_tashkhis_sodor['تاریخ بروزرسانی'] = get_update_date()
             agg_tashkhis_eblagh['تاریخ بروزرسانی'] = get_update_date()
             agg_tashkhis_sodor = agg_tashkhis_sodor.reset_index(level=0)
-            agg_tashkhis_eblagh = agg_tashkhis_eblagh.reset_index(level=0)
             agg_tashkhis_sodor = agg_tashkhis_sodor.reset_index(level=0)
-            agg_tashkhis_eblagh = agg_tashkhis_eblagh.reset_index(level=0)
             agg_tashkhis_eblagh.rename(
-                columns={0: 'تعداد تشخیص ابلاغی'}, inplace=True)
+                columns={0: 'تعداد تشخیص ابلاغی مشاغل سنتی'}, inplace=True)
             agg_tashkhis_sodor.rename(
-                columns={0: 'تعداد تشخیص صادره'}, inplace=True)
-            return agg_tashkhis_sodor, agg_tashkhis_eblagh
+                columns={0: 'تعداد تشخیص صادره مشاغل سنتی'}, inplace=True)
+
+            # if save_on_folder:
+
+            #     file_name_details_t_sadere = 'tashkhis_saderShode_details.xlsx'
+            #     file_name_details = 'tashkhis_sadervaeblaghi_details.xlsx'
+            #     file_name_agg_t_sadere = 'tashkhis_saderShode_agg.xlsx'
+            #     file_name_details_t_eblaghi = 'tashkhis_eblaghshode_details.xlsx'
+            #     file_name_agg_t_eblaghi = 'tashkhis_eblaghshode_agg.xlsx'
+            #     output_dir = os.path.join(saved_folder, file_name_details)
+            #     df_all.to_excel(output_dir)
+            #     output_dir = os.path.join(saved_folder, file_name_agg_t_sadere)
+            #     agg_tashkhis_sodor.to_excel(output_dir)
+            #     output_dir = os.path.join(
+            #         saved_folder, file_name_agg_t_eblaghi)
+            #     agg_tashkhis_eblagh.to_excel(output_dir)
+
+            if save_how == 'db':
+                drop_into_db(table_name='tblTashkhisEblaghNoGhatee',
+                             columns=df_all.columns.tolist(),
+                             values=df_all.values.tolist(),
+                             append_to_prev=False)
+            # return df_all, agg_tashkhis_sodor, agg_tashkhis_eblagh
+            agg_tashkhis_eblagh = agg_tashkhis_eblagh.rename(
+                columns={'کد اداره': 'نام اداره سنتی'})
+            return df_all, agg_tashkhis_eblagh
 
         else:
             if date is not None:
                 df_all = df_all.loc[df_all['ماه صدور تشخیص'] < date]
 
-            agg_tashkhis_sodor = df_all.groupby(['کد اداره', 'شهرستان']).size()
+            agg_tashkhis_sodor = df_all.groupby(
+                ['کد اداره', 'شهرستان', 'تاریخ بروزرسانی']).size()
             agg_tashkhis_sodor = agg_tashkhis_sodor.reset_index()
             agg_tashkhis_sodor['تاریخ بروزرسانی'] = get_update_date()
             agg_tashkhis_sodor.rename(
-                columns={0: 'تعداد تشخیص ابلاغ نشده'}, inplace=True)
-            return agg_tashkhis_sodor
+                columns={0: 'تعداد تشخیص ابلاغ نشده مشاغل سنتی'}, inplace=True)
+            if save_how == 'db':
+                drop_into_db(table_name='tblTashkhisSodorNoElagh',
+                             columns=df_all.columns.tolist(),
+                             values=df_all.values.tolist(),
+                             append_to_prev=False)
+
+            agg_tashkhis_sodor = agg_tashkhis_sodor.rename(
+                columns={'کد اداره': 'نام اداره سنتی'})
+
+            return df_all, agg_tashkhis_sodor
 
     if (check_if_col_exists(df_all, 'تاريخ ثبت برگ قطعي')):
         df_all['ماه صدور قطعی'] = df_all['تاريخ ثبت برگ قطعي'].str.slice(
@@ -912,9 +986,9 @@ def get_mashaghelsonati(mashaghel_type, date=None, eblagh=True):
             # df_all_sodor = df_all.loc[df_all['ماه صدور قطعی'] == '%s%s' % (year, month) ]
             # df_all_eblagh = df_all.loc[df_all['ماه ابلاغ قطعی'] == '%s%s' % (year, month) ]
             agg_ghatee_sodor = df_all.groupby(
-                ['کد اداره', 'شهرستان', 'ماه صدور قطعی']).size()
+                ['کد اداره', 'شهرستان', 'ماه صدور قطعی', 'تاریخ بروزرسانی']).size()
             agg_ghatee_eblagh = df_all.groupby(
-                ['کد اداره', 'شهرستان', 'ماه ابلاغ قطعی']).size()
+                ['کد اداره', 'شهرستان', 'ماه ابلاغ قطعی', 'تاریخ بروزرسانی']).size()
             agg_ghatee_sodor = agg_ghatee_sodor.reset_index(level=0)
             agg_ghatee_eblagh = agg_ghatee_eblagh.reset_index(level=0)
             agg_ghatee_sodor['تاریخ بروزرسانی'] = get_update_date()
@@ -924,24 +998,75 @@ def get_mashaghelsonati(mashaghel_type, date=None, eblagh=True):
             agg_ghatee_sodor = agg_ghatee_sodor.reset_index(level=0)
             agg_ghatee_eblagh = agg_ghatee_eblagh.reset_index(level=0)
             agg_ghatee_eblagh.rename(
-                columns={0: 'تعداد قطعی ابلاغی'}, inplace=True)
+                columns={0: 'تعداد قطعی ابلاغی مشاغل سنتی'}, inplace=True)
             agg_ghatee_sodor.rename(
-                columns={0: 'تعداد قطعی صادره'}, inplace=True)
+                columns={0: 'تعداد قطعی مشاغل سنتی'}, inplace=True)
 
-            return agg_ghatee_sodor, agg_ghatee_eblagh
+            # if save_on_folder:
+
+            #     file_name_details_g_sadere = 'ghatee_saderShode_details.xlsx'
+            #     file_name_details = 'ghatee_sadervaeblaghi_details.xlsx'
+            #     file_name_agg_g_sadere = 'ghatee_saderShode_agg.xlsx'
+            #     file_name_details_g_eblaghi = 'ghatee_eblaghshode_details.xlsx'
+            #     file_name_agg_g_eblaghi = 'ghatee_eblaghshode_agg.xlsx'
+            #     output_dir = os.path.join(saved_folder, file_name_details)
+            #     df_all.to_excel(output_dir)
+            #     output_dir = os.path.join(saved_folder, file_name_agg_g_sadere)
+            #     agg_ghatee_sodor.to_excel(output_dir)
+            #     output_dir = os.path.join(
+            #         saved_folder, file_name_agg_g_eblaghi)
+            #     agg_ghatee_eblagh.to_excel(output_dir)
+
+            if save_how == 'db':
+                drop_into_db(table_name='tblGhateeSodorAndEblagh',
+                             columns=df_all.columns.tolist(),
+                             values=df_all.values.tolist(),
+                             append_to_prev=False)
+
+            agg_ghatee_sodor = agg_ghatee_sodor.rename(
+                columns={'کد اداره': 'نام اداره سنتی'})
+
+            agg_ghatee_eblagh = agg_ghatee_eblagh.rename(
+                columns={'کد اداره': 'نام اداره سنتی'})
+
+            return df_all, agg_ghatee_sodor, agg_ghatee_eblagh
         else:
             if date is not None:
                 df_all = df_all.loc[df_all['ماه صدور قطعی'] < date]
 
-            agg_ghatee_sodor = df_all.groupby(['کد اداره', 'شهرستان']).size()
+            agg_ghatee_sodor = df_all.groupby(
+                ['کد اداره', 'شهرستان', 'تاریخ بروزرسانی']).size()
             agg_ghatee_sodor = agg_ghatee_sodor.reset_index()
             agg_ghatee_sodor['تاریخ بروزرسانی'] = get_update_date()
             agg_ghatee_sodor.rename(
-                columns={0: 'تعداد قطعی ابلاغ نشده'}, inplace=True)
+                columns={0: 'تعداد قطعی ابلاغ نشده مشاغل سنتی'}, inplace=True)
 
-            return agg_ghatee_sodor
+            if save_how == 'db':
+                drop_into_db(table_name='tblGhateeSodorNoEblagh',
+                             columns=df_all.columns.tolist(),
+                             values=df_all.values.tolist(),
+                             append_to_prev=False)
+
+            agg_ghatee_sodor = agg_ghatee_sodor.rename(
+                columns={'کد اداره': 'نام اداره سنتی'})
+
+            return df_all, agg_ghatee_sodor
 
 
+def drop_into_db(table_name, columns, values, append_to_prev=False, sql_con=get_sql_con()):
+    if append_to_prev == False:
+        # Deleting previous table
+        delete_table = sql_delete(table_name)
+        connect_to_sql(sql_query=delete_table, sql_con=sql_con,
+                       connect_type='dropping sql table')
+        # Creating new table
+        sql_create_table = create_sql_table(
+            table_name, columns)
+        connect_to_sql(sql_create_table, sql_con=sql_con, connect_type='creating sql table')
+    # Inserting data into table
+    sql_query = insert_into(table_name, columns)
+    connect_to_sql(sql_query, sql_con=sql_con, df_values=values,
+                   connect_type='inserting into sql table')
 # df1 = pd.read_excel(
 #     r'C:\Users\alkav\Desktop\گزارش کارکرد\گزارش کارکرد جدید\ایریس\رسیدگی نشده ارزش افزوده سنیم New.xlsx')
 # df2 = pd.read_excel(
@@ -952,3 +1077,88 @@ def get_mashaghelsonati(mashaghel_type, date=None, eblagh=True):
 
 # df3.to_excel(
 #     r'C:\Users\alkav\Desktop\گزارش کارکرد\گزارش کارکرد جدید\ایریس\رزوده سنیم.xlsx')
+
+
+def process_mostaghelat(date=140106, report_type='Tashkhis', persian_name='تشخیص', sodor='صدور', msg='تشخیص ابلاغ نشده'):
+
+    sql_query_edare_shahr = "SELECT [city],[edare] FROM [tax].[dbo].[tblEdareShahr]"
+    sql_query_most = "SELECT * FROM tblMostaghelat%s" % report_type
+
+    df_edare_shahr = connect_to_sql(sql_query_edare_shahr, sql_con=get_sql_con(
+        database='tax'), read_from_sql=True, connect_type='read from tblEdateShahr', return_df=True)
+
+    df_most_tashkhis = connect_to_sql(
+        sql_query_most, read_from_sql=True, connect_type='read from tblMost', return_df=True)
+
+    df_merged_1 = df_most_tashkhis.merge(df_edare_shahr, how='inner',
+                                         left_on=df_most_tashkhis['واحد مالیاتی'].str.slice(
+                                             0, 4),
+                                         right_on='edare')
+
+    df_merged_2 = df_most_tashkhis.merge(df_edare_shahr, how='inner',
+                                         left_on=df_most_tashkhis['واحد مالیاتی'].str.slice(
+                                             0, 5),
+                                         right_on=df_edare_shahr['edare'].str.slice(0, 5)).drop(['key_0'], axis=1)
+
+    df_f = pd.concat([df_merged_1, df_merged_2])
+    df_f.drop_duplicates(subset=['شماره برگ %s' %
+                         persian_name], keep=False, inplace=True)
+
+    dff_final = df_f = pd.concat([df_f, df_merged_2])
+    dff_final['ماه %s' % sodor] = dff_final['تاریخ %s' % sodor].str.replace(
+        '/', '').str.slice(0, 6).astype('int64')
+    dff_final = dff_final.loc[dff_final['ماه %s' % sodor] < 140106]
+    dff_final.rename(columns={'edare': 'کد اداره',
+                              'city': 'شهرستان'}, inplace=True)
+    dff_final_agg = dff_final.groupby(
+        ['کد اداره', 'شهرستان', 'تاریخ بروزرسانی']).size().reset_index()
+    dff_final_agg.rename(
+        columns={0: 'تعداد %s مستغلات' % msg}, inplace=True)
+    return dff_final, dff_final_agg
+
+
+def final_most(date=140106):
+    tashkhis, tashkhis_agg = process_mostaghelat(date=date)
+    ghatee, ghatee_agg = process_mostaghelat(date=date,
+                                             report_type='Ghatee', persian_name='قطعی', msg='قطعی ابلاغ نشده')
+    amade_ghatee, amade_ghatee_agg = process_mostaghelat(date=date,
+                                                         report_type='AmadeGhatee', persian_name='تشخیص', sodor='ابلاغ', msg='آماده قطعی')
+
+    lst_agg = [tashkhis_agg, ghatee_agg, amade_ghatee_agg]
+
+    merged_agg = ft.reduce(lambda left, right: pd.merge(
+        left, right, how='outer', on='کد اداره'), lst_agg)
+
+    merged_agg['شهرستان'].fillna(merged_agg['شهرستان_y'], inplace=True)
+    merged_agg['شهرستان'].fillna(merged_agg['شهرستان_x'], inplace=True)
+    merged_agg['تاریخ بروزرسانی'].fillna(
+        merged_agg['تاریخ بروزرسانی_x'], inplace=True)
+    merged_agg['تاریخ بروزرسانی'].fillna(
+        merged_agg['تاریخ بروزرسانی_y'], inplace=True)
+    merged_agg['شهرستان'].fillna(merged_agg['شهرستان_x'], inplace=True)
+    merged_agg.fillna(0, inplace=True)
+
+    selected_columns = ['کد اداره',
+                        'تعداد تشخیص ابلاغ نشده مستغلات',
+                        'تعداد قطعی ابلاغ نشده مستغلات',
+                        'شهرستان',
+                        'تاریخ بروزرسانی',
+                        'تعداد آماده قطعی مستغلات']
+
+    merged_agg = merged_agg[selected_columns]
+    merged_agg = merged_agg.rename(columns={'کد اداره': 'نام اداره سنتی'})
+    merged_agg['نام اداره سنتی'] = merged_agg['نام اداره سنتی'].str.slice(0, 5)
+    merged_agg = merged_agg.iloc[:, [0, 3, 1, 2, 5, 4]]
+
+    return tashkhis, ghatee, amade_ghatee, merged_agg
+
+
+def rename_duplicate_columns(df):
+
+    cols = pd.Series(merged_agg.columns)
+    for dup in merged_agg.columns[merged_agg.columns.duplicated(keep=False)]:
+        cols[merged_agg.columns.get_loc(dup)] = (
+            [dup + '.' + str(d_idx) if d_idx != 0 else dup for d_idx in range(merged_agg.columns.get_loc(dup).sum())])
+    merged_agg.columns = cols
+
+    return merged_agg

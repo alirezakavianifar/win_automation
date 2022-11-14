@@ -2,7 +2,7 @@ from helpers import get_mashaghelsonati, get_tblreports_date, connect_to_sql
 from constants import get_table_names, geck_location
 from sql_queries import sql_delete, create_sql_table, insert_into
 
-saved_folder = geck_location(set_save_dir=True)
+saved_folder = geck_location(set_save_dir=False)
 eblagh = False
 date = 140106
 
@@ -10,19 +10,16 @@ date = 140106
 def get_tashkhis_ghatee_sonati(date=date, eblagh=eblagh, saved_folder=saved_folder):
     #
     if eblagh == False:
-        amade_ersal_beheiat = get_mashaghelsonati(
-            'heiat', date=date, eblagh=eblagh)
-        tashkhis_saderNashode = get_mashaghelsonati(
+        amade_ersal_beheiat, agg_amade_ersal_beheiat = get_mashaghelsonati(
+            'heiat', date=date, eblagh=eblagh, saved_folder=saved_folder)
+        tashkhis_saderNashode, agg_tashkhis_saderNashode = get_mashaghelsonati(
             'tashkhis', date=date, eblagh=eblagh)
-        ghatee_saderNashode = get_mashaghelsonati(
+        tashkhis_eblagh_noGhatee, agg_tashkhis_eblagh_noGhatee = get_mashaghelsonati(
+            'tashkhis', date=date, eblagh=True)
+        ghatee_saderNashode, agg_ghatee_saderNashode = get_mashaghelsonati(
             'ghatee', date=date, eblagh=eblagh)
-        tashkhis_saderNashode.to_excel(
-            '%s/mashaghelSonati_noeblagh_t.xlsx' % saved_folder)
-        ghatee_saderNashode.to_excel(
-            '%s/mashaghelSonati_noeblagh_g.xlsx' % saved_folder)
-        amade_ersal_beheiat.to_excel(
-            '%s/mashaghelSonati_amadeersalbeheiat.xlsx' % saved_folder)
-        return tashkhis_saderNashode, ghatee_saderNashode, amade_ersal_beheiat
+
+        return tashkhis_saderNashode, agg_tashkhis_saderNashode, ghatee_saderNashode, agg_ghatee_saderNashode, amade_ersal_beheiat, agg_amade_ersal_beheiat, tashkhis_eblagh_noGhatee, agg_tashkhis_eblagh_noGhatee
 
     else:
 
@@ -30,14 +27,14 @@ def get_tashkhis_ghatee_sonati(date=date, eblagh=eblagh, saved_folder=saved_fold
             'tashkhis', date=date, eblagh=eblagh)
         ghatee_sadere, ghatee_eblaghi = get_mashaghelsonati(
             'ghatee', date=date, eblagh=eblagh)
-        tashkhis_sadere.to_excel(
-            '%s/mashaghelSonati_tashkhisSadere.xlsx' % saved_folder)
-        ghatee_sadere.to_excel(
-            '%s/mashaghelSonati_ghateeSadere.xlsx' % saved_folder)
-        tashkhis_eblaghi.to_excel(
-            '%s/mashaghelSonati_tashkhisEblaghi.xlsx' % saved_folder)
-        ghatee_eblaghi.to_excel(
-            '%s/mashaghelSonati_ghateeEblaghi.xlsx' % saved_folder)
+        # tashkhis_sadere.to_excel(
+        #     '%s/mashaghelSonati_tashkhisSadere.xlsx' % saved_folder)
+        # ghatee_sadere.to_excel(
+        #     '%s/mashaghelSonati_ghateeSadere.xlsx' % saved_folder)
+        # tashkhis_eblaghi.to_excel(
+        #     '%s/mashaghelSonati_tashkhisEblaghi.xlsx' % saved_folder)
+        # ghatee_eblaghi.to_excel(
+        #     '%s/mashaghelSonati_ghateeEblaghi.xlsx' % saved_folder)
         return tashkhis_sadere, ghatee_sadere, tashkhis_eblaghi, ghatee_eblaghi
 
 

@@ -87,11 +87,11 @@ def get_server_namesV2():
         ('izeh', r'10.52.176.130\Izeh'),
         ('baghmalek', r'10.52.192.130\BAGHMALEK'),
         ('ramhormoz', r'10.53.16.130\ramhormoz'),
-        # ('haftkel', r'10.53.176.130\HAFTKEL'),
+        ('haftkel', r'10.53.176.130\HAFTKEL'),
         ('omidieh', r'10.52.144.130\OMIDIEH'),
         ('aghajari', r'10.52.128.130\Aghajari'),
         ('ramshir', r'10.53.0.130\ramshir'),
-        # ('sosangerd', r'10.53.32.130\Susangerd'),
+        ('sosangerd', r'10.53.32.130\Susangerd'),
         ('lali', r'10.53.160.130\lali'),
         ('hoveyze', r'10.53.48.130\hoveyze'),
     ]

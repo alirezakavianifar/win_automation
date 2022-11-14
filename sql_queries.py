@@ -1489,3 +1489,89 @@ def get_sql_sanimDarjariabBadvi():
     FROM [dbo].[V_PORTAL]) as portal ON obj.[شناسه داخلی سامانه سنیم]=portal.[کد یکتای داخلی مؤدی]
 
 """
+
+
+def get_sql_mashaghelsonati_tashkhisEblaghNoGhatee():
+
+    return """
+
+select 
+case
+when  mm.cod_hozeh  =168141 then 'هويزه'
+ when SUBSTRING( cast (mm.cod_hozeh as varchar(20) ),1,4) =1601 then 'اهواز کد يک'
+when SUBSTRING( cast (mm.cod_hozeh as varchar(20) ),1,4) =1602 then 'اهواز کد دو'
+ when SUBSTRING( cast (mm.cod_hozeh as varchar(20) ),1,5) =16439 then 'هنديجان'
+when SUBSTRING( cast (mm.cod_hozeh as varchar(20) ),1,5) =16649 then 'لالي'
+when SUBSTRING( cast (mm.cod_hozeh as varchar(20) ),1,5) =16718 then 'رامشير'
+when SUBSTRING( cast (mm.cod_hozeh as varchar(20) ),1,4) =1603 then 'اهواز کد سه'
+when SUBSTRING( cast (mm.cod_hozeh as varchar(20) ),1,4) =1604 then 'اهواز کد چهار '
+when SUBSTRING( cast (mm.cod_hozeh as varchar(20) ),1,4) =1605 then 'اهواز کد پنج'
+when SUBSTRING( cast (mm.cod_hozeh as varchar(20) ),1,4) =1606 then 'اهواز کد شش'
+when SUBSTRING( cast (mm.cod_hozeh as varchar(20) ),1,4) =1607 then 'اهواز کد هفت'
+when SUBSTRING( cast (mm.cod_hozeh as varchar(20) ),1,4) =1608 then 'اهواز کد هشت'
+when SUBSTRING( cast (mm.cod_hozeh as varchar(20) ),1,4) =1609 then 'اهواز کد نه'
+when SUBSTRING( cast (mm.cod_hozeh as varchar(20) ),1,4) =1610 then 'اهواز کد 10'
+when SUBSTRING( cast (mm.cod_hozeh as varchar(20) ),1,4) =1611 then 'اهواز کد 11'
+when SUBSTRING( cast (mm.cod_hozeh as varchar(20) ),1,4) =1615 then 'اهواز کد 15'
+when SUBSTRING( cast (mm.cod_hozeh as varchar(20) ),1,4) =1631 then 'آبادان کد 31'
+when SUBSTRING( cast (mm.cod_hozeh as varchar(20) ),1,4) =1632 then 'آبادان کد 32'
+when SUBSTRING( cast (mm.cod_hozeh as varchar(20) ),1,4) =1633 then 'آبادان کد 33'
+when SUBSTRING( cast (mm.cod_hozeh as varchar(20) ),1,4) =1626 then 'دزفول'
+when SUBSTRING( cast (mm.cod_hozeh as varchar(20) ),1,4) =1627 then 'دزفول'
+when SUBSTRING( cast (mm.cod_hozeh as varchar(20) ),1,4) =1628 then 'دزفول'
+when SUBSTRING( cast (mm.cod_hozeh as varchar(20) ),1,4) =1643 then 'ماهشهر کد43'
+when SUBSTRING( cast (mm.cod_hozeh as varchar(20) ),1,4) =1644 then 'ماهشهر کد44'
+when SUBSTRING( cast (mm.cod_hozeh as varchar(20) ),1,4) =1636 then 'بهبهان'
+when SUBSTRING( cast (mm.cod_hozeh as varchar(20) ),1,4) =1639 then 'شوشتر'
+when SUBSTRING( cast (mm.cod_hozeh as varchar(20) ),1,4) =1641 then 'گتوند'
+when SUBSTRING( cast (mm.cod_hozeh as varchar(20) ),1,4) =1649 then 'بندر امام'
+when SUBSTRING( cast (mm.cod_hozeh as varchar(20) ),1,4) =1648 then 'بندر امام'
+when SUBSTRING( cast (mm.cod_hozeh as varchar(20) ),1,4) =1651 then 'انديمشک'
+when SUBSTRING( cast (mm.cod_hozeh as varchar(20) ),1,4) =1654 then 'خرمشهر'
+when SUBSTRING( cast (mm.cod_hozeh as varchar(20) ),1,4) =1659 then 'شادگان'
+when SUBSTRING( cast (mm.cod_hozeh as varchar(20) ),1,4) =1661 then 'اميديه'
+when SUBSTRING( cast (mm.cod_hozeh as varchar(20) ),1,4) =1663 then 'آغاجاري'
+when SUBSTRING( cast (mm.cod_hozeh as varchar(20) ),1,4) =1664 then 'مسجد سليمان'
+when SUBSTRING( cast (mm.cod_hozeh as varchar(20) ),1,4) =1668 then 'شوش'
+when SUBSTRING( cast (mm.cod_hozeh as varchar(20) ),1,4) =1671 then 'رامهرمز'
+when SUBSTRING( cast (mm.cod_hozeh as varchar(20) ),1,4) =1676 then 'ايذه'
+when SUBSTRING( cast (mm.cod_hozeh as varchar(20) ),1,4) =1678 then 'هفتگل'
+when SUBSTRING( cast (mm.cod_hozeh as varchar(20) ),1,4) =1679 then 'باغملک'
+when SUBSTRING( cast (mm.cod_hozeh as varchar(20) ),1,4) =1681 then 'دشت آزاداگان'
+else 'نامشخص' end as 'شهرستان'
+,
+case 
+ when mm.cod_hozeh  IN (168141) then '168141'
+when SUBSTRING( cast (mm.cod_hozeh as varchar(20) ),1,5) IN ('16439','16649','16718') then SUBSTRING( cast (mm.cod_hozeh as varchar(20) ),1,5) else SUBSTRING( cast (mm.cod_hozeh as varchar(20) ),1,4) end as 'کد اداره'
+,
+mm.Cod_Hozeh as 'کد حوزه',
+mm.sal as 'عملکرد',
+mm.K_Parvand as 'کلاسه پرونده',
+TA.motamam AS 'متمم',
+modi_inf.namee AS 'نام',
+modi_inf.family AS 'نام خانوادگي',
+ta.asl_maliat as 'ماليات تشخيص' ,
+ta.dar_maliat_mash as 'درآمد تشخيص',
+ta.sabt_date as 'تاريخ ثبت برگ تشخيص'
+,ta.eblag_date as 'تاريخ ابلاغ برگ تشخيص'
+,ta.Eblagh_Sabt_Date as 'تاريخ ثبت ابلاغ برگ تشخيص'
+ 
+
+ from ghabln_inf hh inner join KMLink_Inf mm on hh.Sal=mm.sal and hh.cod_hozeh=mm.Cod_Hozeh and hh.k_parvand=mm.K_Parvand
+inner join modi_inf on modi_inf.modi_seq=mm.Modi_Seq
+inner join tashkhis_inf ta on ta.sal=mm.sal and ta.cod_hozeh=mm.Cod_Hozeh and ta.k_parvand =mm.K_Parvand and ta.modi_seq=mm.Modi_Seq
+where
+ (CONNECTIONPROPERTY('local_net_address' )!= '10.53.32.130' or (CONNECTIONPROPERTY('local_net_address' )= '10.53.32.130' and hh.cod_hozeh !=168141))
+and
+ (CONNECTIONPROPERTY('local_net_address' )!= '10.53.48.130' or (CONNECTIONPROPERTY('local_net_address' )= '10.53.48.130' and hh.cod_hozeh =168141))
+and
+LEN(ta.sabt_date)>2 and len (Eblagh_Sabt_Date) >2  
+
+ 
+and ta.serial=(select max(serial)from tashkhis_inf where ta.cod_hozeh=cod_hozeh and ta.k_parvand=k_parvand and ta.sal=sal and ta.motamam=motamam and ta.modi_seq=modi_seq)
+
+and hh.sal >=1389
+and Not exists (select ghatee_inf.cod_hozeh from ghatee_inf where ta.cod_hozeh=cod_hozeh and ta.k_parvand=k_parvand and ta.sal=sal and ta.motamam=motamam and ta.modi_seq=modi_seq and LEN(ghatee_inf.sabt_date)>2 )
+ 
+
+"""

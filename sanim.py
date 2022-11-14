@@ -44,7 +44,7 @@ final_selected_columns = ['نام اداره',
                           'مالیات بر درآمد شرکت ها',
                           'مالیات بر ارزش افزوده',
                           'نام اداره سنتی',
-                          'تعداد قطعی ابلاغ نشده',
+                          'تعداد قطعی ابلاغ نشده سنیم',
                           'تاریخ بروزرسانی']
 lst = []
 sql_query = """
@@ -164,8 +164,8 @@ def get_tashkhis_ghatee_sanim(date=selected_date, data=get_sanim_data()):
         if not (df.empty):
             lst.append(df)
         print(i)
-        if i == 6:
-            break
+        # if i == 6:
+        #     break
 
     final_df = pd.concat(lst)
     final_df = final_df[selected_columns]
@@ -212,7 +212,7 @@ def get_tashkhis_ghatee_sanim(date=selected_date, data=get_sanim_data()):
             dff_agg_g = dff_g.groupby(
                 ['کد اداره', 'نام اداره']).size().reset_index()
             dff_agg_g.rename(
-                columns={0: 'تعداد قطعی ابلاغ نشده'}, inplace=True)
+                columns={0: 'تعداد قطعی ابلاغ نشده سنیم'}, inplace=True)
             dff_agg_g.to_excel('%s/no-eblagh_g_agg.xlsx' % saved_folder)
             dff_g.to_excel('%s/no-eblagh_g.xlsx' % saved_folder)
 
@@ -236,8 +236,9 @@ def get_tashkhis_ghatee_sanim(date=selected_date, data=get_sanim_data()):
         # dff_agg_merged.rename(columns=final_selected_columns, inplace=True)
         # dff_agg_t['نام اداره سنتی'] = df['نام اداره'].apply(lambda x: extract_num(x))
         dff_agg_merged.to_excel('%s/no-eblagh_merged.xlsx' % saved_folder)
-
-        return dff_agg_merged
+        dff_agg_merged = dff_agg_merged[['شهرستان', 'نام اداره سنتی', 'کد اداره', 'مالیات بر درآمد مشاغل',
+                                         'مالیات بر درآمد شرکت ها', 'مالیات بر ارزش افزوده', 'تعداد قطعی ابلاغ نشده سنیم', 'تاریخ بروزرسانی']]
+        return lst_t, lst_g, dff_agg_merged
 
 
 def get_badvi_sanim():
@@ -246,4 +247,14 @@ def get_badvi_sanim():
     df_badviSanim = connect_to_sql(
         sql_query, read_from_sql=True, connect_type='', return_df=True)
 
-    return df_badviSanim
+    dff_agg_b = df_badviSanim.groupby(
+        ['نام اداره']).size().reset_index()
+    new_col = dff_agg_b['نام اداره'].apply(lambda x: extract_num(x))
+    dff_agg_b.insert(1, 'نام اداره سنتی', new_col)
+    new_col = dff_agg_b['نام اداره'].apply(lambda x: remove_num(x))
+    dff_agg_b.insert(0, 'شهرستان', new_col)
+    dff_agg_b.drop('نام اداره', axis=1, inplace=True)
+    dff_agg_b.rename(
+        columns={0: 'تعداد آماده ارسال به هیات سنیم'}, inplace=True)
+
+    return df_badviSanim, dff_agg_b
