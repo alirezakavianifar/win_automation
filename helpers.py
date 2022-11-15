@@ -20,6 +20,8 @@ import functools as ft
 import math
 from tqdm import tqdm
 import pyodbc
+import urllib.request
+from aspect_tgju import log_internet
 from constants import geck_location, set_gecko_prefs, get_remote_sql_con, get_sql_con, get_str_help, get_comm_reports, get_heiat, get_lst_reports, \
     get_all_years, get_common_years, get_str_years, get_years, get_common_reports, get_comm_years, get_heiat_reports, get_server_namesV2
 from sql_queries import get_sql_mashaghelsonati, get_sql_mashaghelsonati_ghatee, get_sql_mashaghelsonati_tashkhisEblaghNoGhatee, \
@@ -491,7 +493,7 @@ def check_if_col_exists(df, col):
         return False
 
 
-def init_driver(pathsave, driver_type='firefox'):
+def init_driver(pathsave, driver_type='firefox', headless=False):
     if driver_type == 'chrome':
         options = Options()
         prefs = {'download.default_directory': pathsave}
@@ -524,8 +526,13 @@ def init_driver(pathsave, driver_type='firefox'):
         fp.set_preference(
             'browser.download.manager.showAlertOnComplete', False)
         fp.set_preference('browser.download.manager.closeWhenDone', False)
-
-        driver = webdriver.Firefox(fp, executable_path=geck_location())
+        if headless:
+            options = webdriver.FirefoxOptions()
+            options.headless = True
+            driver = webdriver.Firefox(
+                fp, executable_path=geck_location(), options=options)
+        else:
+            driver = webdriver.Firefox(fp, executable_path=geck_location())
         driver.window_handles
         driver.switch_to.window(driver.window_handles[0])
 
@@ -764,12 +771,21 @@ class Login:
         self.driver.close()
 
 
+@log_internet
+def internet_on():
+    try:
+        request_url = urllib.request.urlopen('https://www.tgju.org/')
+        return True
+    except:
+        return False
+
+
 def login_tgju(driver):
     driver.get("https://www.tgju.org/")
     driver.implicitly_wait(20)
-    
+
     return driver
-    
+
 
 def login_arzeshafzoodeh(driver):
     driver.get("http://10.2.16.131/frmManagerLogin2.aspx")
@@ -1062,7 +1078,8 @@ def drop_into_db(table_name, columns, values, append_to_prev=False, sql_con=get_
         # Creating new table
         sql_create_table = create_sql_table(
             table_name, columns)
-        connect_to_sql(sql_create_table, sql_con=sql_con, connect_type='creating sql table')
+        connect_to_sql(sql_create_table, sql_con=sql_con,
+                       connect_type='creating sql table')
     # Inserting data into table
     sql_query = insert_into(table_name, columns)
     connect_to_sql(sql_query, sql_con=sql_con, df_values=values,

@@ -1,10 +1,8 @@
+import pandas as pd
 from scrape import Scrape
-from helpers import maybe_make_dir
+from helpers import maybe_make_dir, get_update_date, drop_into_db
+from constants import get_sql_con
+import time
+import datetime
 
-path = r'H:\پروژه اتوماسیون گزارشات\monthly_reports\saved_dir\tgju'
-
-maybe_make_dir([path])
-
-x = Scrape()
-
-x.scrape_tgju(path=path)
+    
