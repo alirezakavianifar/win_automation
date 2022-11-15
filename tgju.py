@@ -20,7 +20,7 @@ maybe_make_dir([path])
 
 @log
 def compare_prices(coin, last_coin):
-    if coin != last_coin:
+    if abs(coin - last_coin) > 300_000:
         return True
     return False
 
