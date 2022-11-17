@@ -724,7 +724,7 @@ def create_df(excel_files, year=None, report_type=None, type_of_report=None):
 
 
 @time_it
-def connect_to_sql(sql_query, sql_con=get_sql_con(), df_values=None, read_from_sql=False, connect_type=None, return_df=False, chunk_size=None):
+def connect_to_sql(sql_query, connect_type, sql_con=get_sql_con(), df_values=None, read_from_sql=False, return_df=False, chunk_size=None, index_col=None):
 
     global n_retries
 
@@ -736,6 +736,9 @@ def connect_to_sql(sql_query, sql_con=get_sql_con(), df_values=None, read_from_s
 
         if (read_from_sql):
             df = pd.read_sql(sql_query, cnxn, chunksize=chunk_size)
+            if index_col is not None:
+                df[index_col] = pd.to_datetime(df[index_col])
+                df = df.set_index(index_col)
             return df
 
         if df_values == None:
