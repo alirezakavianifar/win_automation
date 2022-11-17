@@ -12,7 +12,7 @@ golds = []
 dollars = []
 coins = []
 eng_dates = []
-last_coin = 0
+last_coin = '0'
 last_gold = 0
 last_dollar = 0
 maybe_make_dir([path])
@@ -20,7 +20,7 @@ maybe_make_dir([path])
 
 @log
 def compare_prices(coin, last_coin):
-    if abs(int(coin.replace(',', '')) - int(last_coin.replace(',', ''))) > 300_000:
+    if abs(coin - last_coin) > 300_000:
         return True
     return False
 
@@ -39,7 +39,7 @@ while True:
 
             x = Scrape()
             coin, dollar, gold = x.scrape_tgju(path=path)
-            if compare_prices(coin=coin, last_coin=last_coin):
+            if compare_prices(coin=int(coin.replace(',', '')), last_coin=int(last_coin.replace(',', ''))):
                 last_coin, last_gold, last_dollar = coin, gold, dollar
                 eng_date = str(datetime.datetime.now())
                 date = get_update_date()

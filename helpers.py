@@ -534,7 +534,6 @@ def init_driver(pathsave, driver_type='firefox', headless=False):
             'browser.download.manager.showAlertOnComplete', False)
         fp.set_preference('browser.download.manager.closeWhenDone', False)
 
-        driver = webdriver.Firefox(fp, executable_path=geck_location())
         if headless:
             options = webdriver.FirefoxOptions()
             options.headless = True
@@ -778,6 +777,13 @@ class Login:
 
     def close(self):
         self.driver.close()
+
+
+def login_tgju(driver):
+    driver.get("https://www.tgju.org/")
+    driver.implicitly_wait(20)
+
+    return driver
 
 
 def login_arzeshafzoodeh(driver):

@@ -5,8 +5,8 @@ import os
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support.select import Select
 from selenium.webdriver.support import expected_conditions as EC
-from helpers import login_sanim, login_arzeshafzoodeh,\
-    login_mostaghelat, login_codeghtesadi, \
+from helpers import login_sanim, login_arzeshafzoodeh, login_tgju,\
+    login_mostaghelat, login_codeghtesadi,\
     maybe_make_dir, input_info, merge_multiple_excel_sheets, \
     remove_excel_files, init_driver, \
     log_it, is_updated_to_download, \

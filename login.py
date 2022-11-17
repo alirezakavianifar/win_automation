@@ -1,6 +1,6 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
-from constants import geck_location_remote, geck_location_local, set_gecko_prefs
+from constants import geck_location_remote, set_gecko_prefs
 
 
 class Login:
