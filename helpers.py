@@ -500,7 +500,7 @@ def check_if_col_exists(df, col):
         return False
 
 
-def init_driver(pathsave, driver_type='firefox'):
+def init_driver(pathsave, driver_type='firefox', headless=False):
     if driver_type == 'chrome':
         options = Options()
         prefs = {'download.default_directory': pathsave}
@@ -535,6 +535,13 @@ def init_driver(pathsave, driver_type='firefox'):
         fp.set_preference('browser.download.manager.closeWhenDone', False)
 
         driver = webdriver.Firefox(fp, executable_path=geck_location())
+        if headless:
+            options = webdriver.FirefoxOptions()
+            options.headless = True
+            driver = webdriver.Firefox(
+                fp, executable_path=geck_location(), options=options)
+        else:
+            driver = webdriver.Firefox(fp, executable_path=geck_location())
         driver.window_handles
         driver.switch_to.window(driver.window_handles[0])
 
