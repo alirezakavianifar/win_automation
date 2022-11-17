@@ -1,5 +1,6 @@
 
 import datetime
+import urllib
 
 
 def log(func):
@@ -26,3 +27,12 @@ def log_internet(func):
             print('The internet connection is lost. Trying again...')
             return result
     return log_it
+
+
+@log_internet
+def internet_on():
+    try:
+        request_url = urllib.request.urlopen('https://www.tgju.org/')
+        return True
+    except:
+        return False

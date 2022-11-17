@@ -62,7 +62,7 @@ def get_allSanim(excel_file, selected_sql_query, tbl_name):
     connect_to_sql(sql_create_table_query, connect_type='creating sql table')
 
     # Fetch data
-    num_rows = 200
+    num_rows = 200000
     while True:
         rows = cursor.fetchmany(num_rows)
         if not rows:

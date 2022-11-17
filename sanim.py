@@ -22,12 +22,16 @@ sql_conn = get_remote_sql_con()
 selected_date = 140106
 none_date = 999999999
 selected_columns = ['نام مودی',
+                    'شماره اقتصادی',
                     'کد ملی/شناسه ملی',
                     'کد اداره',
                     'نام اداره',
                     'سال عملکرد',
                     'منبع مالیاتی',
+                    'دوره عملکرد',
                     'تاریخ صدور برگ تشخیص (تاریخ تایید گزارش حسابرسی)',
+                    'شماره برگ تشخیص',
+                    'شماره اظهارنامه',
                     'تاریخ ابلاغ برگ تشخیص',
                     'درآمد تشخیص',
                     'مالیات تشخیص',
@@ -36,6 +40,7 @@ selected_columns = ['نام مودی',
                     'تاریخ ابلاغ برگ قطعی',
                     'مبلغ مالیات قطعی شده',
                     'وضعیت ابلاغ برگ قطعی',
+                    'شماره برگ قطعی',
                     'تاریخ بروزرسانی']
 
 final_selected_columns = ['نام اداره',
@@ -76,7 +81,7 @@ def help_func(row, date=None, type_of=None):
         else:
             # if (row['کد ملی/شناسه ملی']=='14005436900'):
             #     print('f')
-            if ((int(row['ماه صدور برگ تشخیص']) <= date) &
+            if ((int(row['ماه صدور برگ تشخیص']) < date) &
                 (row['تاریخ ابلاغ برگ تشخیص'] in (lst_none)) &
                     (row['تاريخ ايجاد برگ قطعي'] in (lst_none))):
                 return 'تشخیص ابلاغ نشده قبل از %s' % date
@@ -97,7 +102,7 @@ def help_func(row, date=None, type_of=None):
         else:
             # if (row['کد ملی/شناسه ملی']=='14005436900'):
             #         print('f')
-            if ((int(row['ماه صدور برگ قطعی']) <= date) &
+            if ((int(row['ماه صدور برگ قطعی']) < date) &
                 (row['ماه صدور برگ قطعی'] != none_date) &
                     (row['تاریخ ابلاغ برگ قطعی'] in (lst_none))):
                 return 'قطعی ابلاغ نشده قبل از %s' % date
@@ -236,9 +241,9 @@ def get_tashkhis_ghatee_sanim(date=selected_date, data=get_sanim_data()):
         # dff_agg_merged.rename(columns=final_selected_columns, inplace=True)
         # dff_agg_t['نام اداره سنتی'] = df['نام اداره'].apply(lambda x: extract_num(x))
         dff_agg_merged.to_excel('%s/no-eblagh_merged.xlsx' % saved_folder)
-        dff_agg_merged = dff_agg_merged[['شهرستان', 'نام اداره سنتی', 'کد اداره', 'مالیات بر درآمد مشاغل',
-                                         'مالیات بر درآمد شرکت ها', 'مالیات بر ارزش افزوده', 'تعداد قطعی ابلاغ نشده سنیم', 'تاریخ بروزرسانی']]
-        return lst_t, lst_g, dff_agg_merged
+        # dff_agg_merged = dff_agg_merged[['شهرستان', 'نام اداره سنتی', 'کد اداره', 'مالیات بر درآمد مشاغل',
+        #                                  'مالیات بر درآمد شرکت ها', 'مالیات بر ارزش افزوده', 'تعداد قطعی ابلاغ نشده سنیم', 'تاریخ بروزرسانی']]
+        return dff_agg_merged
 
 
 def get_badvi_sanim():

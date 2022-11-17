@@ -1,19 +1,18 @@
 from selenium.webdriver.common.by import By
 import time
-import datetime
 import glob
-import pandas as pd
+import os
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support.select import Select
 from selenium.webdriver.support import expected_conditions as EC
 from helpers import login_sanim, login_arzeshafzoodeh,\
-    login_mostaghelat, login_codeghtesadi, get_update_date, \
+    login_mostaghelat, login_codeghtesadi, \
     maybe_make_dir, input_info, merge_multiple_excel_sheets, \
-    remove_excel_files, init_driver, drop_into_db, \
-    log_it, is_updated_to_download, login_tgju, \
+    remove_excel_files, init_driver, \
+    log_it, is_updated_to_download, \
     is_updated_to_save, rename_files, merge_multiple_html_files, merge_multiple_excel_files
 from download_helpers import download_1000_parvandeh, download_excel
-from constants import get_dict_years, get_sql_con
+from constants import get_dict_years
 import threading
 from watchdog_186 import watch_over, is_downloaded
 
@@ -119,115 +118,118 @@ class Scrape:
         merge_multiple_excel_sheets(self.path, dest=self.path)
 
     def scrape_mostaghelat(self, path=None, report_type='tashkhis', return_df=False, table_name=None, drop_to_sql=True, append_to_prev=False):
-        self.driver = init_driver(
-            pathsave=path, driver_type=self.driver_type)
-        self.path = path
-        self.driver = login_mostaghelat(self.driver)
-        time.sleep(1)
-        WebDriverWait(self.driver, 8).until(EC.presence_of_element_located(
-            (By.XPATH, '/html/body/form/div[4]/div[1]/ul[1]/li[10]/a/span')))
-        self.driver.find_element(
-            By.XPATH, '/html/body/form/div[4]/div[1]/ul[1]/li[10]/a/span').click()
-
-        if report_type == 'amade_ghatee':
-            index = '14'
-            select_type = 'Dro_S_TaxOffice'
-        elif report_type == 'tashkhis':
-            index = '8'
-            select_type = 'Drop_S_TaxUnitCode'
-        elif report_type == 'ghatee':
-            path_second_date = '/html/body/form/div[4]/div[2]/div/div[2]/div/div[2]/div/div/div/div/div[2]/div[3]/div/div/div[2]/table[1]/tbody/tr[3]/td[4]/button'
-            index = '9'
-            select_type = 'Drop_S_TaxUnitCode'
-
-        WebDriverWait(self.driver, 8).until(EC.presence_of_element_located(
-            (By.XPATH, '/html/body/form/div[4]/div[1]/ul[1]/li[10]/ul/li[%s]/a/i[2]' % index)))
-        self.driver.find_element(
-            By.XPATH, '/html/body/form/div[4]/div[1]/ul[1]/li[10]/ul/li[%s]/a/i[2]' % index).click()
-        if select_type == 'Drop_S_TaxUnitCode':
-            time.sleep(3)
-            WebDriverWait(self.driver, 8).until(EC.presence_of_element_located(
-                (By.ID, 'Txt_RegisterDateAz')))
+        def scrape_it():
+            self.driver = init_driver(
+                pathsave=path, driver_type=self.driver_type)
+            self.path = path
+            self.driver = login_mostaghelat(self.driver)
+            WebDriverWait(self.driver, 66).until(EC.presence_of_element_located(
+                (By.XPATH, '/html/body/form/div[4]/div[1]/ul[1]/li[10]/a/span')))
+            time.sleep(5)
             self.driver.find_element(
-                By.ID, 'Txt_RegisterDateAz').click()
-            time.sleep(1)
-            sel = Select(self.driver.find_element(
-                By.ID, 'bd-year-Txt_RegisterDateAz'))
-            sel.select_by_index(0)
-            WebDriverWait(self.driver, 8).until(EC.presence_of_element_located(
-                (By.CLASS_NAME, 'day-1')))
-            self.driver.find_element(
-                By.CLASS_NAME, 'day-1').click()
+                By.XPATH, '/html/body/form/div[4]/div[1]/ul[1]/li[10]/a/span').click()
+            if report_type == 'amade_ghatee':
+                index = '15'
+                select_type = 'Dro_S_TaxOffice'
+            elif report_type == 'tashkhis':
+                index = '8'
+                select_type = 'Drop_S_TaxUnitCode'
+            elif report_type == 'ghatee':
+                path_second_date = '/html/body/form/div[4]/div[2]/div/div[2]/div/div[2]/div/div/div/div/div[2]/div[3]/div/div/div[2]/table[1]/tbody/tr[3]/td[4]/button'
+                index = '9'
+                select_type = 'Drop_S_TaxUnitCode'
 
-            WebDriverWait(self.driver, 8).until(EC.presence_of_element_located(
-                (By.ID, 'Txt_RegisterDateTa')))
+            WebDriverWait(self.driver, 24).until(EC.presence_of_element_located(
+                (By.XPATH, '/html/body/form/div[4]/div[1]/ul[1]/li[10]/ul/li[%s]/a/i[2]' % index)))
             self.driver.find_element(
-                By.ID, 'Txt_RegisterDateTa').click()
-            sel = Select(self.driver.find_element(
-                By.ID, 'bd-year-Txt_RegisterDateTa'))
-            sel.select_by_index(99)
-            if report_type == 'tashkhis':
-                WebDriverWait(self.driver, 8).until(EC.presence_of_element_located(
-                    (By.XPATH, '/html/body/form/div[4]/div[2]/div/div[2]/div/div/div[2]/div/div/div/div/div[2]/div[3]/div/div/div[2]/table[1]/tbody/tr[1]/td[7]/button')))
+                By.XPATH, '/html/body/form/div[4]/div[1]/ul[1]/li[10]/ul/li[%s]/a/i[2]' % index).click()
+            if select_type == 'Drop_S_TaxUnitCode':
+                time.sleep(3)
+                WebDriverWait(self.driver, 48).until(EC.presence_of_element_located(
+                    (By.ID, 'Txt_RegisterDateAz')))
+                # time.sleep(5)
                 self.driver.find_element(
-                    By.XPATH, '/html/body/form/div[4]/div[2]/div/div[2]/div/div/div[2]/div/div/div/div/div[2]/div[3]/div/div/div[2]/table[1]/tbody/tr[1]/td[7]/button').click()
-
-            else:
-                WebDriverWait(self.driver, 8).until(EC.presence_of_element_located(
-                    (By.XPATH, path_second_date)))
+                    By.ID, 'Txt_RegisterDateAz').click()
+                time.sleep(1)
+                sel = Select(self.driver.find_element(
+                    By.ID, 'bd-year-Txt_RegisterDateAz'))
+                sel.select_by_index(0)
+                WebDriverWait(self.driver, 24).until(EC.presence_of_element_located(
+                    (By.CLASS_NAME, 'day-1')))
                 self.driver.find_element(
-                    By.XPATH, path_second_date).click()
+                    By.CLASS_NAME, 'day-1').click()
 
-        if report_type == 'amade_ghatee':
+                WebDriverWait(self.driver, 24).until(EC.presence_of_element_located(
+                    (By.ID, 'Txt_RegisterDateTa')))
+                self.driver.find_element(
+                    By.ID, 'Txt_RegisterDateTa').click()
+                sel = Select(self.driver.find_element(
+                    By.ID, 'bd-year-Txt_RegisterDateTa'))
+                sel.select_by_index(99)
+                if report_type == 'tashkhis':
+                    WebDriverWait(self.driver, 8).until(EC.presence_of_element_located(
+                        (By.XPATH, '/html/body/form/div[4]/div[2]/div/div[2]/div/div/div[2]/div/div/div/div/div[2]/div[3]/div/div/div[2]/table[1]/tbody/tr[1]/td[7]/button')))
+                    self.driver.find_element(
+                        By.XPATH, '/html/body/form/div[4]/div[2]/div/div[2]/div/div/div[2]/div/div/div/div/div[2]/div[3]/div/div/div[2]/table[1]/tbody/tr[1]/td[7]/button').click()
 
-            sel = Select(self.driver.find_element(By.ID, select_type))
-            count = len(sel.options) - 1
-        else:
-            count = 2
-
-        def mostagh(i, select_type=select_type):
+                else:
+                    WebDriverWait(self.driver, 8).until(EC.presence_of_element_located(
+                        (By.XPATH, path_second_date)))
+                    self.driver.find_element(
+                        By.XPATH, path_second_date).click()
 
             if report_type == 'amade_ghatee':
+
                 sel = Select(self.driver.find_element(By.ID, select_type))
-                sel.select_by_index(i)
+                count = len(sel.options) - 1
+            else:
+                count = 1
 
-            WebDriverWait(self.driver, 4).until(EC.presence_of_element_located(
-                (By.ID, 'Btn_Search')))
-            self.driver.find_element(
-                By.ID, 'Btn_Search').click()
-            if report_type == 'amade_ghatee':
+            def mostagh(i, select_type=select_type):
+
+                if report_type == 'amade_ghatee':
+                    sel = Select(self.driver.find_element(By.ID, select_type))
+                    sel.select_by_index(i)
+
+                WebDriverWait(self.driver, 4).until(EC.presence_of_element_located(
+                    (By.ID, 'Btn_Search')))
+                self.driver.find_element(
+                    By.ID, 'Btn_Search').click()
+                if report_type == 'amade_ghatee':
+                    try:
+                        if(self.driver.find_element(By.ID, 'ContentPlaceHolder1_Btn_Export')):
+                            time.sleep(4)
+                            self.driver.find_element(
+                                By.ID, 'ContentPlaceHolder1_Btn_Export').click()
+                    except Exception as e:
+                        global start_index
+                        start_index += 1
+                        mostagh(start_index, select_type=select_type)
+
+                elif (self.driver.find_element(By.ID, 'ContentPlaceHolder1_Lbl_Count').text != 'تعداد : 0 مورد'):
+                    try:
+                        if(self.driver.find_element(By.ID, 'ContentPlaceHolder1_Btn_Export')):
+                            time.sleep(4)
+                            self.driver.find_element(
+                                By.ID, 'ContentPlaceHolder1_Btn_Export').click()
+                    except Exception as e:
+                        print(e)
+
+            global start_index
+            while start_index <= count:
                 try:
-                    if (self.driver.find_element(By.ID, 'ContentPlaceHolder1_Btn_Export')):
-                        time.sleep(4)
-                        self.driver.find_element(
-                            By.ID, 'ContentPlaceHolder1_Btn_Export').click()
-                except Exception as e:
-                    global start_index
+                    t1 = threading.Thread(target=mostagh, args=(start_index,))
+                    t2 = threading.Thread(target=watch_over, args=(self.path,))
+                    t1.start()
+                    t2.start()
+                    t1.join()
+                    t2.join()
                     start_index += 1
-                    mostagh(start_index, select_type=select_type)
-
-            elif (self.driver.find_element(By.ID, 'ContentPlaceHolder1_Lbl_Count').text != 'تعداد : 0 مورد'):
-                try:
-                    if (self.driver.find_element(By.ID, 'ContentPlaceHolder1_Btn_Export')):
-                        time.sleep(4)
-                        self.driver.find_element(
-                            By.ID, 'ContentPlaceHolder1_Btn_Export').click()
                 except Exception as e:
                     print(e)
+                    continue
 
-        global start_index
-        while start_index <= count:
-            try:
-                t1 = threading.Thread(target=mostagh, args=(start_index,))
-                t2 = threading.Thread(target=watch_over, args=(self.path,))
-                t1.start()
-                t2.start()
-                t1.join()
-                t2.join()
-                start_index += 1
-            except Exception as e:
-                print(e)
-                continue
+        scrape_it()
 
         df = merge_multiple_excel_files(
             self.path,
@@ -243,112 +245,87 @@ class Scrape:
 
         self.driver.close()
 
-    def scrape_tgju(self, path=None, return_df=True):
-        self.driver = init_driver(
-            pathsave=path, driver_type=self.driver_type, headless=True)
-        self.path = path
-        self.driver = login_tgju(self.driver)
-        WebDriverWait(self.driver, 540).until(EC.presence_of_element_located(
-            (By.XPATH, '/html/body/div[2]/header/div[2]/div[6]/ul/li/a/img')))
-        try:
-            if (self.driver.find_element(
-                    By.XPATH, '/html/body/div[2]/header/div[2]/div[6]/ul/li/a/img')):
-                time.sleep(5)
-                WebDriverWait(self.driver, 8).until(EC.presence_of_element_located(
-                    (By.XPATH, '/html/body/main/div[1]/div[2]/div/ul/li[5]/span[1]/span')))
-                coin = self.driver.find_element(
-                    By.XPATH, '/html/body/main/div[1]/div[2]/div/ul/li[5]/span[1]/span').text
-
-                WebDriverWait(self.driver, 8).until(EC.presence_of_element_located(
-                    (By.XPATH, '/html/body/main/div[1]/div[2]/div/ul/li[6]/span[1]/span')))
-                dollar = self.driver.find_element(
-                    By.XPATH, '/html/body/main/div[1]/div[2]/div/ul/li[6]/span[1]/span').text
-
-                WebDriverWait(self.driver, 8).until(EC.presence_of_element_located(
-                    (By.XPATH, '/html/body/main/div[1]/div[2]/div/ul/li[4]/span[1]/span')))
-                gold = self.driver.find_element(
-                    By.XPATH, '/html/body/main/div[1]/div[2]/div/ul/li[4]/span[1]/span').text
-        except Exception as e:
-            print(e)
-
-        self.driver.close()
-
-        return coin, dollar, gold
-
-    def scrape_arzeshafzoodeh(self, path=None, return_df=True):
-        self.driver = init_driver(
-            pathsave=path, driver_type=self.drive_type)
-        self.path = path
-        self.driver = login_arzeshafzoodeh(self.driver)
-        WebDriverWait(self.driver, 8).until(EC.presence_of_element_located(
-            (By.XPATH, '/html/body/form/div[3]/table/tbody/tr[2]/td/div/table/tbody/tr[10]/td/div/ul/li[10]/a/span')))
-        self.driver.find_element(
-            By.XPATH, '/html/body/form/div[3]/table/tbody/tr[2]/td/div/table/tbody/tr[10]/td/div/ul/li[10]/a/span').click()
-        WebDriverWait(self.driver, 8).until(EC.presence_of_element_located(
-            (By.XPATH, '/html/body/form/div[3]/table/tbody/tr[2]/td/div/table/tbody/tr[10]/td/div/ul/li[10]/div/ul/li[16]/a/span')))
-        self.driver.find_element(
-            By.XPATH, '/html/body/form/div[3]/table/tbody/tr[2]/td/div/table/tbody/tr[10]/td/div/ul/li[10]/div/ul/li[16]/a/span').click()
-
-        WebDriverWait(self.driver, 8).until(EC.presence_of_element_located(
-            (By.ID, 'ctl00_ContentPlaceHolder1_chkAuditStatus_2')))
-        self.driver.find_element(
-            By.ID, 'ctl00_ContentPlaceHolder1_chkAuditStatus_2').click()
-        WebDriverWait(self.driver, 8).until(EC.presence_of_element_located(
-            (By.ID, 'ctl00_ContentPlaceHolder1_chkAuditStatus_3')))
-        self.driver.find_element(
-            By.ID, 'ctl00_ContentPlaceHolder1_chkAuditStatus_3').click()
-
-        def arzesh(i):
+    def scrape_arzeshafzoodeh(self, path=None, return_df=True, del_prev_files=True):
+        def scrape_it():
+            if del_prev_files:
+                remove_excel_files(file_path=path, postfix='.xls')
+            self.driver = init_driver(
+                pathsave=path, driver_type=self.driver_type)
+            self.path = path
+            self.driver = login_arzeshafzoodeh(self.driver)
             WebDriverWait(self.driver, 8).until(EC.presence_of_element_located(
-                (By.ID, 'ctl00_ContentPlaceHolder1_frm_year')))
-            sel = Select(self.driver.find_element(
-                By.ID, 'ctl00_ContentPlaceHolder1_frm_year'))
-            sel.select_by_index(i)
-
-            WebDriverWait(self.driver, 8).until(EC.presence_of_element_located(
-                (By.ID, 'ctl00_ContentPlaceHolder1_frm_period')))
-            sel = Select(self.driver.find_element(
-                By.ID, 'ctl00_ContentPlaceHolder1_frm_period'))
-            sel.select_by_index(0)
-
-            WebDriverWait(self.driver, 8).until(EC.presence_of_element_located(
-                (By.ID, 'ctl00_ContentPlaceHolder1_To_year')))
-            sel = Select(self.driver.find_element(
-                By.ID, 'ctl00_ContentPlaceHolder1_To_year'))
-            sel.select_by_index(i)
-
-            WebDriverWait(self.driver, 8).until(EC.presence_of_element_located(
-                (By.ID, 'ctl00_ContentPlaceHolder1_To_period')))
-            sel = Select(self.driver.find_element(
-                By.ID, 'ctl00_ContentPlaceHolder1_To_period'))
-            sel.select_by_index(3)
-
-            WebDriverWait(self.driver, 8).until(EC.presence_of_element_located(
-                (By.ID, 'ctl00_ContentPlaceHolder1_Button3')))
-            time.sleep(10)
+                (By.XPATH, '/html/body/form/div[3]/table/tbody/tr[2]/td/div/table/tbody/tr[10]/td/div/ul/li[10]/a/span')))
             self.driver.find_element(
-                By.ID, 'ctl00_ContentPlaceHolder1_Button3').click()
+                By.XPATH, '/html/body/form/div[3]/table/tbody/tr[2]/td/div/table/tbody/tr[10]/td/div/ul/li[10]/a/span').click()
+            WebDriverWait(self.driver, 8).until(EC.presence_of_element_located(
+                (By.XPATH, '/html/body/form/div[3]/table/tbody/tr[2]/td/div/table/tbody/tr[10]/td/div/ul/li[10]/div/ul/li[16]/a/span')))
+            self.driver.find_element(
+                By.XPATH, '/html/body/form/div[3]/table/tbody/tr[2]/td/div/table/tbody/tr[10]/td/div/ul/li[10]/div/ul/li[16]/a/span').click()
 
-        for i in range(0, 15):
+            WebDriverWait(self.driver, 8).until(EC.presence_of_element_located(
+                (By.ID, 'ctl00_ContentPlaceHolder1_chkAuditStatus_2')))
+            self.driver.find_element(
+                By.ID, 'ctl00_ContentPlaceHolder1_chkAuditStatus_2').click()
+            WebDriverWait(self.driver, 8).until(EC.presence_of_element_located(
+                (By.ID, 'ctl00_ContentPlaceHolder1_chkAuditStatus_3')))
+            self.driver.find_element(
+                By.ID, 'ctl00_ContentPlaceHolder1_chkAuditStatus_3').click()
 
-            t1 = threading.Thread(target=arzesh, args=(i,))
-            t2 = threading.Thread(target=watch_over)
-            t1.start()
-            t2.start()
-            t1.join()
-            t2.join()
+            def arzesh(i):
+                WebDriverWait(self.driver, 8).until(EC.presence_of_element_located(
+                    (By.ID, 'ctl00_ContentPlaceHolder1_frm_year')))
+                sel = Select(self.driver.find_element(
+                    By.ID, 'ctl00_ContentPlaceHolder1_frm_year'))
+                sel.select_by_index(i)
 
-        file_list = glob.glob(self.path + "/*" + '.xls.part')
+                WebDriverWait(self.driver, 8).until(EC.presence_of_element_located(
+                    (By.ID, 'ctl00_ContentPlaceHolder1_frm_period')))
+                sel = Select(self.driver.find_element(
+                    By.ID, 'ctl00_ContentPlaceHolder1_frm_period'))
+                sel.select_by_index(0)
 
-        while len(file_list) != 0:
+                WebDriverWait(self.driver, 8).until(EC.presence_of_element_located(
+                    (By.ID, 'ctl00_ContentPlaceHolder1_To_year')))
+                sel = Select(self.driver.find_element(
+                    By.ID, 'ctl00_ContentPlaceHolder1_To_year'))
+                sel.select_by_index(i)
 
-            time.sleep(1)
+                WebDriverWait(self.driver, 8).until(EC.presence_of_element_located(
+                    (By.ID, 'ctl00_ContentPlaceHolder1_To_period')))
+                sel = Select(self.driver.find_element(
+                    By.ID, 'ctl00_ContentPlaceHolder1_To_period'))
+                sel.select_by_index(3)
+
+                WebDriverWait(self.driver, 8).until(EC.presence_of_element_located(
+                    (By.ID, 'ctl00_ContentPlaceHolder1_Button3')))
+                time.sleep(10)
+                self.driver.find_element(
+                    By.ID, 'ctl00_ContentPlaceHolder1_Button3').click()
+
+            for i in range(0, 15):
+
+                t1 = threading.Thread(target=arzesh, args=(i,))
+                t2 = threading.Thread(target=watch_over)
+                t1.start()
+                t2.start()
+                t1.join()
+                t2.join()
+
             file_list = glob.glob(self.path + "/*" + '.xls.part')
 
+            while len(file_list) != 0:
+
+                time.sleep(1)
+                file_list = glob.glob(self.path + "/*" + '.xls.part')
+
+        # scrape_it()
+
         time.sleep(1)
-        dest = os.path.join(self.path, 'temp')
-        rename_files(self.path, dest=dest)
-        df_arzesh = merge_multiple_html_files(path=dest)
+        dest = os.path.join(path, 'temp')
+        dest = path
+        rename_files(path, dest=dest)
+        df_arzesh = merge_multiple_html_files(
+            path=dest, drop_into_sql=True, drop_to_excel=True)
 
         if return_df:
             return df_arzesh

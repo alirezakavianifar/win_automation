@@ -20,8 +20,6 @@ import functools as ft
 import math
 from tqdm import tqdm
 import pyodbc
-import urllib.request
-from aspect_tgju import log_internet
 from constants import geck_location, set_gecko_prefs, get_remote_sql_con, get_sql_con, get_str_help, get_comm_reports, get_heiat, get_lst_reports, \
     get_all_years, get_common_years, get_str_years, get_years, get_common_reports, get_comm_years, get_heiat_reports, get_server_namesV2
 from sql_queries import get_sql_mashaghelsonati, get_sql_mashaghelsonati_ghatee, get_sql_mashaghelsonati_tashkhisEblaghNoGhatee, \
@@ -97,7 +95,9 @@ def read_multiple_excel_sheets(path):
     return df
 
 
-def remove_excel_files(files=None, pathsave=None):
+def remove_excel_files(files=None, pathsave=None, file_path=None, postfix='html'):
+    if file_path is not None:
+        files = glob.glob(file_path + "/*" + postfix)
     for f in files:
 
         if os.path.exists(f):
@@ -146,7 +146,7 @@ def rename_files(path, dest, prefix='.xls', postfix='.html'):
         os.rename(item, dest1)
 
 
-def merge_multiple_html_files(path, return_df=False, delete_after_merge=True):
+def merge_multiple_html_files(path, return_df=False, delete_after_merge=True, drop_into_sql=False, drop_to_excel=False):
     file_list = glob.glob(path + "/*.html")
 
     merge_excels = []
@@ -156,11 +156,18 @@ def merge_multiple_html_files(path, return_df=False, delete_after_merge=True):
         merge_excels.append(df)
 
     final_df = pd.concat(merge_excels)
+    final_df = final_df.astype('str')
 
-    path = os.path.join(path, 'final_df.csv')
+    if drop_into_sql:
+        drop_into_db('tblArzeshAfzoodeSonati', final_df.columns.tolist(
+        ), final_df.values.tolist(), append_to_prev=False)
+
+    if drop_to_excel:
+        path = os.path.join(path, 'final_df.xlsx')
+        final_df.to_excel(path)
+
     if delete_after_merge:
         remove_excel_files(files=file_list)
-    final_df.to_csv(path)
 
     if return_df:
         return final_df
@@ -493,7 +500,7 @@ def check_if_col_exists(df, col):
         return False
 
 
-def init_driver(pathsave, driver_type='firefox', headless=False):
+def init_driver(pathsave, driver_type='firefox'):
     if driver_type == 'chrome':
         options = Options()
         prefs = {'download.default_directory': pathsave}
@@ -526,13 +533,8 @@ def init_driver(pathsave, driver_type='firefox', headless=False):
         fp.set_preference(
             'browser.download.manager.showAlertOnComplete', False)
         fp.set_preference('browser.download.manager.closeWhenDone', False)
-        if headless:
-            options = webdriver.FirefoxOptions()
-            options.headless = True
-            driver = webdriver.Firefox(
-                fp, executable_path=geck_location(), options=options)
-        else:
-            driver = webdriver.Firefox(fp, executable_path=geck_location())
+
+        driver = webdriver.Firefox(fp, executable_path=geck_location())
         driver.window_handles
         driver.switch_to.window(driver.window_handles[0])
 
@@ -769,22 +771,6 @@ class Login:
 
     def close(self):
         self.driver.close()
-
-
-@log_internet
-def internet_on():
-    try:
-        request_url = urllib.request.urlopen('https://www.tgju.org/')
-        return True
-    except:
-        return False
-
-
-def login_tgju(driver):
-    driver.get("https://www.tgju.org/")
-    driver.implicitly_wait(20)
-
-    return driver
 
 
 def login_arzeshafzoodeh(driver):
@@ -1069,20 +1055,19 @@ def get_mashaghelsonati(mashaghel_type, date=None, eblagh=True, save_on_folder=F
             return df_all, agg_ghatee_sodor
 
 
-def drop_into_db(table_name, columns, values, append_to_prev=False, sql_con=get_sql_con()):
+def drop_into_db(table_name, columns, values, append_to_prev=False):
     if append_to_prev == False:
         # Deleting previous table
         delete_table = sql_delete(table_name)
-        connect_to_sql(sql_query=delete_table, sql_con=sql_con,
+        connect_to_sql(sql_query=delete_table,
                        connect_type='dropping sql table')
         # Creating new table
         sql_create_table = create_sql_table(
             table_name, columns)
-        connect_to_sql(sql_create_table, sql_con=sql_con,
-                       connect_type='creating sql table')
+        connect_to_sql(sql_create_table, connect_type='creating sql table')
     # Inserting data into table
     sql_query = insert_into(table_name, columns)
-    connect_to_sql(sql_query, sql_con=sql_con, df_values=values,
+    connect_to_sql(sql_query, df_values=values,
                    connect_type='inserting into sql table')
 # df1 = pd.read_excel(
 #     r'C:\Users\alkav\Desktop\گزارش کارکرد\گزارش کارکرد جدید\ایریس\رسیدگی نشده ارزش افزوده سنیم New.xlsx')
@@ -1172,10 +1157,10 @@ def final_most(date=140106):
 
 def rename_duplicate_columns(df):
 
-    cols = pd.Series(merged_agg.columns)
-    for dup in merged_agg.columns[merged_agg.columns.duplicated(keep=False)]:
-        cols[merged_agg.columns.get_loc(dup)] = (
-            [dup + '.' + str(d_idx) if d_idx != 0 else dup for d_idx in range(merged_agg.columns.get_loc(dup).sum())])
-    merged_agg.columns = cols
+    cols = pd.Series(df.columns)
+    for dup in df.columns[df.columns.duplicated(keep=False)]:
+        cols[df.columns.get_loc(dup)] = (
+            [dup + '.' + str(d_idx) if d_idx != 0 else dup for d_idx in range(df.columns.get_loc(dup).sum())])
+    df.columns = cols
 
-    return merged_agg
+    return df
