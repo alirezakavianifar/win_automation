@@ -82,6 +82,42 @@ class Scrape:
         self.year = year
         self.driver_type = driver_type
 
+    def scrape_tgju(self, path=None, return_df=True):
+        self.driver = init_driver(
+            pathsave=path, driver_type=self.driver_type, headless=True)
+        self.path = path
+        self.driver = login_tgju(self.driver)
+        WebDriverWait(self.driver, 8).until(EC.presence_of_element_located(
+            (By.XPATH, '/html/body/main/div[1]/div[2]/div/ul/li[5]/span[1]/span')))
+        price = self.driver.find_element(
+            By.XPATH, '/html/body/main/div[1]/div[2]/div/ul/li[5]/span[1]/span').text
+        WebDriverWait(self.driver, 540).until(EC.presence_of_element_located(
+            (By.XPATH, '/html/body/div[2]/header/div[2]/div[6]/ul/li/a/img')))
+        try:
+            if (self.driver.find_element(
+                    By.XPATH, '/html/body/div[2]/header/div[2]/div[6]/ul/li/a/img')):
+                time.sleep(5)
+                WebDriverWait(self.driver, 8).until(EC.presence_of_element_located(
+                    (By.XPATH, '/html/body/main/div[1]/div[2]/div/ul/li[5]/span[1]/span')))
+                coin = self.driver.find_element(
+                    By.XPATH, '/html/body/main/div[1]/div[2]/div/ul/li[5]/span[1]/span').text
+
+                WebDriverWait(self.driver, 8).until(EC.presence_of_element_located(
+                    (By.XPATH, '/html/body/main/div[1]/div[2]/div/ul/li[6]/span[1]/span')))
+                dollar = self.driver.find_element(
+                    By.XPATH, '/html/body/main/div[1]/div[2]/div/ul/li[6]/span[1]/span').text
+
+                WebDriverWait(self.driver, 8).until(EC.presence_of_element_located(
+                    (By.XPATH, '/html/body/main/div[1]/div[2]/div/ul/li[4]/span[1]/span')))
+                gold = self.driver.find_element(
+                    By.XPATH, '/html/body/main/div[1]/div[2]/div/ul/li[4]/span[1]/span').text
+        except Exception as e:
+            print(e)
+
+        self.driver.close()
+
+        return coin, dollar, gold
+
     def scrape_codeghtesadi(self, path=None, return_df=True):
         self.driver = init_driver(
             pathsave=path, driver_type=self.driver_type)
@@ -197,7 +233,7 @@ class Scrape:
                     By.ID, 'Btn_Search').click()
                 if report_type == 'amade_ghatee':
                     try:
-                        if(self.driver.find_element(By.ID, 'ContentPlaceHolder1_Btn_Export')):
+                        if (self.driver.find_element(By.ID, 'ContentPlaceHolder1_Btn_Export')):
                             time.sleep(4)
                             self.driver.find_element(
                                 By.ID, 'ContentPlaceHolder1_Btn_Export').click()
@@ -208,7 +244,7 @@ class Scrape:
 
                 elif (self.driver.find_element(By.ID, 'ContentPlaceHolder1_Lbl_Count').text != 'تعداد : 0 مورد'):
                     try:
-                        if(self.driver.find_element(By.ID, 'ContentPlaceHolder1_Btn_Export')):
+                        if (self.driver.find_element(By.ID, 'ContentPlaceHolder1_Btn_Export')):
                             time.sleep(4)
                             self.driver.find_element(
                                 By.ID, 'ContentPlaceHolder1_Btn_Export').click()

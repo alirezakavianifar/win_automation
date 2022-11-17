@@ -1,10 +1,10 @@
 import pandas as pd
 from scrape import Scrape
-from helpers import maybe_make_dir, get_update_date, drop_into_db, internet_on
+from helpers import maybe_make_dir, get_update_date, drop_into_db
 from constants import get_sql_con
 import time
 import datetime
-from aspect_tgju import log
+from aspect_tgju import log, internet_on
 
 path = r'D:\projects\win_automation\saved_dir\tgju'
 dates = []
@@ -20,7 +20,7 @@ maybe_make_dir([path])
 
 @log
 def compare_prices(coin, last_coin):
-    if abs(int(coin) - int(last_coin)) > 300_000:
+    if abs(int(coin.replace(',', '')) - int(last_coin.replace(',', ''))) > 300_000:
         return True
     return False
 
