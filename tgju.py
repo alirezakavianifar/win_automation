@@ -20,7 +20,7 @@ maybe_make_dir([path])
 
 @log
 def compare_prices(coin, last_coin):
-    if abs(coin - last_coin) > 300_000:
+    if abs(coin - last_coin) > 100_000:
         return True
     return False
 
@@ -30,10 +30,13 @@ def createdf_and_dropToSql(*args):
         {'date': args[0], 'eng_date': args[1], 'gold': args[2], 'coin': args[3], 'dollar': args[4]})
 
     drop_into_db('tblTgju', df.columns.tolist(), df.values.tolist(),
-                 sql_con=get_sql_con(password='14579Ali.'), append_to_prev=True)
+                 sql_con=get_sql_con(password='14579Ali.'),
+                 append_to_prev=True)
 
 
 while True:
+    time.sleep(1)
+
     if internet_on():
         try:
 
@@ -51,7 +54,7 @@ while True:
 
                 time.sleep(1)
 
-            if len(dates) == 10:
+            if len(dates) == 1:
                 createdf_and_dropToSql(dates, eng_dates, golds, coins, dollars)
                 eng_dates.clear(), dollars.clear(), coins.clear(), golds.clear(), dates.clear()
 
@@ -62,5 +65,6 @@ while True:
                 eng_dates.clear(), dollars.clear(), coins.clear(), golds.clear(), dates.clear()
             print(e)
             continue
+
     else:
         continue

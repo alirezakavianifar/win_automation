@@ -7,8 +7,8 @@ def log(func):
     def log_it(*args, **kwargs):
         result = func(*args, **kwargs)
         if result == False:
-            print('The price of coin has not changed compared to last time %s ' %
-                  datetime.datetime.now())
+            print('The price of coin  is %s and has not changed compared to last time %s ' %
+                  (kwargs['coin'], datetime.datetime.now()))
         else:
             print('The price has changed %s ' % datetime.datetime.now())
 
@@ -31,7 +31,7 @@ def log_internet(func):
 @log_internet
 def internet_on():
     try:
-        request_url = urllib.request.urlopen('https://www.tgju.org/')
+        request_url = urllib.request.urlopen('https://www.varzesh3.com/')
         return True
     except:
         return False

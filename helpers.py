@@ -1071,19 +1071,19 @@ def get_mashaghelsonati(mashaghel_type, date=None, eblagh=True, save_on_folder=F
             return df_all, agg_ghatee_sodor
 
 
-def drop_into_db(table_name, columns, values, append_to_prev=False):
+def drop_into_db(table_name, columns, values, append_to_prev=False, sql_con=get_sql_con()):
     if append_to_prev == False:
         # Deleting previous table
         delete_table = sql_delete(table_name)
-        connect_to_sql(sql_query=delete_table,
+        connect_to_sql(sql_query=delete_table, sql_con=sql_con,
                        connect_type='dropping sql table')
         # Creating new table
         sql_create_table = create_sql_table(
             table_name, columns)
-        connect_to_sql(sql_create_table, connect_type='creating sql table')
+        connect_to_sql(sql_create_table, sql_con=sql_con, connect_type='creating sql table')
     # Inserting data into table
     sql_query = insert_into(table_name, columns)
-    connect_to_sql(sql_query, df_values=values,
+    connect_to_sql(sql_query, df_values=values, sql_con=sql_con,
                    connect_type='inserting into sql table')
 # df1 = pd.read_excel(
 #     r'C:\Users\alkav\Desktop\گزارش کارکرد\گزارش کارکرد جدید\ایریس\رسیدگی نشده ارزش افزوده سنیم New.xlsx')
