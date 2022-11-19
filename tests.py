@@ -2,6 +2,7 @@ from helpers import rename_files, merge_multiple_html_files, merge_multiple_exce
 import glob
 import pandas as pd
 
+print('hello')
 # merge_multiple_excel_sheets(r'E:\automating_reports_V2\saved_dir\codeghtesadi',
 # r'E:\automating_reports_V2\saved_dir\codeghtesadi')
 
