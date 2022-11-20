@@ -9,4 +9,6 @@ df = connect_to_sql(sql_query=sql_query, connect_type='read from tblTgju', sql_c
 
 df['coin'] = df['coin'].str.replace(',', '').astype('int64')
 
-df.coin.plot()
+df.coin.resample('D').plot()
+
+df.date.unique()

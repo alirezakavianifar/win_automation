@@ -4,7 +4,7 @@ from helpers import maybe_make_dir, get_update_date, drop_into_db
 from constants import get_sql_con
 import time
 import datetime
-from aspect_tgju import log, internet_on
+from tgju.aspect_tgju import log, internet_on
 
 path = r'D:\projects\win_automation\saved_dir\tgju'
 dates = []
