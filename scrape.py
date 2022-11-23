@@ -82,9 +82,9 @@ class Scrape:
         self.year = year
         self.driver_type = driver_type
 
-    def scrape_tgju(self, path=None, return_df=True):
+    def scrape_tgju(self, path=None, return_df=True, headless=False):
         self.driver = init_driver(
-            pathsave=path, driver_type=self.driver_type, headless=True)
+            pathsave=path, driver_type=self.driver_type, headless=headless)
         self.path = path
         self.driver = login_tgju(self.driver)
         WebDriverWait(self.driver, 8).until(EC.presence_of_element_located(

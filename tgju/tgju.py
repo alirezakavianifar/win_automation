@@ -1,10 +1,7 @@
-import pandas as pd
-from scrape import Scrape
-from helpers import maybe_make_dir, get_update_date, drop_into_db
-from constants import get_sql_con
-import time
-import datetime
-from tgju.aspect_tgju import log, internet_on
+from import_tgju import import_tgju
+sys, pd, Scrape, maybe_make_dir, get_update_date, \
+    drop_into_db, get_sql_con, time, \
+    datetime, log, internet_on, done_log, run_tgju_log, get_shared_var = import_tgju()
 
 path = r'D:\projects\win_automation\saved_dir\tgju'
 dates = []
@@ -12,7 +9,7 @@ golds = []
 dollars = []
 coins = []
 eng_dates = []
-last_coin = '0'
+g_last_coin = '0'
 last_gold = 0
 last_dollar = 0
 maybe_make_dir([path])
@@ -34,37 +31,59 @@ def createdf_and_dropToSql(*args):
                  append_to_prev=True)
 
 
-while True:
-    time.sleep(1)
+@done_log
+def set_done(done=False):
+    return done
 
-    if internet_on():
+
+@run_tgju_log
+def run_tgju(done=False):
+    global g_last_coin
+    while not done:
+        if get_shared_var():
+            break
         try:
+            time.sleep(1)
+            if internet_on():
+                try:
+                    x = Scrape()
+                    coin, dollar, gold = x.scrape_tgju(path=path)
+                    if compare_prices(coin=int(coin.replace(',', '')), last_coin=int(g_last_coin.replace(',', ''))):
+                        g_last_coin, last_gold, last_dollar = coin, gold, dollar
+                        eng_date = str(datetime.datetime.now())
+                        date = get_update_date()
+                        dates.append(date)
+                        golds.append(gold)
+                        dollars.append(dollar)
+                        coins.append(coin)
+                        eng_dates.append(eng_date)
 
-            x = Scrape()
-            coin, dollar, gold = x.scrape_tgju(path=path)
-            if compare_prices(coin=int(coin.replace(',', '')), last_coin=int(last_coin.replace(',', ''))):
-                last_coin, last_gold, last_dollar = coin, gold, dollar
-                eng_date = str(datetime.datetime.now())
-                date = get_update_date()
-                dates.append(date)
-                golds.append(gold)
-                dollars.append(dollar)
-                coins.append(coin)
-                eng_dates.append(eng_date)
+                        time.sleep(1)
 
-                time.sleep(1)
+                    if len(dates) == 1:
+                        createdf_and_dropToSql(
+                            dates, eng_dates, golds, coins, dollars)
+                        eng_dates.clear(), dollars.clear(), coins.clear(), golds.clear(), dates.clear()
 
-            if len(dates) == 1:
-                createdf_and_dropToSql(dates, eng_dates, golds, coins, dollars)
-                eng_dates.clear(), dollars.clear(), coins.clear(), golds.clear(), dates.clear()
+                    continue
+                except KeyboardInterrupt:
+                    done = set_done(done=True)
+                except Exception as e:
+                    if len(dates) > 0:
+                        createdf_and_dropToSql(
+                            dates, eng_dates, golds, coins, dollars)
+                        eng_dates.clear(), dollars.clear(), coins.clear(), golds.clear(), dates.clear()
+                    print(e)
+                    continue
 
-            continue
-        except Exception as e:
-            if len(dates) > 0:
-                createdf_and_dropToSql(dates, eng_dates, golds, coins, dollars)
-                eng_dates.clear(), dollars.clear(), coins.clear(), golds.clear(), dates.clear()
-            print(e)
-            continue
+            else:
+                continue
+        except KeyboardInterrupt:
+            done = set_done(done=True)
 
-    else:
-        continue
+
+if __name__ == '__main__':
+    try:
+        run_tgju()
+    except KeyboardInterrupt:
+        set_done(done=True)

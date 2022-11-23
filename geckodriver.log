@@ -3114,3 +3114,1828 @@ Read port: 2988
 [GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
 console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofilesfyAGk\\search.json.mozlz4", (void 0)))
 DevTools listening on ws://127.0.0.1:2973/devtools/browser/7a9f6001-8958-46b3-85c0-a642acbd8455
+1669134966135	geckodriver	INFO	Listening on 127.0.0.1:3859
+1669134969172	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "--remote-debugging-port" "3860" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofilevAduVI"
+*** You are running in headless mode.
+1669134969568	Marionette	INFO	Marionette enabled
+1669134969572	Marionette	INFO	Listening on port 3876
+Read port: 3876
+WebDriver BiDi listening on ws://127.0.0.1:3860
+1669134969653	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofilevAduVI\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:3860/devtools/browser/6f088907-4bed-4b06-ae97-618d56371f65
+console.error: Region.jsm: "Error fetching region" (new Error("TIMEOUT", "resource://gre/modules/Region.sys.mjs", 763))
+console.error: Region.jsm: "Failed to fetch region" (new Error("TIMEOUT", "resource://gre/modules/Region.sys.mjs", 415))
+1669134980264	Marionette	INFO	Stopped listening on port 3876
+JavaScript error: resource://gre/modules/Sqlite.sys.mjs, line 1106: Error: Sqlite.jsm has been shutdown. Cannot open connection to: C:\Users\Msi\AppData\Local\Temp\rust_mozprofilevAduVI\protections.sqlite
+1669135163378	geckodriver	INFO	Listening on 127.0.0.1:6126
+1669135166449	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "--remote-debugging-port" "6127" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofile6NCRH8"
+*** You are running in headless mode.
+1669135166813	Marionette	INFO	Marionette enabled
+1669135166817	Marionette	INFO	Listening on port 6140
+WebDriver BiDi listening on ws://127.0.0.1:6127
+Read port: 6140
+1669135167053	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofile6NCRH8\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:6127/devtools/browser/0d25d1e3-7aba-4181-a568-66a1cdd9c6f3
+console.error: Region.jsm: "Error fetching region" (new Error("TIMEOUT", "resource://gre/modules/Region.sys.mjs", 763))
+console.error: Region.jsm: "Failed to fetch region" (new Error("TIMEOUT", "resource://gre/modules/Region.sys.mjs", 415))
+1669135179428	Marionette	INFO	Stopped listening on port 6140
+JavaScript error: resource://gre/modules/Sqlite.sys.mjs, line 1106: Error: Sqlite.jsm has been shutdown. Cannot open connection to: C:\Users\Msi\AppData\Local\Temp\rust_mozprofile6NCRH8\protections.sqlite
+[Parent 21228, IPC I/O Parent] WARNING: file /builds/worker/checkouts/gecko/ipc/chromium/src/base/process_util_win.cc:167
+1669135941326	geckodriver	INFO	Listening on 127.0.0.1:9077
+1669135944355	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "--remote-debugging-port" "9078" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofile7348Bx"
+*** You are running in headless mode.
+1669135944895	Marionette	INFO	Marionette enabled
+1669135944904	Marionette	INFO	Listening on port 9099
+WebDriver BiDi listening on ws://127.0.0.1:9078
+Read port: 9099
+1669135945163	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofile7348Bx\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:9078/devtools/browser/afbe8458-cf1a-4bf5-8dcb-82caeaef77f6
+console.error: Region.jsm: "Error fetching region" (new Error("TIMEOUT", "resource://gre/modules/Region.sys.mjs", 763))
+console.error: Region.jsm: "Failed to fetch region" (new Error("TIMEOUT", "resource://gre/modules/Region.sys.mjs", 415))
+1669136124398	Marionette	INFO	Stopped listening on port 9099
+JavaScript error: resource://gre/modules/Sqlite.sys.mjs, line 1106: Error: Sqlite.jsm has been shutdown. Cannot open connection to: C:\Users\Msi\AppData\Local\Temp\rust_mozprofile7348Bx\protections.sqlite
+1669136502423	geckodriver	INFO	Listening on 127.0.0.1:2061
+1669136505461	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "--remote-debugging-port" "2062" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofile7q74Us"
+*** You are running in headless mode.
+1669136505936	Marionette	INFO	Marionette enabled
+1669136505942	Marionette	INFO	Listening on port 2080
+Read port: 2080
+WebDriver BiDi listening on ws://127.0.0.1:2062
+1669136506079	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofile7q74Us\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:2062/devtools/browser/ff458a6e-f39f-4546-96f0-30c8d74ccec4
+console.error: Region.jsm: "Error fetching region" (new Error("TIMEOUT", "resource://gre/modules/Region.sys.mjs", 763))
+console.error: Region.jsm: "Failed to fetch region" (new Error("TIMEOUT", "resource://gre/modules/Region.sys.mjs", 415))
+1669136566578	Marionette	INFO	Stopped listening on port 2080
+JavaScript error: resource://gre/modules/Sqlite.sys.mjs, line 1106: Error: Sqlite.jsm has been shutdown. Cannot open connection to: C:\Users\Msi\AppData\Local\Temp\rust_mozprofile7q74Us\protections.sqlite
+1669136758850	geckodriver	INFO	Listening on 127.0.0.1:8682
+1669136761888	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "--remote-debugging-port" "8683" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofilei1KNO8"
+*** You are running in headless mode.
+1669136762203	Marionette	INFO	Marionette enabled
+1669136762207	Marionette	INFO	Listening on port 8704
+Read port: 8704
+WebDriver BiDi listening on ws://127.0.0.1:8683
+1669136762288	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofilei1KNO8\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:8683/devtools/browser/f7f554a0-c11e-413b-b3d9-5592e08c616c
+console.error: Region.jsm: "Error fetching region" (new Error("TIMEOUT", "resource://gre/modules/Region.sys.mjs", 763))
+console.error: Region.jsm: "Failed to fetch region" (new Error("TIMEOUT", "resource://gre/modules/Region.sys.mjs", 415))
+1669136827115	Marionette	INFO	Stopped listening on port 8704
+JavaScript error: resource://gre/modules/Sqlite.sys.mjs, line 1106: Error: Sqlite.jsm has been shutdown. Cannot open connection to: C:\Users\Msi\AppData\Local\Temp\rust_mozprofilei1KNO8\protections.sqlite
+1669137011650	geckodriver	INFO	Listening on 127.0.0.1:12826
+1669137014676	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "--remote-debugging-port" "12827" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofile4gViLK"
+*** You are running in headless mode.
+1669137015132	Marionette	INFO	Marionette enabled
+1669137015139	Marionette	INFO	Listening on port 12845
+Read port: 12845
+WebDriver BiDi listening on ws://127.0.0.1:12827
+1669137015291	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofile4gViLK\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:12827/devtools/browser/e3238f7b-4b44-4d61-a73a-7aa171bcae9c
+console.error: Region.jsm: "Error fetching region" (new Error("TIMEOUT", "resource://gre/modules/Region.sys.mjs", 763))
+console.error: Region.jsm: "Failed to fetch region" (new Error("TIMEOUT", "resource://gre/modules/Region.sys.mjs", 415))
+1669137104280	Marionette	INFO	Stopped listening on port 12845
+JavaScript error: resource://gre/modules/Sqlite.sys.mjs, line 1106: Error: Sqlite.jsm has been shutdown. Cannot open connection to: C:\Users\Msi\AppData\Local\Temp\rust_mozprofile4gViLK\protections.sqlite
+1669137485425	geckodriver	INFO	Listening on 127.0.0.1:11539
+1669137488471	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "--remote-debugging-port" "11540" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofilem0yh9n"
+*** You are running in headless mode.
+1669137488921	Marionette	INFO	Marionette enabled
+1669137488927	Marionette	INFO	Listening on port 11560
+WebDriver BiDi listening on ws://127.0.0.1:11540
+Read port: 11560
+1669137489177	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofilem0yh9n\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:11540/devtools/browser/6926637e-c56b-4de3-a3a4-f750158bb19b
+console.error: Region.jsm: "Error fetching region" (new Error("TIMEOUT", "resource://gre/modules/Region.sys.mjs", 763))
+console.error: Region.jsm: "Failed to fetch region" (new Error("TIMEOUT", "resource://gre/modules/Region.sys.mjs", 415))
+1669137567389	Marionette	INFO	Stopped listening on port 11560
+JavaScript error: resource://gre/modules/Sqlite.sys.mjs, line 1106: Error: Sqlite.jsm has been shutdown. Cannot open connection to: C:\Users\Msi\AppData\Local\Temp\rust_mozprofilem0yh9n\protections.sqlite
+1669137750987	geckodriver	INFO	Listening on 127.0.0.1:13522
+1669137754041	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "--remote-debugging-port" "13523" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofiledlP0Zr"
+*** You are running in headless mode.
+1669137754570	Marionette	INFO	Marionette enabled
+1669137754575	Marionette	INFO	Listening on port 13545
+Read port: 13545
+WebDriver BiDi listening on ws://127.0.0.1:13523
+1669137754685	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofiledlP0Zr\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:13523/devtools/browser/0ebcac37-bddb-4f0f-b7c0-6f1eedaea2ca
+console.error: Region.jsm: "Error fetching region" (new Error("TIMEOUT", "resource://gre/modules/Region.sys.mjs", 763))
+console.error: Region.jsm: "Failed to fetch region" (new Error("TIMEOUT", "resource://gre/modules/Region.sys.mjs", 415))
+1669137802236	Marionette	INFO	Stopped listening on port 13545
+JavaScript error: resource://gre/modules/Sqlite.sys.mjs, line 1106: Error: Sqlite.jsm has been shutdown. Cannot open connection to: C:\Users\Msi\AppData\Local\Temp\rust_mozprofiledlP0Zr\protections.sqlite
+1669137997627	geckodriver	INFO	Listening on 127.0.0.1:7405
+1669138000680	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "--remote-debugging-port" "7406" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofileRBG0MP"
+*** You are running in headless mode.
+1669138001069	Marionette	INFO	Marionette enabled
+1669138001076	Marionette	INFO	Listening on port 7421
+Read port: 7421
+WebDriver BiDi listening on ws://127.0.0.1:7406
+1669138001189	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofileRBG0MP\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:7406/devtools/browser/dd1cab1c-86fa-42d9-a84a-795d0e092ffd
+console.error: Region.jsm: "Error fetching region" (new Error("TIMEOUT", "resource://gre/modules/Region.sys.mjs", 763))
+console.error: Region.jsm: "Failed to fetch region" (new Error("TIMEOUT", "resource://gre/modules/Region.sys.mjs", 415))
+1669138047690	Marionette	INFO	Stopped listening on port 7421
+JavaScript error: resource://gre/modules/Sqlite.sys.mjs, line 1106: Error: Sqlite.jsm has been shutdown. Cannot open connection to: C:\Users\Msi\AppData\Local\Temp\rust_mozprofileRBG0MP\protections.sqlite
+1669138234749	geckodriver	INFO	Listening on 127.0.0.1:6735
+1669138237798	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "--remote-debugging-port" "6736" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofile3Gm3lP"
+*** You are running in headless mode.
+1669138238175	Marionette	INFO	Marionette enabled
+1669138238180	Marionette	INFO	Listening on port 6753
+Read port: 6753
+WebDriver BiDi listening on ws://127.0.0.1:6736
+1669138238315	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofile3Gm3lP\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:6736/devtools/browser/5f65414a-04c2-4f1e-b850-d31e3e0b7f52
+1669138329789	Marionette	INFO	Stopped listening on port 6753
+JavaScript error: resource://gre/modules/Sqlite.sys.mjs, line 1106: Error: Sqlite.jsm has been shutdown. Cannot open connection to: C:\Users\Msi\AppData\Local\Temp\rust_mozprofile3Gm3lP\protections.sqlite
+1669138519402	geckodriver	INFO	Listening on 127.0.0.1:1395
+1669138522461	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "--remote-debugging-port" "1396" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofile6lZL0R"
+*** You are running in headless mode.
+1669138522943	Marionette	INFO	Marionette enabled
+1669138522949	Marionette	INFO	Listening on port 1411
+Read port: 1411
+WebDriver BiDi listening on ws://127.0.0.1:1396
+1669138523070	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofile6lZL0R\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:1396/devtools/browser/79c1166a-9cf0-4672-acd1-c7e9ef6e755f
+console.error: Region.jsm: "Error fetching region" (new Error("TIMEOUT", "resource://gre/modules/Region.sys.mjs", 763))
+console.error: Region.jsm: "Failed to fetch region" (new Error("TIMEOUT", "resource://gre/modules/Region.sys.mjs", 415))
+1669138568750	Marionette	INFO	Stopped listening on port 1411
+JavaScript error: resource://gre/modules/Sqlite.sys.mjs, line 1106: Error: Sqlite.jsm has been shutdown. Cannot open connection to: C:\Users\Msi\AppData\Local\Temp\rust_mozprofile6lZL0R\protections.sqlite
+1669138758766	geckodriver	INFO	Listening on 127.0.0.1:3738
+1669138761803	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "--remote-debugging-port" "3739" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofileykiuWq"
+*** You are running in headless mode.
+1669138762519	Marionette	INFO	Marionette enabled
+1669138762527	Marionette	INFO	Listening on port 3757
+Read port: 3757
+WebDriver BiDi listening on ws://127.0.0.1:3739
+1669138762664	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofileykiuWq\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:3739/devtools/browser/473cdb66-6714-449e-a2df-c6396e844253
+console.error: Region.jsm: "Error fetching region" (new Error("TIMEOUT", "resource://gre/modules/Region.sys.mjs", 763))
+console.error: Region.jsm: "Failed to fetch region" (new Error("TIMEOUT", "resource://gre/modules/Region.sys.mjs", 415))
+1669138812128	Marionette	INFO	Stopped listening on port 3757
+JavaScript error: resource://gre/modules/Sqlite.sys.mjs, line 1106: Error: Sqlite.jsm has been shutdown. Cannot open connection to: C:\Users\Msi\AppData\Local\Temp\rust_mozprofileykiuWq\protections.sqlite
+1669139000981	geckodriver	INFO	Listening on 127.0.0.1:5728
+1669139004029	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "--remote-debugging-port" "5729" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofilesbZdVb"
+*** You are running in headless mode.
+1669139004403	Marionette	INFO	Marionette enabled
+1669139004408	Marionette	INFO	Listening on port 5743
+Read port: 5743
+WebDriver BiDi listening on ws://127.0.0.1:5729
+1669139004525	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofilesbZdVb\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:5729/devtools/browser/f5019c2e-dec4-4983-b97d-9ea44beec1d8
+console.error: Region.jsm: "Error fetching region" (new Error("TIMEOUT", "resource://gre/modules/Region.sys.mjs", 763))
+console.error: Region.jsm: "Failed to fetch region" (new Error("TIMEOUT", "resource://gre/modules/Region.sys.mjs", 415))
+1669139080933	Marionette	INFO	Stopped listening on port 5743
+JavaScript error: resource://gre/modules/Sqlite.sys.mjs, line 1106: Error: Sqlite.jsm has been shutdown. Cannot open connection to: C:\Users\Msi\AppData\Local\Temp\rust_mozprofilesbZdVb\protections.sqlite
+1669139269984	geckodriver	INFO	Listening on 127.0.0.1:1490
+1669139273051	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "--remote-debugging-port" "1491" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofileYYtRRf"
+*** You are running in headless mode.
+1669139273567	Marionette	INFO	Marionette enabled
+1669139273573	Marionette	INFO	Listening on port 1508
+Read port: 1508
+WebDriver BiDi listening on ws://127.0.0.1:1491
+1669139273697	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofileYYtRRf\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:1491/devtools/browser/c30c807a-ca61-4cd4-bea5-de380969271b
+console.error: Region.jsm: "Error fetching region" (new Error("TIMEOUT", "resource://gre/modules/Region.sys.mjs", 763))
+console.error: Region.jsm: "Failed to fetch region" (new Error("TIMEOUT", "resource://gre/modules/Region.sys.mjs", 415))
+1669139331435	Marionette	INFO	Stopped listening on port 1508
+JavaScript error: resource://gre/modules/Sqlite.sys.mjs, line 1106: Error: Sqlite.jsm has been shutdown. Cannot open connection to: C:\Users\Msi\AppData\Local\Temp\rust_mozprofileYYtRRf\protections.sqlite
+1669139708120	geckodriver	INFO	Listening on 127.0.0.1:8029
+1669139711165	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "--remote-debugging-port" "8030" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofile8a07DB"
+*** You are running in headless mode.
+1669139711546	Marionette	INFO	Marionette enabled
+1669139711550	Marionette	INFO	Listening on port 8046
+Read port: 8046
+WebDriver BiDi listening on ws://127.0.0.1:8030
+1669139711654	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofile8a07DB\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:8030/devtools/browser/1c4074fa-28e6-4a66-8f13-fbb8c88a44bb
+console.error: Region.jsm: "Error fetching region" (new Error("TIMEOUT", "resource://gre/modules/Region.sys.mjs", 763))
+console.error: Region.jsm: "Failed to fetch region" (new Error("TIMEOUT", "resource://gre/modules/Region.sys.mjs", 415))
+1669139826042	Marionette	INFO	Stopped listening on port 8046
+JavaScript error: resource://gre/modules/Sqlite.sys.mjs, line 1106: Error: Sqlite.jsm has been shutdown. Cannot open connection to: C:\Users\Msi\AppData\Local\Temp\rust_mozprofile8a07DB\protections.sqlite
+1669140019427	geckodriver	INFO	Listening on 127.0.0.1:12914
+1669140022477	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "--remote-debugging-port" "12915" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofileIOR5Pd"
+*** You are running in headless mode.
+1669140022813	Marionette	INFO	Marionette enabled
+1669140022818	Marionette	INFO	Listening on port 12935
+WebDriver BiDi listening on ws://127.0.0.1:12915
+Read port: 12935
+1669140023067	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofileIOR5Pd\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:12915/devtools/browser/4a5f699f-689e-4635-9d3f-c746ead3e270
+console.error: Region.jsm: "Error fetching region" (new Error("TIMEOUT", "resource://gre/modules/Region.sys.mjs", 763))
+console.error: Region.jsm: "Failed to fetch region" (new Error("TIMEOUT", "resource://gre/modules/Region.sys.mjs", 415))
+1669140186254	Marionette	INFO	Stopped listening on port 12935
+JavaScript error: resource://gre/modules/Sqlite.sys.mjs, line 1106: Error: Sqlite.jsm has been shutdown. Cannot open connection to: C:\Users\Msi\AppData\Local\Temp\rust_mozprofileIOR5Pd\protections.sqlite
+1669140374174	geckodriver	INFO	Listening on 127.0.0.1:10366
+1669140377233	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "--remote-debugging-port" "10367" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofile5oUPBJ"
+*** You are running in headless mode.
+1669140377717	Marionette	INFO	Marionette enabled
+1669140377723	Marionette	INFO	Listening on port 10386
+Read port: 10386
+WebDriver BiDi listening on ws://127.0.0.1:10367
+1669140377835	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofile5oUPBJ\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:10367/devtools/browser/71ffc9df-3476-4871-9791-8e20b7eaa577
+1669140439751	Marionette	INFO	Stopped listening on port 10386
+JavaScript error: resource://gre/modules/Sqlite.sys.mjs, line 1106: Error: Sqlite.jsm has been shutdown. Cannot open connection to: C:\Users\Msi\AppData\Local\Temp\rust_mozprofile5oUPBJ\protections.sqlite
+1669140814824	geckodriver	INFO	Listening on 127.0.0.1:7316
+1669140817863	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "--remote-debugging-port" "7317" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofileNfR68S"
+*** You are running in headless mode.
+1669140818215	Marionette	INFO	Marionette enabled
+1669140818219	Marionette	INFO	Listening on port 7333
+WebDriver BiDi listening on ws://127.0.0.1:7317
+Read port: 7333
+1669140818463	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofileNfR68S\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:7317/devtools/browser/f06d0fab-1d6c-4c79-8d40-5b68bcfd3483
+console.error: Region.jsm: "Error fetching region" (new Error("TIMEOUT", "resource://gre/modules/Region.sys.mjs", 763))
+console.error: Region.jsm: "Failed to fetch region" (new Error("TIMEOUT", "resource://gre/modules/Region.sys.mjs", 415))
+1669141001505	Marionette	INFO	Stopped listening on port 7333
+1669141582442	geckodriver	INFO	Listening on 127.0.0.1:14434
+1669141585474	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "--remote-debugging-port" "14435" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofileFIC5G8"
+*** You are running in headless mode.
+1669141585895	Marionette	INFO	Marionette enabled
+1669141585900	Marionette	INFO	Listening on port 14455
+Read port: 14455
+WebDriver BiDi listening on ws://127.0.0.1:14435
+1669141586018	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofileFIC5G8\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:14435/devtools/browser/9de2994e-ec50-4e81-8fb9-6406b08e3206
+1669141662126	Marionette	INFO	Stopped listening on port 14455
+JavaScript error: resource://gre/modules/Sqlite.sys.mjs, line 1106: Error: Sqlite.jsm has been shutdown. Cannot open connection to: C:\Users\Msi\AppData\Local\Temp\rust_mozprofileFIC5G8\protections.sqlite
+1669142043689	geckodriver	INFO	Listening on 127.0.0.1:5189
+1669142046746	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "--remote-debugging-port" "5190" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofileTDGtM6"
+*** You are running in headless mode.
+1669142047078	Marionette	INFO	Marionette enabled
+1669142047082	Marionette	INFO	Listening on port 5207
+WebDriver BiDi listening on ws://127.0.0.1:5190
+Read port: 5207
+1669142047333	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofileTDGtM6\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:5190/devtools/browser/2fc72ec5-7de7-48f3-9b32-97d371fdd837
+console.error: Region.jsm: "Error fetching region" (new Error("TIMEOUT", "resource://gre/modules/Region.sys.mjs", 763))
+console.error: Region.jsm: "Failed to fetch region" (new Error("TIMEOUT", "resource://gre/modules/Region.sys.mjs", 415))
+1669142099940	Marionette	INFO	Stopped listening on port 5207
+JavaScript error: resource://gre/modules/Sqlite.sys.mjs, line 1106: Error: Sqlite.jsm has been shutdown. Cannot open connection to: C:\Users\Msi\AppData\Local\Temp\rust_mozprofileTDGtM6\protections.sqlite
+1669142286681	geckodriver	INFO	Listening on 127.0.0.1:3373
+1669142289732	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "--remote-debugging-port" "3374" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofile89xxZt"
+*** You are running in headless mode.
+1669142290186	Marionette	INFO	Marionette enabled
+1669142290191	Marionette	INFO	Listening on port 3391
+WebDriver BiDi listening on ws://127.0.0.1:3374
+Read port: 3391
+1669142290433	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofile89xxZt\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:3374/devtools/browser/61868d9f-d55a-47a8-aa89-2e3265231d9a
+console.error: Region.jsm: "Error fetching region" (new Error("TIMEOUT", "resource://gre/modules/Region.sys.mjs", 763))
+console.error: Region.jsm: "Failed to fetch region" (new Error("TIMEOUT", "resource://gre/modules/Region.sys.mjs", 415))
+1669142403292	Marionette	INFO	Stopped listening on port 3391
+JavaScript error: resource://gre/modules/Sqlite.sys.mjs, line 1106: Error: Sqlite.jsm has been shutdown. Cannot open connection to: C:\Users\Msi\AppData\Local\Temp\rust_mozprofile89xxZt\protections.sqlite
+1669142592228	geckodriver	INFO	Listening on 127.0.0.1:12467
+1669142595275	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "--remote-debugging-port" "12468" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofileFKHHjQ"
+*** You are running in headless mode.
+1669142595744	Marionette	INFO	Marionette enabled
+1669142595749	Marionette	INFO	Listening on port 12485
+WebDriver BiDi listening on ws://127.0.0.1:12468
+Read port: 12485
+1669142595976	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofileFKHHjQ\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:12468/devtools/browser/d387cfd6-5979-482f-a50b-a1c1b6d1bc8c
+console.error: Region.jsm: "Error fetching region" (new Error("TIMEOUT", "resource://gre/modules/Region.sys.mjs", 763))
+console.error: Region.jsm: "Failed to fetch region" (new Error("TIMEOUT", "resource://gre/modules/Region.sys.mjs", 415))
+1669142656746	Marionette	INFO	Stopped listening on port 12485
+JavaScript error: resource://gre/modules/Sqlite.sys.mjs, line 1106: Error: Sqlite.jsm has been shutdown. Cannot open connection to: C:\Users\Msi\AppData\Local\Temp\rust_mozprofileFKHHjQ\protections.sqlite
+1669142841252	geckodriver	INFO	Listening on 127.0.0.1:10274
+1669142844303	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "--remote-debugging-port" "10275" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofileeBLsQa"
+*** You are running in headless mode.
+1669142845084	Marionette	INFO	Marionette enabled
+1669142845096	Marionette	INFO	Listening on port 10289
+Read port: 10289
+WebDriver BiDi listening on ws://127.0.0.1:10275
+1669142845241	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofileeBLsQa\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:10275/devtools/browser/51c52283-f7d7-45ba-9433-86d35d71c37f
+console.error: Region.jsm: "Error fetching region" (new Error("TIMEOUT", "resource://gre/modules/Region.sys.mjs", 763))
+console.error: Region.jsm: "Failed to fetch region" (new Error("TIMEOUT", "resource://gre/modules/Region.sys.mjs", 415))
+1669142872058	Marionette	INFO	Stopped listening on port 10289
+JavaScript error: resource://gre/modules/Sqlite.sys.mjs, line 1106: Error: Sqlite.jsm has been shutdown. Cannot open connection to: C:\Users\Msi\AppData\Local\Temp\rust_mozprofileeBLsQa\protections.sqlite
+1669143059608	geckodriver	INFO	Listening on 127.0.0.1:6772
+1669143062651	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "--remote-debugging-port" "6773" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofileaYx4Tf"
+*** You are running in headless mode.
+1669143063156	Marionette	INFO	Marionette enabled
+1669143063164	Marionette	INFO	Listening on port 6793
+Read port: 6793
+WebDriver BiDi listening on ws://127.0.0.1:6773
+1669143063274	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofileaYx4Tf\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:6773/devtools/browser/ed7a305a-a6f4-4cca-8923-99277b195593
+console.error: Region.jsm: "Error fetching region" (new Error("TIMEOUT", "resource://gre/modules/Region.sys.mjs", 763))
+console.error: Region.jsm: "Failed to fetch region" (new Error("TIMEOUT", "resource://gre/modules/Region.sys.mjs", 415))
+1669143100250	Marionette	INFO	Stopped listening on port 6793
+JavaScript error: resource://gre/modules/Sqlite.sys.mjs, line 1106: Error: Sqlite.jsm has been shutdown. Cannot open connection to: C:\Users\Msi\AppData\Local\Temp\rust_mozprofileaYx4Tf\protections.sqlite
+1669143288798	geckodriver	INFO	Listening on 127.0.0.1:9189
+1669143291831	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "--remote-debugging-port" "9190" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofileqA9yOr"
+*** You are running in headless mode.
+1669143292208	Marionette	INFO	Marionette enabled
+1669143292212	Marionette	INFO	Listening on port 9206
+Read port: 9206
+WebDriver BiDi listening on ws://127.0.0.1:9190
+1669143292316	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofileqA9yOr\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:9190/devtools/browser/087214fd-53e7-4195-8b58-2c20f29647a6
+console.error: Region.jsm: "Error fetching region" (new Error("TIMEOUT", "resource://gre/modules/Region.sys.mjs", 763))
+console.error: Region.jsm: "Failed to fetch region" (new Error("TIMEOUT", "resource://gre/modules/Region.sys.mjs", 415))
+1669143358971	Marionette	INFO	Stopped listening on port 9206
+JavaScript error: resource://gre/modules/Sqlite.sys.mjs, line 1106: Error: Sqlite.jsm has been shutdown. Cannot open connection to: C:\Users\Msi\AppData\Local\Temp\rust_mozprofileqA9yOr\protections.sqlite
+1669143547459	geckodriver	INFO	Listening on 127.0.0.1:10459
+1669143550517	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "--remote-debugging-port" "10460" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofile3g6MMP"
+*** You are running in headless mode.
+1669143550888	Marionette	INFO	Marionette enabled
+1669143550892	Marionette	INFO	Listening on port 10477
+WebDriver BiDi listening on ws://127.0.0.1:10460
+Read port: 10477
+1669143551067	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofile3g6MMP\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:10460/devtools/browser/ca1a690f-bc53-482d-a460-e105a3744610
+console.error: Region.jsm: "Error fetching region" (new Error("TIMEOUT", "resource://gre/modules/Region.sys.mjs", 763))
+console.error: Region.jsm: "Failed to fetch region" (new Error("TIMEOUT", "resource://gre/modules/Region.sys.mjs", 415))
+1669143579794	Marionette	INFO	Stopped listening on port 10477
+JavaScript error: resource://gre/modules/Sqlite.sys.mjs, line 1106: Error: Sqlite.jsm has been shutdown. Cannot open connection to: C:\Users\Msi\AppData\Local\Temp\rust_mozprofile3g6MMP\protections.sqlite
+1669143764279	geckodriver	INFO	Listening on 127.0.0.1:3263
+1669143767344	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "--remote-debugging-port" "3264" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofiledSSSqV"
+*** You are running in headless mode.
+1669143767817	Marionette	INFO	Marionette enabled
+1669143767822	Marionette	INFO	Listening on port 3278
+Read port: 3278
+WebDriver BiDi listening on ws://127.0.0.1:3264
+1669143767954	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofiledSSSqV\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:3264/devtools/browser/d8b3a21d-844b-4581-ac6f-0ccbc3d4a7dd
+1669143809307	Marionette	INFO	Stopped listening on port 3278
+JavaScript error: resource://gre/modules/Sqlite.sys.mjs, line 1106: Error: Sqlite.jsm has been shutdown. Cannot open connection to: C:\Users\Msi\AppData\Local\Temp\rust_mozprofiledSSSqV\protections.sqlite
+1669144384607	geckodriver	INFO	Listening on 127.0.0.1:1558
+1669144387658	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "--remote-debugging-port" "1559" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofileWhYn9s"
+*** You are running in headless mode.
+1669144388072	Marionette	INFO	Marionette enabled
+1669144388077	Marionette	INFO	Listening on port 1574
+Read port: 1574
+WebDriver BiDi listening on ws://127.0.0.1:1559
+1669144388181	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofileWhYn9s\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:1559/devtools/browser/a65938cd-cdf9-42b9-afd1-40a359435ac4
+console.error: Region.jsm: "Error fetching region" (new Error("TIMEOUT", "resource://gre/modules/Region.sys.mjs", 763))
+console.error: Region.jsm: "Failed to fetch region" (new Error("TIMEOUT", "resource://gre/modules/Region.sys.mjs", 415))
+1669144498716	Marionette	INFO	Stopped listening on port 1574
+JavaScript error: resource://gre/modules/Sqlite.sys.mjs, line 1106: Error: Sqlite.jsm has been shutdown. Cannot open connection to: C:\Users\Msi\AppData\Local\Temp\rust_mozprofileWhYn9s\protections.sqlite
+1669144688000	geckodriver	INFO	Listening on 127.0.0.1:7622
+1669144691070	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "--remote-debugging-port" "7623" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofileRx5tey"
+*** You are running in headless mode.
+1669144691693	Marionette	INFO	Marionette enabled
+1669144691701	Marionette	INFO	Listening on port 7643
+Read port: 7643
+WebDriver BiDi listening on ws://127.0.0.1:7623
+1669144691863	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofileRx5tey\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:7623/devtools/browser/745ca387-9dc8-4ab1-bb8f-9a342f95146f
+1669144726156	Marionette	INFO	Stopped listening on port 7643
+JavaScript error: resource://gre/modules/Sqlite.sys.mjs, line 1106: Error: Sqlite.jsm has been shutdown. Cannot open connection to: C:\Users\Msi\AppData\Local\Temp\rust_mozprofileRx5tey\protections.sqlite
+1669144913488	geckodriver	INFO	Listening on 127.0.0.1:10782
+1669144916537	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "--remote-debugging-port" "10783" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofileKECGvM"
+*** You are running in headless mode.
+1669144917044	Marionette	INFO	Marionette enabled
+1669144917050	Marionette	INFO	Listening on port 10801
+Read port: 10801
+WebDriver BiDi listening on ws://127.0.0.1:10783
+1669144917168	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofileKECGvM\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:10783/devtools/browser/31084892-c0b0-4248-bebf-e111d85facd8
+console.error: Region.jsm: "Error fetching region" (new Error("TIMEOUT", "resource://gre/modules/Region.sys.mjs", 763))
+console.error: Region.jsm: "Failed to fetch region" (new Error("TIMEOUT", "resource://gre/modules/Region.sys.mjs", 415))
+1669144948326	Marionette	INFO	Stopped listening on port 10801
+JavaScript error: resource://gre/modules/Sqlite.sys.mjs, line 1106: Error: Sqlite.jsm has been shutdown. Cannot open connection to: C:\Users\Msi\AppData\Local\Temp\rust_mozprofileKECGvM\protections.sqlite
+1669145136951	geckodriver	INFO	Listening on 127.0.0.1:11487
+1669145139979	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "--remote-debugging-port" "11488" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofileqiRpDb"
+*** You are running in headless mode.
+1669145140317	Marionette	INFO	Marionette enabled
+1669145140323	Marionette	INFO	Listening on port 11510
+WebDriver BiDi listening on ws://127.0.0.1:11488
+Read port: 11510
+1669145140573	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofileqiRpDb\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:11488/devtools/browser/b2321953-a313-41ed-bb0a-cf05a9560bbc
+console.error: Region.jsm: "Error fetching region" (new Error("TIMEOUT", "resource://gre/modules/Region.sys.mjs", 763))
+console.error: Region.jsm: "Failed to fetch region" (new Error("TIMEOUT", "resource://gre/modules/Region.sys.mjs", 415))
+1669145245842	Marionette	INFO	Stopped listening on port 11510
+JavaScript error: resource://gre/modules/Sqlite.sys.mjs, line 1106: Error: Sqlite.jsm has been shutdown. Cannot open connection to: C:\Users\Msi\AppData\Local\Temp\rust_mozprofileqiRpDb\protections.sqlite
+1669145436031	geckodriver	INFO	Listening on 127.0.0.1:5748
+1669145439084	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "--remote-debugging-port" "5749" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofiledM04x3"
+*** You are running in headless mode.
+1669145439910	Marionette	INFO	Marionette enabled
+1669145439917	Marionette	INFO	Listening on port 5767
+Read port: 5767
+WebDriver BiDi listening on ws://127.0.0.1:5749
+1669145440057	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofiledM04x3\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:5749/devtools/browser/aa1347be-fdfd-439c-8cd9-55d14f6152fd
+console.error: Region.jsm: "Error fetching region" (new Error("TIMEOUT", "resource://gre/modules/Region.sys.mjs", 763))
+console.error: Region.jsm: "Failed to fetch region" (new Error("TIMEOUT", "resource://gre/modules/Region.sys.mjs", 415))
+1669145489595	Marionette	INFO	Stopped listening on port 5767
+JavaScript error: resource://gre/modules/Sqlite.sys.mjs, line 1106: Error: Sqlite.jsm has been shutdown. Cannot open connection to: C:\Users\Msi\AppData\Local\Temp\rust_mozprofiledM04x3\protections.sqlite
+1669145674733	geckodriver	INFO	Listening on 127.0.0.1:3721
+1669145677766	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "--remote-debugging-port" "3722" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofileAuvGzH"
+*** You are running in headless mode.
+1669145678282	Marionette	INFO	Marionette enabled
+1669145678289	Marionette	INFO	Listening on port 3735
+Read port: 3735
+WebDriver BiDi listening on ws://127.0.0.1:3722
+1669145678407	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofileAuvGzH\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:3722/devtools/browser/bddd22ec-8e1e-4791-afad-246495bed337
+console.error: Region.jsm: "Error fetching region" (new Error("TIMEOUT", "resource://gre/modules/Region.sys.mjs", 763))
+console.error: Region.jsm: "Failed to fetch region" (new Error("TIMEOUT", "resource://gre/modules/Region.sys.mjs", 415))
+1669145714714	Marionette	INFO	Stopped listening on port 3735
+JavaScript error: resource://gre/modules/Sqlite.sys.mjs, line 1106: Error: Sqlite.jsm has been shutdown. Cannot open connection to: C:\Users\Msi\AppData\Local\Temp\rust_mozprofileAuvGzH\protections.sqlite
+1669145899495	geckodriver	INFO	Listening on 127.0.0.1:6701
+1669145902542	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "--remote-debugging-port" "6702" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofileS8YoOJ"
+*** You are running in headless mode.
+1669145903144	Marionette	INFO	Marionette enabled
+1669145903153	Marionette	INFO	Listening on port 6721
+Read port: 6721
+WebDriver BiDi listening on ws://127.0.0.1:6702
+1669145903307	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofileS8YoOJ\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:6702/devtools/browser/b9db3e56-54b4-432d-bde8-411fd259daff
+console.error: Region.jsm: "Error fetching region" (new Error("TIMEOUT", "resource://gre/modules/Region.sys.mjs", 763))
+console.error: Region.jsm: "Failed to fetch region" (new Error("TIMEOUT", "resource://gre/modules/Region.sys.mjs", 415))
+1669145929979	Marionette	INFO	Stopped listening on port 6721
+console.error: services.settings: 
+  main/query-stripping Signature failed  TypeError: NetworkError: Network request failed
+JavaScript error: resource://gre/modules/Sqlite.sys.mjs, line 1106: Error: Sqlite.jsm has been shutdown. Cannot open connection to: C:\Users\Msi\AppData\Local\Temp\rust_mozprofileS8YoOJ\protections.sqlite
+1669146316517	geckodriver	INFO	Listening on 127.0.0.1:13786
+1669146319551	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "--remote-debugging-port" "13787" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofilesQJRgj"
+*** You are running in headless mode.
+1669146319990	Marionette	INFO	Marionette enabled
+1669146319994	Marionette	INFO	Listening on port 13809
+WebDriver BiDi listening on ws://127.0.0.1:13787
+Read port: 13809
+1669146320246	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofilesQJRgj\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:13787/devtools/browser/4e30c4d2-f985-4d20-92d2-0b91b36a6bd1
+console.error: Region.jsm: "Error fetching region" (new Error("TIMEOUT", "resource://gre/modules/Region.sys.mjs", 763))
+console.error: Region.jsm: "Failed to fetch region" (new Error("TIMEOUT", "resource://gre/modules/Region.sys.mjs", 415))
+1669146360183	Marionette	INFO	Stopped listening on port 13809
+JavaScript error: resource://gre/modules/Sqlite.sys.mjs, line 1106: Error: Sqlite.jsm has been shutdown. Cannot open connection to: C:\Users\Msi\AppData\Local\Temp\rust_mozprofilesQJRgj\protections.sqlite
+1669146545458	geckodriver	INFO	Listening on 127.0.0.1:4702
+1669146548484	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "--remote-debugging-port" "4703" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofile2NlLTZ"
+*** You are running in headless mode.
+1669146548834	Marionette	INFO	Marionette enabled
+1669146548838	Marionette	INFO	Listening on port 4719
+WebDriver BiDi listening on ws://127.0.0.1:4703
+Read port: 4719
+1669146549089	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofile2NlLTZ\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:4703/devtools/browser/cd15e684-3149-4bd9-a17e-316e1d50652a
+1669146619632	Marionette	INFO	Stopped listening on port 4719
+JavaScript error: resource://gre/modules/Sqlite.sys.mjs, line 1106: Error: Sqlite.jsm has been shutdown. Cannot open connection to: C:\Users\Msi\AppData\Local\Temp\rust_mozprofile2NlLTZ\protections.sqlite
+1669146999387	geckodriver	INFO	Listening on 127.0.0.1:13158
+1669147002418	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "--remote-debugging-port" "13159" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofilelsUVUx"
+*** You are running in headless mode.
+1669147002866	Marionette	INFO	Marionette enabled
+1669147002871	Marionette	INFO	Listening on port 13174
+WebDriver BiDi listening on ws://127.0.0.1:13159
+Read port: 13174
+1669147003127	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofilelsUVUx\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:13159/devtools/browser/8f8e4c9f-9c06-46fa-aed0-a50d727eff85
+console.error: Region.jsm: "Error fetching region" (new Error("TIMEOUT", "resource://gre/modules/Region.sys.mjs", 763))
+console.error: Region.jsm: "Failed to fetch region" (new Error("TIMEOUT", "resource://gre/modules/Region.sys.mjs", 415))
+console.error: services.settings: 
+  main/query-stripping Signature failed  TypeError: NetworkError: Network request failed
+1669147018242	Marionette	INFO	Stopped listening on port 13174
+JavaScript error: resource://gre/modules/Sqlite.sys.mjs, line 1106: Error: Sqlite.jsm has been shutdown. Cannot open connection to: C:\Users\Msi\AppData\Local\Temp\rust_mozprofilelsUVUx\protections.sqlite
+1669176799414	geckodriver	INFO	Listening on 127.0.0.1:8236
+1669176802468	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "--remote-debugging-port" "8237" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofileA86NIz"
+*** You are running in headless mode.
+1669176803735	Marionette	INFO	Marionette enabled
+1669176803750	Marionette	INFO	Listening on port 8254
+Read port: 8254
+WebDriver BiDi listening on ws://127.0.0.1:8237
+1669176804193	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofileA86NIz\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:8237/devtools/browser/0831c009-0174-40b1-9653-1e83ddd939a7
+1669176822674	Marionette	INFO	Stopped listening on port 8254
+JavaScript error: resource://gre/modules/Sqlite.sys.mjs, line 1106: Error: Sqlite.jsm has been shutdown. Cannot open connection to: C:\Users\Msi\AppData\Local\Temp\rust_mozprofileA86NIz\protections.sqlite
+1669177059816	geckodriver	INFO	Listening on 127.0.0.1:13518
+1669177062872	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "--remote-debugging-port" "13519" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofileOIslEW"
+*** You are running in headless mode.
+1669177063449	Marionette	INFO	Marionette enabled
+1669177063454	Marionette	INFO	Listening on port 13535
+WebDriver BiDi listening on ws://127.0.0.1:13519
+Read port: 13535
+1669177063739	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofileOIslEW\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:13519/devtools/browser/cb025870-d7d5-4fa6-8b09-9c8733d01af6
+1669177177042	geckodriver	INFO	Listening on 127.0.0.1:13948
+1669177180098	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "--remote-debugging-port" "13949" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofileMCfrcR"
+*** You are running in headless mode.
+1669177180493	Marionette	INFO	Marionette enabled
+1669177180500	Marionette	INFO	Listening on port 13960
+Read port: 13960
+WebDriver BiDi listening on ws://127.0.0.1:13949
+1669177180653	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofileMCfrcR\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:13949/devtools/browser/73da4b65-2a41-40c6-a464-47cb9dc569d8
+1669177190935	Marionette	INFO	Stopped listening on port 13960
+JavaScript error: resource://gre/modules/Sqlite.sys.mjs, line 1106: Error: Sqlite.jsm has been shutdown. Cannot open connection to: C:\Users\Msi\AppData\Local\Temp\rust_mozprofileMCfrcR\protections.sqlite
+1669177195220	geckodriver	INFO	Listening on 127.0.0.1:14047
+1669177198256	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "--remote-debugging-port" "14048" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofileXIRP7T"
+*** You are running in headless mode.
+1669177198827	Marionette	INFO	Marionette enabled
+1669177198833	Marionette	INFO	Listening on port 14063
+Read port: 14063
+WebDriver BiDi listening on ws://127.0.0.1:14048
+1669177198995	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofileXIRP7T\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:14048/devtools/browser/6ce35e8e-facc-44c3-a4a0-d3db635a7bf1
+1669177273159	geckodriver	INFO	Listening on 127.0.0.1:1753
+1669177276184	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "--remote-debugging-port" "1754" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofilemjywq0"
+*** You are running in headless mode.
+1669177276503	Marionette	INFO	Marionette enabled
+1669177276507	Marionette	INFO	Listening on port 1767
+Read port: 1767
+WebDriver BiDi listening on ws://127.0.0.1:1754
+1669177276588	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofilemjywq0\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:1754/devtools/browser/b716a9ed-c962-4f41-ade6-c3be06cbee8e
+1669177285166	Marionette	INFO	Stopped listening on port 1767
+JavaScript error: resource://gre/modules/Sqlite.sys.mjs, line 1106: Error: Sqlite.jsm has been shutdown. Cannot open connection to: C:\Users\Msi\AppData\Local\Temp\rust_mozprofilemjywq0\protections.sqlite
+1669177287105	geckodriver	INFO	Listening on 127.0.0.1:1838
+1669177290129	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "--remote-debugging-port" "1839" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofile6SLOqv"
+*** You are running in headless mode.
+1669177290628	Marionette	INFO	Marionette enabled
+1669177290636	Marionette	INFO	Listening on port 1850
+Read port: 1850
+WebDriver BiDi listening on ws://127.0.0.1:1839
+1669177290757	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofile6SLOqv\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:1839/devtools/browser/fefb1c1c-1a74-40c7-81a3-e6d34ed6f056
+1669177299560	Marionette	INFO	Stopped listening on port 1850
+JavaScript error: resource://gre/modules/UrlClassifierListManager.jsm, line 693: TypeError: this.tablesData[table] is undefined
+JavaScript error: resource://gre/modules/Sqlite.sys.mjs, line 1106: Error: Sqlite.jsm has been shutdown. Cannot open connection to: C:\Users\Msi\AppData\Local\Temp\rust_mozprofile6SLOqv\protections.sqlite
+1669177305568	geckodriver	INFO	Listening on 127.0.0.1:1930
+1669177308620	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "--remote-debugging-port" "1931" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofilePmkT0D"
+*** You are running in headless mode.
+1669177308931	Marionette	INFO	Marionette enabled
+1669177308935	Marionette	INFO	Listening on port 1949
+Read port: 1949
+WebDriver BiDi listening on ws://127.0.0.1:1931
+1669177309017	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofilePmkT0D\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:1931/devtools/browser/dcc31d8a-b51d-4049-84b1-f2bc9ac9cd7b
+1669177317437	Marionette	INFO	Stopped listening on port 1949
+JavaScript error: resource://gre/modules/Sqlite.sys.mjs, line 1106: Error: Sqlite.jsm has been shutdown. Cannot open connection to: C:\Users\Msi\AppData\Local\Temp\rust_mozprofilePmkT0D\protections.sqlite
+1669177375349	geckodriver	INFO	Listening on 127.0.0.1:2167
+1669177378390	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "--remote-debugging-port" "2168" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofileiihQ2G"
+*** You are running in headless mode.
+1669177379097	Marionette	INFO	Marionette enabled
+1669177379106	Marionette	INFO	Listening on port 2183
+Read port: 2183
+WebDriver BiDi listening on ws://127.0.0.1:2168
+1669177379247	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofileiihQ2G\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:2168/devtools/browser/fa4d39bb-f555-4a9a-9c32-70b276258fe5
+1669177388651	Marionette	INFO	Stopped listening on port 2183
+JavaScript error: resource://gre/modules/Sqlite.sys.mjs, line 1106: Error: Sqlite.jsm has been shutdown. Cannot open connection to: C:\Users\Msi\AppData\Local\Temp\rust_mozprofileiihQ2G\protections.sqlite
+1669177467323	geckodriver	INFO	Listening on 127.0.0.1:9668
+1669177470371	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "--remote-debugging-port" "9669" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofileOdlD3N"
+*** You are running in headless mode.
+1669177470687	Marionette	INFO	Marionette enabled
+1669177470712	Marionette	INFO	Listening on port 9678
+WebDriver BiDi listening on ws://127.0.0.1:9669
+Read port: 9678
+1669177470943	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofileOdlD3N\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:9669/devtools/browser/99d3862e-aaa3-4966-9674-619cf5137ec4
+1669177480146	Marionette	INFO	Stopped listening on port 9678
+JavaScript error: resource://gre/modules/Sqlite.sys.mjs, line 1106: Error: Sqlite.jsm has been shutdown. Cannot open connection to: C:\Users\Msi\AppData\Local\Temp\rust_mozprofileOdlD3N\protections.sqlite
+1669177563019	geckodriver	INFO	Listening on 127.0.0.1:9913
+1669177566073	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "--remote-debugging-port" "9914" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofileu8BMDy"
+*** You are running in headless mode.
+1669177566444	Marionette	INFO	Marionette enabled
+1669177566450	Marionette	INFO	Listening on port 9925
+WebDriver BiDi listening on ws://127.0.0.1:9914
+Read port: 9925
+1669177566631	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofileu8BMDy\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:9914/devtools/browser/41a5d097-691e-45f0-87f6-741b9e90b8b5
+1669177575240	Marionette	INFO	Stopped listening on port 9925
+JavaScript error: resource://gre/modules/Sqlite.sys.mjs, line 1106: Error: Sqlite.jsm has been shutdown. Cannot open connection to: C:\Users\Msi\AppData\Local\Temp\rust_mozprofileu8BMDy\protections.sqlite
+1669177637737	geckodriver	INFO	Listening on 127.0.0.1:10170
+1669177640786	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "--remote-debugging-port" "10171" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofilegF1P11"
+*** You are running in headless mode.
+1669177641263	Marionette	INFO	Marionette enabled
+1669177641269	Marionette	INFO	Listening on port 10182
+Read port: 10182
+WebDriver BiDi listening on ws://127.0.0.1:10171
+1669177641417	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofilegF1P11\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:10171/devtools/browser/9888ff53-33e2-46b6-80bb-c5960f13d259
+1669177651095	Marionette	INFO	Stopped listening on port 10182
+JavaScript error: resource://gre/modules/Sqlite.sys.mjs, line 1106: Error: Sqlite.jsm has been shutdown. Cannot open connection to: C:\Users\Msi\AppData\Local\Temp\rust_mozprofilegF1P11\protections.sqlite
+1669177656990	geckodriver	INFO	Listening on 127.0.0.1:10263
+1669177660028	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "--remote-debugging-port" "10264" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofilehqp0UE"
+*** You are running in headless mode.
+1669177660505	Marionette	INFO	Marionette enabled
+1669177660510	Marionette	INFO	Listening on port 10277
+WebDriver BiDi listening on ws://127.0.0.1:10264
+Read port: 10277
+1669177660739	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofilehqp0UE\\search.json.mozlz4", (void 0)))
+1669177687457	geckodriver	INFO	Listening on 127.0.0.1:10378
+1669177690499	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "--remote-debugging-port" "10379" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofileAhi2bO"
+*** You are running in headless mode.
+1669177690868	Marionette	INFO	Marionette enabled
+1669177690872	Marionette	INFO	Listening on port 10392
+WebDriver BiDi listening on ws://127.0.0.1:10379
+Read port: 10392
+1669177691103	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofileAhi2bO\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:10379/devtools/browser/dcbdc55e-07b9-4375-aa88-61fa4d2d696b
+1669177699704	Marionette	INFO	Stopped listening on port 10392
+JavaScript error: resource://gre/modules/Sqlite.sys.mjs, line 1106: Error: Sqlite.jsm has been shutdown. Cannot open connection to: C:\Users\Msi\AppData\Local\Temp\rust_mozprofileAhi2bO\protections.sqlite
+1669177704742	geckodriver	INFO	Listening on 127.0.0.1:10455
+1669177707788	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "--remote-debugging-port" "10456" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofileJF3yNs"
+*** You are running in headless mode.
+1669177708108	Marionette	INFO	Marionette enabled
+1669177708112	Marionette	INFO	Listening on port 1407
+Read port: 1407
+WebDriver BiDi listening on ws://127.0.0.1:10456
+1669177708194	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofileJF3yNs\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:10456/devtools/browser/1877553e-ab54-4902-98a8-f01e5f8d1c5a
+1669177719155	Marionette	INFO	Stopped listening on port 1407
+JavaScript error: resource://gre/modules/Sqlite.sys.mjs, line 1106: Error: Sqlite.jsm has been shutdown. Cannot open connection to: C:\Users\Msi\AppData\Local\Temp\rust_mozprofileJF3yNs\protections.sqlite
+1669177723191	geckodriver	INFO	Listening on 127.0.0.1:1493
+1669177726242	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "--remote-debugging-port" "1494" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofilenDmjlA"
+*** You are running in headless mode.
+1669177726583	Marionette	INFO	Marionette enabled
+1669177726588	Marionette	INFO	Listening on port 1505
+WebDriver BiDi listening on ws://127.0.0.1:1494
+Read port: 1505
+1669177726847	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofilenDmjlA\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:1494/devtools/browser/72c0406a-f7ab-49d4-a3e5-c96e70abdaf9
+1669177735416	Marionette	INFO	Stopped listening on port 1505
+JavaScript error: resource://gre/modules/Sqlite.sys.mjs, line 1106: Error: Sqlite.jsm has been shutdown. Cannot open connection to: C:\Users\Msi\AppData\Local\Temp\rust_mozprofilenDmjlA\protections.sqlite
+1669177738391	geckodriver	INFO	Listening on 127.0.0.1:1577
+1669178070898	geckodriver	INFO	Listening on 127.0.0.1:1052
+1669178073990	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "--remote-debugging-port" "1053" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofile8KETUb"
+*** You are running in headless mode.
+1669178074400	Marionette	INFO	Marionette enabled
+1669178074406	Marionette	INFO	Listening on port 1068
+Read port: 1068
+WebDriver BiDi listening on ws://127.0.0.1:1053
+1669178074513	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofile8KETUb\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:1053/devtools/browser/ecdad503-48af-4e97-808e-1218d3fd5e7d
+1669178083417	Marionette	INFO	Stopped listening on port 1068
+JavaScript error: resource://gre/modules/Sqlite.sys.mjs, line 1106: Error: Sqlite.jsm has been shutdown. Cannot open connection to: C:\Users\Msi\AppData\Local\Temp\rust_mozprofile8KETUb\protections.sqlite
+1669178088692	geckodriver	INFO	Listening on 127.0.0.1:1150
+1669178091731	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "--remote-debugging-port" "1151" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofile3Zzn43"
+*** You are running in headless mode.
+1669178092162	Marionette	INFO	Marionette enabled
+1669178092169	Marionette	INFO	Listening on port 1162
+Read port: 1162
+WebDriver BiDi listening on ws://127.0.0.1:1151
+1669178092307	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofile3Zzn43\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:1151/devtools/browser/9745ae4b-5d1b-4bbe-bbac-2f37d78e7be6
+1669178101036	Marionette	INFO	Stopped listening on port 1162
+JavaScript error: resource://gre/modules/UrlClassifierListManager.jsm, line 693: TypeError: this.tablesData[table] is undefined
+JavaScript error: resource://gre/modules/Sqlite.sys.mjs, line 1106: Error: Sqlite.jsm has been shutdown. Cannot open connection to: C:\Users\Msi\AppData\Local\Temp\rust_mozprofile3Zzn43\protections.sqlite
+1669178103322	geckodriver	INFO	Listening on 127.0.0.1:1236
+1669178106362	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "--remote-debugging-port" "1237" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofile5C0sY9"
+*** You are running in headless mode.
+1669178106813	Marionette	INFO	Marionette enabled
+1669178106818	Marionette	INFO	Listening on port 1248
+WebDriver BiDi listening on ws://127.0.0.1:1237
+Read port: 1248
+1669178107100	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofile5C0sY9\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:1237/devtools/browser/b53330de-06d9-4f21-8bf4-a294bf9dcde4
+1669178116062	Marionette	INFO	Stopped listening on port 1248
+JavaScript error: resource://gre/modules/Sqlite.sys.mjs, line 1106: Error: Sqlite.jsm has been shutdown. Cannot open connection to: C:\Users\Msi\AppData\Local\Temp\rust_mozprofile5C0sY9\protections.sqlite
+[Parent 16848, Compositor] WARNING: pipe error: 232: file /builds/worker/checkouts/gecko/ipc/chromium/src/chrome/common/ipc_channel_win.cc:559
+1669178118336	geckodriver	INFO	Listening on 127.0.0.1:1317
+1669178121372	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "--remote-debugging-port" "1318" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofilen7AblU"
+*** You are running in headless mode.
+1669178122052	Marionette	INFO	Marionette enabled
+1669178122058	Marionette	INFO	Listening on port 1329
+Read port: 1329
+WebDriver BiDi listening on ws://127.0.0.1:1318
+1669178122225	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofilen7AblU\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:1318/devtools/browser/f323f4d3-ff69-431f-b7c0-ca7cc3e62073
+1669178131778	Marionette	INFO	Stopped listening on port 1329
+JavaScript error: resource://gre/modules/Sqlite.sys.mjs, line 1106: Error: Sqlite.jsm has been shutdown. Cannot open connection to: C:\Users\Msi\AppData\Local\Temp\rust_mozprofilen7AblU\protections.sqlite
+1669178134202	geckodriver	INFO	Listening on 127.0.0.1:1401
+1669178137241	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "--remote-debugging-port" "1402" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofilefikBJk"
+*** You are running in headless mode.
+1669178137726	Marionette	INFO	Marionette enabled
+1669178137731	Marionette	INFO	Listening on port 1415
+Read port: 1415
+WebDriver BiDi listening on ws://127.0.0.1:1402
+1669178137858	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofilefikBJk\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:1402/devtools/browser/20f39f8b-7215-4c44-a68a-97ce29dd19e0
+1669178153528	Marionette	INFO	Stopped listening on port 1415
+JavaScript error: resource://gre/modules/Sqlite.sys.mjs, line 1106: Error: Sqlite.jsm has been shutdown. Cannot open connection to: C:\Users\Msi\AppData\Local\Temp\rust_mozprofilefikBJk\protections.sqlite
+1669178157710	geckodriver	INFO	Listening on 127.0.0.1:1503
+1669178160752	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "--remote-debugging-port" "1504" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofilengytyc"
+*** You are running in headless mode.
+1669178161036	Marionette	INFO	Marionette enabled
+1669178161040	Marionette	INFO	Listening on port 1517
+Read port: 1517
+WebDriver BiDi listening on ws://127.0.0.1:1504
+1669178161117	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofilengytyc\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:1504/devtools/browser/6a1978f1-502e-431c-bb31-70615175eb49
+console.error: Region.jsm: "Error fetching region" (new Error("TIMEOUT", "resource://gre/modules/Region.sys.mjs", 763))
+console.error: Region.jsm: "Failed to fetch region" (new Error("TIMEOUT", "resource://gre/modules/Region.sys.mjs", 415))
+1669178656499	geckodriver	INFO	Listening on 127.0.0.1:5176
+1669178659553	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "--remote-debugging-port" "5177" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofile6p2u0d"
+*** You are running in headless mode.
+1669178659988	Marionette	INFO	Marionette enabled
+1669178659993	Marionette	INFO	Listening on port 5192
+Read port: 5192
+WebDriver BiDi listening on ws://127.0.0.1:5177
+1669178660097	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofile6p2u0d\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:5177/devtools/browser/179933b9-e9f7-45af-a5cb-e1e4879fb3f4
+1669178669662	Marionette	INFO	Stopped listening on port 5192
+JavaScript error: resource://gre/modules/Sqlite.sys.mjs, line 1106: Error: Sqlite.jsm has been shutdown. Cannot open connection to: C:\Users\Msi\AppData\Local\Temp\rust_mozprofile6p2u0d\protections.sqlite
+1669178674933	geckodriver	INFO	Listening on 127.0.0.1:9110
+1669178677973	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "--remote-debugging-port" "9111" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofileGDPJoD"
+*** You are running in headless mode.
+1669178678522	Marionette	INFO	Marionette enabled
+1669178678529	Marionette	INFO	Listening on port 9124
+Read port: 9124
+WebDriver BiDi listening on ws://127.0.0.1:9111
+1669178678671	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofileGDPJoD\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:9111/devtools/browser/50dd69fa-becc-4b71-b118-b1e349a62d6d
+1669178688257	Marionette	INFO	Stopped listening on port 9124
+JavaScript error: resource://gre/modules/Sqlite.sys.mjs, line 1106: Error: Sqlite.jsm has been shutdown. Cannot open connection to: C:\Users\Msi\AppData\Local\Temp\rust_mozprofileGDPJoD\protections.sqlite
+1669178692239	geckodriver	INFO	Listening on 127.0.0.1:9196
+1669179698217	geckodriver	INFO	Listening on 127.0.0.1:8573
+1669179701272	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "--remote-debugging-port" "8574" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofile6y7g3O"
+*** You are running in headless mode.
+1669179701755	Marionette	INFO	Marionette enabled
+1669179701760	Marionette	INFO	Listening on port 8589
+Read port: 8589
+WebDriver BiDi listening on ws://127.0.0.1:8574
+1669179701895	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofile6y7g3O\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:8574/devtools/browser/f7330d4c-722c-4725-ae0f-1d280df4ba27
+1669179710939	Marionette	INFO	Stopped listening on port 8589
+JavaScript error: resource://gre/modules/Sqlite.sys.mjs, line 1106: Error: Sqlite.jsm has been shutdown. Cannot open connection to: C:\Users\Msi\AppData\Local\Temp\rust_mozprofile6y7g3O\protections.sqlite
+1669179716133	geckodriver	INFO	Listening on 127.0.0.1:8677
+1669180632131	geckodriver	INFO	Listening on 127.0.0.1:13594
+1669180635184	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "--remote-debugging-port" "13595" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofilee9hqVc"
+*** You are running in headless mode.
+1669180635598	Marionette	INFO	Marionette enabled
+1669180635603	Marionette	INFO	Listening on port 13608
+Read port: 13608
+WebDriver BiDi listening on ws://127.0.0.1:13595
+1669180635719	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofilee9hqVc\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:13595/devtools/browser/c70a6cfc-c4ca-419a-9b86-f20e1ee04e09
+1669180645723	Marionette	INFO	Stopped listening on port 13608
+JavaScript error: resource://gre/modules/Sqlite.sys.mjs, line 1106: Error: Sqlite.jsm has been shutdown. Cannot open connection to: C:\Users\Msi\AppData\Local\Temp\rust_mozprofilee9hqVc\protections.sqlite
+1669180651121	geckodriver	INFO	Listening on 127.0.0.1:13694
+1669180654186	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "--remote-debugging-port" "13695" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofilevj9KAr"
+*** You are running in headless mode.
+1669180654593	Marionette	INFO	Marionette enabled
+1669180654598	Marionette	INFO	Listening on port 13710
+Read port: 13710
+WebDriver BiDi listening on ws://127.0.0.1:13695
+1669180654709	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofilevj9KAr\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:13695/devtools/browser/258ac165-5fbd-4664-8fb2-e51eddc08eaa
+1669180663861	Marionette	INFO	Stopped listening on port 13710
+JavaScript error: resource://gre/modules/Sqlite.sys.mjs, line 1106: Error: Sqlite.jsm has been shutdown. Cannot open connection to: C:\Users\Msi\AppData\Local\Temp\rust_mozprofilevj9KAr\protections.sqlite
+1669180668174	geckodriver	INFO	Listening on 127.0.0.1:13782
+1669180671212	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "--remote-debugging-port" "13783" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofileTgwaWf"
+*** You are running in headless mode.
+1669180671650	Marionette	INFO	Marionette enabled
+1669180671657	Marionette	INFO	Listening on port 13796
+WebDriver BiDi listening on ws://127.0.0.1:13783
+Read port: 13796
+1669180671956	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofileTgwaWf\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:13783/devtools/browser/3c1c6fdd-4ee9-40c5-8a62-354742d71cd4
+1669180765324	geckodriver	INFO	Listening on 127.0.0.1:13985
+1669180784603	geckodriver	INFO	Listening on 127.0.0.1:14027
+1669180809481	geckodriver	INFO	Listening on 127.0.0.1:14081
+1669180812526	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "--remote-debugging-port" "14082" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofilewwPyh2"
+*** You are running in headless mode.
+1669180813289	Marionette	INFO	Marionette enabled
+1669180813294	Marionette	INFO	Listening on port 14097
+Read port: 14097
+WebDriver BiDi listening on ws://127.0.0.1:14082
+1669180813429	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofilewwPyh2\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:14082/devtools/browser/08029653-af32-4f30-9568-25d6898dce5e
+1669180822740	Marionette	INFO	Stopped listening on port 14097
+JavaScript error: resource://gre/modules/Sqlite.sys.mjs, line 1106: Error: Sqlite.jsm has been shutdown. Cannot open connection to: C:\Users\Msi\AppData\Local\Temp\rust_mozprofilewwPyh2\protections.sqlite
+1669180828276	geckodriver	INFO	Listening on 127.0.0.1:14174
+1669180852630	geckodriver	INFO	Listening on 127.0.0.1:5000
+1669180855664	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "--remote-debugging-port" "5001" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofilebDqjj3"
+*** You are running in headless mode.
+1669180856221	Marionette	INFO	Marionette enabled
+1669180856229	Marionette	INFO	Listening on port 5014
+WebDriver BiDi listening on ws://127.0.0.1:5001
+Read port: 5014
+1669180856529	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofilebDqjj3\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:5001/devtools/browser/ee8f2661-c322-481f-a5fa-e242768d6324
+1669180865622	Marionette	INFO	Stopped listening on port 5014
+JavaScript error: resource://gre/modules/Sqlite.sys.mjs, line 1106: Error: Sqlite.jsm has been shutdown. Cannot open connection to: C:\Users\Msi\AppData\Local\Temp\rust_mozprofilebDqjj3\protections.sqlite
+1669180871073	geckodriver	INFO	Listening on 127.0.0.1:5098
+1669180874118	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "--remote-debugging-port" "5099" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofile62nKWJ"
+*** You are running in headless mode.
+1669180874543	Marionette	INFO	Marionette enabled
+1669180874548	Marionette	INFO	Listening on port 5115
+Read port: 5115
+WebDriver BiDi listening on ws://127.0.0.1:5099
+1669180874658	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofile62nKWJ\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:5099/devtools/browser/f7b6f97a-4d69-4012-9b07-40308128979c
+console.error: Region.jsm: "Error fetching region" (new Error("TIMEOUT", "resource://gre/modules/Region.sys.mjs", 763))
+console.error: Region.jsm: "Failed to fetch region" (new Error("TIMEOUT", "resource://gre/modules/Region.sys.mjs", 415))
+1669180883959	Marionette	INFO	Stopped listening on port 5115
+JavaScript error: resource://gre/modules/Sqlite.sys.mjs, line 1106: Error: Sqlite.jsm has been shutdown. Cannot open connection to: C:\Users\Msi\AppData\Local\Temp\rust_mozprofile62nKWJ\protections.sqlite
+1669180886099	geckodriver	INFO	Listening on 127.0.0.1:5174
+1669180912905	geckodriver	INFO	Listening on 127.0.0.1:5229
+1669180932991	geckodriver	INFO	Listening on 127.0.0.1:5268
+1669180936020	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "--remote-debugging-port" "5269" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofile0uH2KJ"
+*** You are running in headless mode.
+1669180936433	Marionette	INFO	Marionette enabled
+1669180936438	Marionette	INFO	Listening on port 5280
+Read port: 5280
+WebDriver BiDi listening on ws://127.0.0.1:5269
+1669180936545	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofile0uH2KJ\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:5269/devtools/browser/d3c24035-715f-4388-beeb-4ed77f421d44
+1669180945336	Marionette	INFO	Stopped listening on port 5280
+JavaScript error: resource://gre/modules/Sqlite.sys.mjs, line 1106: Error: Sqlite.jsm has been shutdown. Cannot open connection to: C:\Users\Msi\AppData\Local\Temp\rust_mozprofile0uH2KJ\protections.sqlite
+1669180948394	geckodriver	INFO	Listening on 127.0.0.1:5352
+1669180951435	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "--remote-debugging-port" "5353" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofilemphtMY"
+*** You are running in headless mode.
+1669180951784	Marionette	INFO	Marionette enabled
+1669180951788	Marionette	INFO	Listening on port 5367
+WebDriver BiDi listening on ws://127.0.0.1:5353
+Read port: 5367
+1669180952029	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofilemphtMY\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:5353/devtools/browser/84eb7895-b8d0-4120-97bc-3c8448435fa7
+1669180960469	Marionette	INFO	Stopped listening on port 5367
+JavaScript error: resource://gre/modules/Sqlite.sys.mjs, line 1106: Error: Sqlite.jsm has been shutdown. Cannot open connection to: C:\Users\Msi\AppData\Local\Temp\rust_mozprofilemphtMY\protections.sqlite
+1669180966708	geckodriver	INFO	Listening on 127.0.0.1:5441
+1669180969741	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "--remote-debugging-port" "5442" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofileVPFnKy"
+*** You are running in headless mode.
+1669180970267	Marionette	INFO	Marionette enabled
+1669180970273	Marionette	INFO	Listening on port 5457
+Read port: 5457
+WebDriver BiDi listening on ws://127.0.0.1:5442
+1669180970408	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofileVPFnKy\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:5442/devtools/browser/3faa6b37-6e75-4e59-a412-3f85202ea136
+1669180979259	Marionette	INFO	Stopped listening on port 5457
+JavaScript error: resource://gre/modules/Sqlite.sys.mjs, line 1106: Error: Sqlite.jsm has been shutdown. Cannot open connection to: C:\Users\Msi\AppData\Local\Temp\rust_mozprofileVPFnKy\protections.sqlite
+1669180981431	geckodriver	INFO	Listening on 127.0.0.1:5524
+1669180984459	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "--remote-debugging-port" "5525" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofilejn2IMm"
+*** You are running in headless mode.
+1669180984882	Marionette	INFO	Marionette enabled
+1669180984888	Marionette	INFO	Listening on port 5543
+Read port: 5543
+WebDriver BiDi listening on ws://127.0.0.1:5525
+1669180985011	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofilejn2IMm\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:5525/devtools/browser/cebdbf35-ad58-4509-a061-885e77185349
+1669180994774	Marionette	INFO	Stopped listening on port 5543
+JavaScript error: resource://gre/modules/Sqlite.sys.mjs, line 1106: Error: Sqlite.jsm has been shutdown. Cannot open connection to: C:\Users\Msi\AppData\Local\Temp\rust_mozprofilejn2IMm\protections.sqlite
+1669180996974	geckodriver	INFO	Listening on 127.0.0.1:5614
+1669181000033	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "--remote-debugging-port" "5615" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofileNI9Dgn"
+*** You are running in headless mode.
+1669181000496	Marionette	INFO	Marionette enabled
+1669181000503	Marionette	INFO	Listening on port 5628
+WebDriver BiDi listening on ws://127.0.0.1:5615
+Read port: 5628
+1669181000824	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofileNI9Dgn\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:5615/devtools/browser/309b8ce1-0256-4c91-8b8f-f8f6383cdbff
+1669181284711	geckodriver	INFO	Listening on 127.0.0.1:5956
+1669181287766	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "--remote-debugging-port" "5957" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofileQ3q8HN"
+*** You are running in headless mode.
+1669181288230	Marionette	INFO	Marionette enabled
+1669181288236	Marionette	INFO	Listening on port 5970
+Read port: 5970
+WebDriver BiDi listening on ws://127.0.0.1:5957
+1669181288380	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofileQ3q8HN\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:5957/devtools/browser/a1761c61-c780-46b9-bde3-ef5210d127a0
+1669181297796	Marionette	INFO	Stopped listening on port 5970
+JavaScript error: resource://gre/modules/Sqlite.sys.mjs, line 1106: Error: Sqlite.jsm has been shutdown. Cannot open connection to: C:\Users\Msi\AppData\Local\Temp\rust_mozprofileQ3q8HN\protections.sqlite
+1669181303330	geckodriver	INFO	Listening on 127.0.0.1:6056
+1669181306369	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "--remote-debugging-port" "6057" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofileuII0ql"
+*** You are running in headless mode.
+1669181306866	Marionette	INFO	Marionette enabled
+1669181306871	Marionette	INFO	Listening on port 6070
+Read port: 6070
+WebDriver BiDi listening on ws://127.0.0.1:6057
+1669181306994	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofileuII0ql\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:6057/devtools/browser/1105d11f-1b9e-4e83-9e93-b14d5626e49c
+1669181310597	geckodriver	INFO	Listening on 127.0.0.1:6096
+1669181313641	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "--remote-debugging-port" "6097" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofileBD9KBn"
+*** You are running in headless mode.
+1669181314122	Marionette	INFO	Marionette enabled
+1669181314128	Marionette	INFO	Listening on port 6113
+Read port: 6113
+WebDriver BiDi listening on ws://127.0.0.1:6097
+1669181314264	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofileBD9KBn\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:6097/devtools/browser/669ef7f7-87bb-4277-83b2-fe95e3f4f047
+1669181327669	Marionette	INFO	Stopped listening on port 6113
+JavaScript error: resource://gre/modules/Sqlite.sys.mjs, line 1106: Error: Sqlite.jsm has been shutdown. Cannot open connection to: C:\Users\Msi\AppData\Local\Temp\rust_mozprofileBD9KBn\protections.sqlite
+1669181329788	geckodriver	INFO	Listening on 127.0.0.1:12073
+1669181332827	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "--remote-debugging-port" "12074" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofilecU2623"
+*** You are running in headless mode.
+1669181333252	Marionette	INFO	Marionette enabled
+1669181333257	Marionette	INFO	Listening on port 12087
+Read port: 12087
+WebDriver BiDi listening on ws://127.0.0.1:12074
+1669181333389	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+1669182347907	geckodriver	INFO	Listening on 127.0.0.1:5258
+1669182350963	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "--remote-debugging-port" "5259" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofileJDyVif"
+*** You are running in headless mode.
+1669182351448	Marionette	INFO	Marionette enabled
+1669182351455	Marionette	INFO	Listening on port 5274
+Read port: 5274
+WebDriver BiDi listening on ws://127.0.0.1:5259
+1669182351584	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofileJDyVif\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:5259/devtools/browser/5d2e30c6-11a3-40b9-b7ea-330155d13779
+1669182360804	Marionette	INFO	Stopped listening on port 5274
+JavaScript error: resource://gre/modules/Sqlite.sys.mjs, line 1106: Error: Sqlite.jsm has been shutdown. Cannot open connection to: C:\Users\Msi\AppData\Local\Temp\rust_mozprofileJDyVif\protections.sqlite
+1669182366197	geckodriver	INFO	Listening on 127.0.0.1:5352
+1669182369240	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "--remote-debugging-port" "5353" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofile45mQGV"
+*** You are running in headless mode.
+1669182369666	Marionette	INFO	Marionette enabled
+1669182369671	Marionette	INFO	Listening on port 5367
+Read port: 5367
+WebDriver BiDi listening on ws://127.0.0.1:5353
+1669182369797	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofile45mQGV\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:5353/devtools/browser/5a006a9c-a59d-4e46-90e0-4959654468c8
+1669182379587	Marionette	INFO	Stopped listening on port 5367
+JavaScript error: resource://gre/modules/Sqlite.sys.mjs, line 1106: Error: Sqlite.jsm has been shutdown. Cannot open connection to: C:\Users\Msi\AppData\Local\Temp\rust_mozprofile45mQGV\protections.sqlite
+1669182381913	geckodriver	INFO	Listening on 127.0.0.1:5441
+1669182384951	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "--remote-debugging-port" "5442" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofilefPwR7u"
+*** You are running in headless mode.
+1669182385381	Marionette	INFO	Marionette enabled
+1669182385387	Marionette	INFO	Listening on port 5459
+Read port: 5459
+WebDriver BiDi listening on ws://127.0.0.1:5442
+1669182385509	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofilefPwR7u\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:5442/devtools/browser/5124b412-2182-4740-bf18-37c2cf266a57
+1669182397447	Marionette	INFO	Stopped listening on port 5459
+JavaScript error: resource://gre/modules/Sqlite.sys.mjs, line 1106: Error: Sqlite.jsm has been shutdown. Cannot open connection to: C:\Users\Msi\AppData\Local\Temp\rust_mozprofilefPwR7u\protections.sqlite
+1669182422494	geckodriver	INFO	Listening on 127.0.0.1:5588
+1669182425557	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "--remote-debugging-port" "5589" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofileJrWHM0"
+*** You are running in headless mode.
+1669182426009	Marionette	INFO	Marionette enabled
+1669182426014	Marionette	INFO	Listening on port 5604
+WebDriver BiDi listening on ws://127.0.0.1:5589
+Read port: 5604
+1669182426312	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofileJrWHM0\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:5589/devtools/browser/cea10b48-c92e-4ed4-bbc8-73b7761484bc
+1669182436175	Marionette	INFO	Stopped listening on port 5604
+JavaScript error: resource://gre/modules/Sqlite.sys.mjs, line 1106: Error: Sqlite.jsm has been shutdown. Cannot open connection to: C:\Users\Msi\AppData\Local\Temp\rust_mozprofileJrWHM0\protections.sqlite
+1669182469428	geckodriver	INFO	Listening on 127.0.0.1:5743
+1669182472468	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "--remote-debugging-port" "5744" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofilea0doa7"
+*** You are running in headless mode.
+1669182472883	Marionette	INFO	Marionette enabled
+1669182472889	Marionette	INFO	Listening on port 5757
+Read port: 5757
+WebDriver BiDi listening on ws://127.0.0.1:5744
+1669182473004	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofilea0doa7\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:5744/devtools/browser/77177b44-e6b6-43e2-b220-a7cde9dc95be
+1669182482585	Marionette	INFO	Stopped listening on port 5757
+JavaScript error: resource://gre/modules/Sqlite.sys.mjs, line 1106: Error: Sqlite.jsm has been shutdown. Cannot open connection to: C:\Users\Msi\AppData\Local\Temp\rust_mozprofilea0doa7\protections.sqlite
+1669182487939	geckodriver	INFO	Listening on 127.0.0.1:5833
+1669182490989	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "--remote-debugging-port" "5834" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofile02o2wz"
+*** You are running in headless mode.
+1669182491402	Marionette	INFO	Marionette enabled
+1669182491407	Marionette	INFO	Listening on port 5849
+Read port: 5849
+WebDriver BiDi listening on ws://127.0.0.1:5834
+1669182491522	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofile02o2wz\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:5834/devtools/browser/24292d6b-8d7a-4803-b461-2d16af0d692e
+1669182734561	geckodriver	INFO	Listening on 127.0.0.1:13485
+1669182737610	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "--remote-debugging-port" "13486" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofilepvysDv"
+*** You are running in headless mode.
+1669182738027	Marionette	INFO	Marionette enabled
+1669182738032	Marionette	INFO	Listening on port 13499
+Read port: 13499
+WebDriver BiDi listening on ws://127.0.0.1:13486
+1669182738141	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofilepvysDv\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:13486/devtools/browser/8facec9e-dda8-410a-bc91-6a07044d94ed
+1669182897673	geckodriver	INFO	Listening on 127.0.0.1:9060
+1669182900737	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "--remote-debugging-port" "9061" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofilexj5IG1"
+*** You are running in headless mode.
+1669182901176	Marionette	INFO	Marionette enabled
+1669182901181	Marionette	INFO	Listening on port 9076
+Read port: 9076
+WebDriver BiDi listening on ws://127.0.0.1:9061
+1669182901290	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofilexj5IG1\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:9061/devtools/browser/4ab54ea8-e19a-4daa-861a-0ec556e863e3
+1669182910424	Marionette	INFO	Stopped listening on port 9076
+JavaScript error: resource://gre/modules/Sqlite.sys.mjs, line 1106: Error: Sqlite.jsm has been shutdown. Cannot open connection to: C:\Users\Msi\AppData\Local\Temp\rust_mozprofilexj5IG1\protections.sqlite
+1669182956468	geckodriver	INFO	Listening on 127.0.0.1:9232
+1669182992057	geckodriver	INFO	Listening on 127.0.0.1:9302
+1669182995104	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "--remote-debugging-port" "9303" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofilezRsPol"
+*** You are running in headless mode.
+1669182995500	Marionette	INFO	Marionette enabled
+1669182995505	Marionette	INFO	Listening on port 9316
+Read port: 9316
+WebDriver BiDi listening on ws://127.0.0.1:9303
+1669182995614	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofilezRsPol\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:9303/devtools/browser/dcc0565b-89ef-4bad-a5bf-df5eee559c27
+1669183005413	Marionette	INFO	Stopped listening on port 9316
+JavaScript error: resource://gre/modules/Sqlite.sys.mjs, line 1106: Error: Sqlite.jsm has been shutdown. Cannot open connection to: C:\Users\Msi\AppData\Local\Temp\rust_mozprofilezRsPol\protections.sqlite
+1669183036608	geckodriver	INFO	Listening on 127.0.0.1:9454
+1669183039665	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "--remote-debugging-port" "9455" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofileZcPZOK"
+*** You are running in headless mode.
+1669183040091	Marionette	INFO	Marionette enabled
+1669183040096	Marionette	INFO	Listening on port 9468
+Read port: 9468
+WebDriver BiDi listening on ws://127.0.0.1:9455
+1669183040210	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofileZcPZOK\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:9455/devtools/browser/2e258586-0233-4b2c-8dea-34365b7522ae
+1669183050799	Marionette	INFO	Stopped listening on port 9468
+JavaScript error: resource://gre/modules/Sqlite.sys.mjs, line 1106: Error: Sqlite.jsm has been shutdown. Cannot open connection to: C:\Users\Msi\AppData\Local\Temp\rust_mozprofileZcPZOK\protections.sqlite
+1669183056152	geckodriver	INFO	Listening on 127.0.0.1:11809
+1669183059192	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "--remote-debugging-port" "11810" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofile4hHR9q"
+*** You are running in headless mode.
+1669183059816	Marionette	INFO	Marionette enabled
+1669183059824	Marionette	INFO	Listening on port 11825
+Read port: 11825
+WebDriver BiDi listening on ws://127.0.0.1:11810
+1669183059957	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofile4hHR9q\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:11810/devtools/browser/e141beed-3ba5-41da-bc07-99783828ba03
+1669183069622	Marionette	INFO	Stopped listening on port 11825
+JavaScript error: resource://gre/modules/Sqlite.sys.mjs, line 1106: Error: Sqlite.jsm has been shutdown. Cannot open connection to: C:\Users\Msi\AppData\Local\Temp\rust_mozprofile4hHR9q\protections.sqlite
+1669183071904	geckodriver	INFO	Listening on 127.0.0.1:11882
+1669184311556	geckodriver	INFO	Listening on 127.0.0.1:11119
+1669184314597	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "--remote-debugging-port" "11120" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofilee5kfjV"
+*** You are running in headless mode.
+1669184315062	Marionette	INFO	Marionette enabled
+1669184315068	Marionette	INFO	Listening on port 11135
+WebDriver BiDi listening on ws://127.0.0.1:11120
+Read port: 11135
+1669184315300	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofilee5kfjV\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:11120/devtools/browser/e4df1d0a-bfef-4a0d-bd64-b9b72cd7ca73
+1669184324270	Marionette	INFO	Stopped listening on port 11135
+JavaScript error: resource://gre/modules/Sqlite.sys.mjs, line 1106: Error: Sqlite.jsm has been shutdown. Cannot open connection to: C:\Users\Msi\AppData\Local\Temp\rust_mozprofilee5kfjV\protections.sqlite
+1669184329504	geckodriver	INFO	Listening on 127.0.0.1:11210
+1669184332526	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "--remote-debugging-port" "11211" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofileM1ZFae"
+*** You are running in headless mode.
+1669184332944	Marionette	INFO	Marionette enabled
+1669184332949	Marionette	INFO	Listening on port 11224
+Read port: 11224
+WebDriver BiDi listening on ws://127.0.0.1:11211
+1669184333072	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofileM1ZFae\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:11211/devtools/browser/25a73b39-7c40-4c13-8249-1c443e7fb60e
+1669184342891	Marionette	INFO	Stopped listening on port 11224
+JavaScript error: resource://gre/modules/Sqlite.sys.mjs, line 1106: Error: Sqlite.jsm has been shutdown. Cannot open connection to: C:\Users\Msi\AppData\Local\Temp\rust_mozprofileM1ZFae\protections.sqlite
+1669184345153	geckodriver	INFO	Listening on 127.0.0.1:11295
+1669184408051	geckodriver	INFO	Listening on 127.0.0.1:11442
+1669184411092	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "--remote-debugging-port" "11443" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofileK1G6su"
+*** You are running in headless mode.
+1669184411488	Marionette	INFO	Marionette enabled
+1669184411495	Marionette	INFO	Listening on port 11456
+Read port: 11456
+WebDriver BiDi listening on ws://127.0.0.1:11443
+1669184411624	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofileK1G6su\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:11443/devtools/browser/e60f42a1-d421-4b39-97b7-346034304af9
+1669184421480	Marionette	INFO	Stopped listening on port 11456
+JavaScript error: resource://gre/modules/Sqlite.sys.mjs, line 1106: Error: Sqlite.jsm has been shutdown. Cannot open connection to: C:\Users\Msi\AppData\Local\Temp\rust_mozprofileK1G6su\protections.sqlite
+1669184447631	geckodriver	INFO	Listening on 127.0.0.1:11582
+1669184450684	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "--remote-debugging-port" "11583" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofileveWtQs"
+*** You are running in headless mode.
+1669184451094	Marionette	INFO	Marionette enabled
+1669184451099	Marionette	INFO	Listening on port 11596
+Read port: 11596
+WebDriver BiDi listening on ws://127.0.0.1:11583
+1669184451209	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofileveWtQs\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:11583/devtools/browser/2a394b7d-53d5-4242-add3-3022b077b7af
+1669184460160	Marionette	INFO	Stopped listening on port 11596
+JavaScript error: resource://gre/modules/UrlClassifierListManager.jsm, line 693: TypeError: this.tablesData[table] is undefined
+JavaScript error: resource://gre/modules/Sqlite.sys.mjs, line 1106: Error: Sqlite.jsm has been shutdown. Cannot open connection to: C:\Users\Msi\AppData\Local\Temp\rust_mozprofileveWtQs\protections.sqlite
+1669184465770	geckodriver	INFO	Listening on 127.0.0.1:11672
+1669184468806	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "--remote-debugging-port" "11673" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofile6nRCLJ"
+*** You are running in headless mode.
+1669184469391	Marionette	INFO	Marionette enabled
+1669184469398	Marionette	INFO	Listening on port 11688
+Read port: 11688
+WebDriver BiDi listening on ws://127.0.0.1:11673
+1669184469540	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofile6nRCLJ\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:11673/devtools/browser/563733b0-4f85-406b-b06a-996b7e752a10
+1669184478839	Marionette	INFO	Stopped listening on port 11688
+JavaScript error: resource://gre/modules/Sqlite.sys.mjs, line 1106: Error: Sqlite.jsm has been shutdown. Cannot open connection to: C:\Users\Msi\AppData\Local\Temp\rust_mozprofile6nRCLJ\protections.sqlite
+1669184481181	geckodriver	INFO	Listening on 127.0.0.1:11762
+1669184484207	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "--remote-debugging-port" "11763" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofileeXahAh"
+*** You are running in headless mode.
+1669184484865	Marionette	INFO	Marionette enabled
+1669184484871	Marionette	INFO	Listening on port 9087
+Read port: 9087
+WebDriver BiDi listening on ws://127.0.0.1:11763
+1669184485003	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofileeXahAh\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:11763/devtools/browser/3e539f2f-a2fc-4b18-8b0c-07455efda0a9
+1669184695572	geckodriver	INFO	Listening on 127.0.0.1:9465
+1669184698627	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "--remote-debugging-port" "9466" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofile23WBCc"
+*** You are running in headless mode.
+1669184699064	Marionette	INFO	Marionette enabled
+1669184699068	Marionette	INFO	Listening on port 9481
+Read port: 9481
+WebDriver BiDi listening on ws://127.0.0.1:9466
+1669184699179	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofile23WBCc\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:9466/devtools/browser/1c3acd08-2fa6-49fa-9cd3-4d2c07f941b6
+1669184709009	Marionette	INFO	Stopped listening on port 9481
+JavaScript error: resource://gre/modules/Sqlite.sys.mjs, line 1106: Error: Sqlite.jsm has been shutdown. Cannot open connection to: C:\Users\Msi\AppData\Local\Temp\rust_mozprofile23WBCc\protections.sqlite
+1669184714267	geckodriver	INFO	Listening on 127.0.0.1:9562
+1669184717311	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "--remote-debugging-port" "9563" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofileUxP3Rn"
+*** You are running in headless mode.
+1669184717761	Marionette	INFO	Marionette enabled
+1669184717767	Marionette	INFO	Listening on port 9576
+WebDriver BiDi listening on ws://127.0.0.1:9563
+Read port: 9576
+1669184718064	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofileUxP3Rn\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:9563/devtools/browser/c23b19c0-7514-4203-9c3a-4ceedf7e5413
+1669184727859	Marionette	INFO	Stopped listening on port 9576
+JavaScript error: resource://gre/modules/Sqlite.sys.mjs, line 1106: Error: Sqlite.jsm has been shutdown. Cannot open connection to: C:\Users\Msi\AppData\Local\Temp\rust_mozprofileUxP3Rn\protections.sqlite
+1669184730124	geckodriver	INFO	Listening on 127.0.0.1:12356
+1669184733166	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "--remote-debugging-port" "12357" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofile0ToBN5"
+*** You are running in headless mode.
+1669184733605	Marionette	INFO	Marionette enabled
+1669184733612	Marionette	INFO	Listening on port 12374
+WebDriver BiDi listening on ws://127.0.0.1:12357
+Read port: 12374
+1669184733947	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofile0ToBN5\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:12357/devtools/browser/c73d8a7f-efe4-4f88-afb3-9e86cd9d148e
+1669184745335	Marionette	INFO	Stopped listening on port 12374
+JavaScript error: resource://gre/modules/Sqlite.sys.mjs, line 1106: Error: Sqlite.jsm has been shutdown. Cannot open connection to: C:\Users\Msi\AppData\Local\Temp\rust_mozprofile0ToBN5\protections.sqlite
+1669184749510	geckodriver	INFO	Listening on 127.0.0.1:12469
+1669184752544	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "--remote-debugging-port" "12470" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofilefaKp9A"
+*** You are running in headless mode.
+1669184753057	Marionette	INFO	Marionette enabled
+1669184753063	Marionette	INFO	Listening on port 12486
+Read port: 12486
+WebDriver BiDi listening on ws://127.0.0.1:12470
+1669184753181	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofilefaKp9A\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:12470/devtools/browser/0b892721-2f3f-48ad-a06d-28682efd0a8a
+1669184762990	Marionette	INFO	Stopped listening on port 12486
+JavaScript error: resource://gre/modules/Sqlite.sys.mjs, line 1106: Error: Sqlite.jsm has been shutdown. Cannot open connection to: C:\Users\Msi\AppData\Local\Temp\rust_mozprofilefaKp9A\protections.sqlite
+1669184765250	geckodriver	INFO	Listening on 127.0.0.1:12558
+1669184768291	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "--remote-debugging-port" "12559" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofilefj7YKC"
+*** You are running in headless mode.
+1669184769011	Marionette	INFO	Marionette enabled
+1669184769020	Marionette	INFO	Listening on port 12574
+Read port: 12574
+WebDriver BiDi listening on ws://127.0.0.1:12559
+1669184769157	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofilefj7YKC\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:12559/devtools/browser/e68a88f6-499b-4ce9-a821-08b0aabf8ca3
+1669184778665	Marionette	INFO	Stopped listening on port 12574
+JavaScript error: resource://gre/modules/Sqlite.sys.mjs, line 1106: Error: Sqlite.jsm has been shutdown. Cannot open connection to: C:\Users\Msi\AppData\Local\Temp\rust_mozprofilefj7YKC\protections.sqlite
+1669184780936	geckodriver	INFO	Listening on 127.0.0.1:12638
+1669184783959	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "--remote-debugging-port" "12639" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofilelR2OMS"
+*** You are running in headless mode.
+1669184784551	Marionette	INFO	Marionette enabled
+1669184784558	Marionette	INFO	Listening on port 12655
+Read port: 12655
+WebDriver BiDi listening on ws://127.0.0.1:12639
+1669184784695	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofilelR2OMS\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:12639/devtools/browser/e65d8b9a-afe1-4ba9-9bb6-4393b86fe795
+1669184870290	geckodriver	INFO	Listening on 127.0.0.1:12830
+1669184873349	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "--remote-debugging-port" "12831" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofileUIQ973"
+*** You are running in headless mode.
+1669184873814	Marionette	INFO	Marionette enabled
+1669184873818	Marionette	INFO	Listening on port 12844
+Read port: 12844
+WebDriver BiDi listening on ws://127.0.0.1:12831
+1669184873965	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofileUIQ973\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:12831/devtools/browser/1500d864-b9e9-422e-8f6b-b38a2d3a50cf
+1669184883688	Marionette	INFO	Stopped listening on port 12844
+JavaScript error: resource://gre/modules/Sqlite.sys.mjs, line 1106: Error: Sqlite.jsm has been shutdown. Cannot open connection to: C:\Users\Msi\AppData\Local\Temp\rust_mozprofileUIQ973\protections.sqlite
+1669184967930	geckodriver	INFO	Listening on 127.0.0.1:10883
+1669184970986	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "--remote-debugging-port" "10884" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofile4vAC9N"
+*** You are running in headless mode.
+1669184971489	Marionette	INFO	Marionette enabled
+1669184971496	Marionette	INFO	Listening on port 10897
+Read port: 10897
+WebDriver BiDi listening on ws://127.0.0.1:10884
+1669184971597	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofile4vAC9N\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:10884/devtools/browser/8532968f-dc8c-422c-acd2-cad42214ef2f
+1669184980344	Marionette	INFO	Stopped listening on port 10897
+JavaScript error: resource://gre/modules/Sqlite.sys.mjs, line 1106: Error: Sqlite.jsm has been shutdown. Cannot open connection to: C:\Users\Msi\AppData\Local\Temp\rust_mozprofile4vAC9N\protections.sqlite
+1669185003080	geckodriver	INFO	Listening on 127.0.0.1:11016
+1669185006124	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "--remote-debugging-port" "11017" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofileX2l6x3"
+*** You are running in headless mode.
+1669185006498	Marionette	INFO	Marionette enabled
+1669185006505	Marionette	INFO	Listening on port 11031
+Read port: 11031
+WebDriver BiDi listening on ws://127.0.0.1:11017
+1669185006631	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofileX2l6x3\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:11017/devtools/browser/9dc9d62b-c1d0-4662-b04d-908f3847c434
+1669185016355	Marionette	INFO	Stopped listening on port 11031
+JavaScript error: resource://gre/modules/Sqlite.sys.mjs, line 1106: Error: Sqlite.jsm has been shutdown. Cannot open connection to: C:\Users\Msi\AppData\Local\Temp\rust_mozprofileX2l6x3\protections.sqlite
+1669185074349	geckodriver	INFO	Listening on 127.0.0.1:11233
+1669185077405	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "--remote-debugging-port" "11234" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofileLSH63s"
+*** You are running in headless mode.
+1669185077920	Marionette	INFO	Marionette enabled
+1669185077925	Marionette	INFO	Listening on port 11247
+Read port: 11247
+WebDriver BiDi listening on ws://127.0.0.1:11234
+1669185078026	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofileLSH63s\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:11234/devtools/browser/208a5aaf-26bb-4317-b254-e94c7fa829dc
+1669185088058	Marionette	INFO	Stopped listening on port 11247
+JavaScript error: resource://gre/modules/Sqlite.sys.mjs, line 1106: Error: Sqlite.jsm has been shutdown. Cannot open connection to: C:\Users\Msi\AppData\Local\Temp\rust_mozprofileLSH63s\protections.sqlite
+1669185136576	geckodriver	INFO	Listening on 127.0.0.1:11441
+1669185139634	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "--remote-debugging-port" "11442" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofile2SjmXC"
+*** You are running in headless mode.
+1669185140059	Marionette	INFO	Marionette enabled
+1669185140065	Marionette	INFO	Listening on port 11460
+Read port: 11460
+WebDriver BiDi listening on ws://127.0.0.1:11442
+1669185140181	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofile2SjmXC\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:11442/devtools/browser/6f61fe90-216a-4a31-b5cd-18027dcb88f5
+1669185149716	Marionette	INFO	Stopped listening on port 11460
+JavaScript error: resource://gre/modules/Sqlite.sys.mjs, line 1106: Error: Sqlite.jsm has been shutdown. Cannot open connection to: C:\Users\Msi\AppData\Local\Temp\rust_mozprofile2SjmXC\protections.sqlite
+1669185196996	geckodriver	INFO	Listening on 127.0.0.1:11618
+1669185200038	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "--remote-debugging-port" "11619" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofileLjKwCb"
+*** You are running in headless mode.
+1669185200755	Marionette	INFO	Marionette enabled
+1669185200762	Marionette	INFO	Listening on port 11634
+Read port: 11634
+WebDriver BiDi listening on ws://127.0.0.1:11619
+1669185200901	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofileLjKwCb\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:11619/devtools/browser/c3be368e-5267-4545-a6d1-deca9f638ca1
+1669185209832	Marionette	INFO	Stopped listening on port 11634
+JavaScript error: resource://gre/modules/Sqlite.sys.mjs, line 1106: Error: Sqlite.jsm has been shutdown. Cannot open connection to: C:\Users\Msi\AppData\Local\Temp\rust_mozprofileLjKwCb\protections.sqlite
+1669185837571	geckodriver	INFO	Listening on 127.0.0.1:5486
+1669185840615	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "--remote-debugging-port" "5487" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofileDxRyLq"
+*** You are running in headless mode.
+1669185841066	Marionette	INFO	Marionette enabled
+1669185841071	Marionette	INFO	Listening on port 5502
+WebDriver BiDi listening on ws://127.0.0.1:5487
+Read port: 5502
+1669185841379	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofileDxRyLq\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:5487/devtools/browser/01eafa93-44bc-4b96-bd79-671c5f7e8120
+1669185852168	Marionette	INFO	Stopped listening on port 5502
+JavaScript error: resource://gre/modules/Sqlite.sys.mjs, line 1106: Error: Sqlite.jsm has been shutdown. Cannot open connection to: C:\Users\Msi\AppData\Local\Temp\rust_mozprofileDxRyLq\protections.sqlite
+1669185863238	geckodriver	INFO	Listening on 127.0.0.1:5602
+1669185871688	geckodriver	INFO	Listening on 127.0.0.1:5623
+1669185874736	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "--remote-debugging-port" "5624" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofileo7gNdI"
+*** You are running in headless mode.
+1669185875131	Marionette	INFO	Marionette enabled
+1669185875136	Marionette	INFO	Listening on port 5637
+Read port: 5637
+WebDriver BiDi listening on ws://127.0.0.1:5624
+1669185875247	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofileo7gNdI\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:5624/devtools/browser/0052138b-b8c2-43f7-9c5d-0d979c4ef0df
+1669185884687	Marionette	INFO	Stopped listening on port 5637
+JavaScript error: resource://gre/modules/Sqlite.sys.mjs, line 1106: Error: Sqlite.jsm has been shutdown. Cannot open connection to: C:\Users\Msi\AppData\Local\Temp\rust_mozprofileo7gNdI\protections.sqlite
+1669185888959	geckodriver	INFO	Listening on 127.0.0.1:5712
+1669185897369	geckodriver	INFO	Listening on 127.0.0.1:5734
+1669185900395	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "--remote-debugging-port" "5735" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofilewugYot"
+*** You are running in headless mode.
+1669185900868	Marionette	INFO	Marionette enabled
+1669185900873	Marionette	INFO	Listening on port 5750
+WebDriver BiDi listening on ws://127.0.0.1:5735
+Read port: 5750
+1669185901143	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofilewugYot\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:5735/devtools/browser/859a7c7c-3738-4644-9861-071cd2a46949
+1669185910441	Marionette	INFO	Stopped listening on port 5750
+JavaScript error: resource://gre/modules/Sqlite.sys.mjs, line 1106: Error: Sqlite.jsm has been shutdown. Cannot open connection to: C:\Users\Msi\AppData\Local\Temp\rust_mozprofilewugYot\protections.sqlite
+1669185912753	geckodriver	INFO	Listening on 127.0.0.1:5821
+1669185915804	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "--remote-debugging-port" "5822" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofile9iPJ8h"
+*** You are running in headless mode.
+1669185916242	Marionette	INFO	Marionette enabled
+1669185916247	Marionette	INFO	Listening on port 5837
+Read port: 5837
+WebDriver BiDi listening on ws://127.0.0.1:5822
+1669185916358	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofile9iPJ8h\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:5822/devtools/browser/c3185dbf-ad86-44a0-a2ce-dab4879c6079
+1669185926156	Marionette	INFO	Stopped listening on port 5837
+JavaScript error: resource://gre/modules/Sqlite.sys.mjs, line 1106: Error: Sqlite.jsm has been shutdown. Cannot open connection to: C:\Users\Msi\AppData\Local\Temp\rust_mozprofile9iPJ8h\protections.sqlite
+1669185928276	geckodriver	INFO	Listening on 127.0.0.1:4316
+1669185931322	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "--remote-debugging-port" "4317" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofileR02ewe"
+*** You are running in headless mode.
+1669185931858	Marionette	INFO	Marionette enabled
+1669185931864	Marionette	INFO	Listening on port 4336
+Read port: 4336
+WebDriver BiDi listening on ws://127.0.0.1:4317
+1669185932003	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofileR02ewe\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:4317/devtools/browser/ed2e45c8-1509-4b0b-9f60-b5dd9986c627
+1669185941859	Marionette	INFO	Stopped listening on port 4336
+JavaScript error: resource://gre/modules/Sqlite.sys.mjs, line 1106: Error: Sqlite.jsm has been shutdown. Cannot open connection to: C:\Users\Msi\AppData\Local\Temp\rust_mozprofileR02ewe\protections.sqlite
+1669185944097	geckodriver	INFO	Listening on 127.0.0.1:4414
+1669186284796	geckodriver	INFO	Listening on 127.0.0.1:6264
+1669186287833	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "--remote-debugging-port" "6265" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofileHCsVF0"
+*** You are running in headless mode.
+1669187090088	geckodriver	INFO	Listening on 127.0.0.1:5668
+1669187154725	geckodriver	INFO	Listening on 127.0.0.1:5797
+1669187157776	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "--remote-debugging-port" "5798" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofilej9CRrG"
+*** You are running in headless mode.
+1669187158265	Marionette	INFO	Marionette enabled
+1669187158271	Marionette	INFO	Listening on port 5817
+Read port: 5817
+WebDriver BiDi listening on ws://127.0.0.1:5798
+1669187158403	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofilej9CRrG\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:5798/devtools/browser/ff17946f-3619-4a10-8340-60f9308b8c89
+1669187243107	geckodriver	INFO	Listening on 127.0.0.1:1542
+1669187246152	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "--remote-debugging-port" "1543" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofile8uw9YK"
+*** You are running in headless mode.
+1669187246560	Marionette	INFO	Marionette enabled
+1669187246565	Marionette	INFO	Listening on port 1556
+Read port: 1556
+WebDriver BiDi listening on ws://127.0.0.1:1543
+1669187246680	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofile8uw9YK\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:1543/devtools/browser/cf8a6e07-317b-44de-8be3-4be1caf7f524
+1669187256373	Marionette	INFO	Stopped listening on port 1556
+JavaScript error: resource://gre/modules/Sqlite.sys.mjs, line 1106: Error: Sqlite.jsm has been shutdown. Cannot open connection to: C:\Users\Msi\AppData\Local\Temp\rust_mozprofile8uw9YK\protections.sqlite
+1669187267780	geckodriver	INFO	Listening on 127.0.0.1:1649
+1669192288658	geckodriver	INFO	Listening on 127.0.0.1:12063
+1669192291919	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "--remote-debugging-port" "12064" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofileyLPJBN"
+*** You are running in headless mode.
+1669192293634	Marionette	INFO	Marionette enabled
+1669192293637	Marionette	INFO	Listening on port 12082
+WebDriver BiDi listening on ws://127.0.0.1:12064
+Read port: 12082
+1669192293782	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofileyLPJBN\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:12064/devtools/browser/eb74880d-870e-442f-8d17-d985b80fb91e
+1669192302677	Marionette	INFO	Stopped listening on port 12082
+[Parent 1092, IPC I/O Parent] WARNING: file /builds/worker/checkouts/gecko/ipc/chromium/src/base/process_util_win.cc:167
+JavaScript error: resource://gre/modules/Sqlite.sys.mjs, line 1106: Error: Sqlite.jsm has been shutdown. Cannot open connection to: C:\Users\Msi\AppData\Local\Temp\rust_mozprofileyLPJBN\protections.sqlite
+1669192307906	geckodriver	INFO	Listening on 127.0.0.1:12142
+1669192310962	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "--remote-debugging-port" "12143" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofilem0D7KI"
+*** You are running in headless mode.
+1669192311392	Marionette	INFO	Marionette enabled
+1669192311395	Marionette	INFO	Listening on port 12154
+Read port: 12154
+WebDriver BiDi listening on ws://127.0.0.1:12143
+1669192311465	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofilem0D7KI\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:12143/devtools/browser/04e11d6d-dbb0-43eb-bfd7-a9d06fcfd2ba
+1669192319936	Marionette	INFO	Stopped listening on port 12154
+JavaScript error: resource://gre/modules/Sqlite.sys.mjs, line 1106: Error: Sqlite.jsm has been shutdown. Cannot open connection to: C:\Users\Msi\AppData\Local\Temp\rust_mozprofilem0D7KI\protections.sqlite
+1669192321744	geckodriver	INFO	Listening on 127.0.0.1:12221
+1669192324785	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "--remote-debugging-port" "12222" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofile7Y4sJf"
+*** You are running in headless mode.
+1669192325099	Marionette	INFO	Marionette enabled
+1669192325102	Marionette	INFO	Listening on port 12234
+Read port: 12234
+WebDriver BiDi listening on ws://127.0.0.1:12222
+1669192325174	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofile7Y4sJf\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:12222/devtools/browser/c5fc0ec3-b4dd-411d-a442-37ef132e61a1
+1669192348326	geckodriver	INFO	Listening on 127.0.0.1:12329
+1669192351366	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "--remote-debugging-port" "12330" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofile94GkKb"
+*** You are running in headless mode.
+1669192351631	Marionette	INFO	Marionette enabled
+1669192351635	Marionette	INFO	Listening on port 12341
+WebDriver BiDi listening on ws://127.0.0.1:12330
+Read port: 12341
+1669192351777	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofile94GkKb\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:12330/devtools/browser/7dd9a207-495e-4d20-bb7a-a94bd6a558ae
+1669192360180	Marionette	INFO	Stopped listening on port 12341
+JavaScript error: resource://gre/modules/Sqlite.sys.mjs, line 1106: Error: Sqlite.jsm has been shutdown. Cannot open connection to: C:\Users\Msi\AppData\Local\Temp\rust_mozprofile94GkKb\protections.sqlite
+1669192365159	geckodriver	INFO	Listening on 127.0.0.1:12407
+1669192368187	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "--remote-debugging-port" "12408" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofileyc6o4G"
+*** You are running in headless mode.
+1669192368547	Marionette	INFO	Marionette enabled
+1669192368550	Marionette	INFO	Listening on port 12421
+WebDriver BiDi listening on ws://127.0.0.1:12408
+Read port: 12421
+1669192368795	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofileyc6o4G\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:12408/devtools/browser/be7adcd5-d012-4b97-afba-a662fa9d485f
+1669192376953	Marionette	INFO	Stopped listening on port 12421
+!!! error running onStopped callback: TypeError: callback is not a function
+JavaScript error: resource://gre/modules/Sqlite.sys.mjs, line 1106: Error: Sqlite.jsm has been shutdown. Cannot open connection to: C:\Users\Msi\AppData\Local\Temp\rust_mozprofileyc6o4G\protections.sqlite
+1669192378832	geckodriver	INFO	Listening on 127.0.0.1:12483
+1669192381868	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "--remote-debugging-port" "12484" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofile1tUNYX"
+*** You are running in headless mode.
+1669192382134	Marionette	INFO	Marionette enabled
+1669192382137	Marionette	INFO	Listening on port 12502
+Read port: 12502
+WebDriver BiDi listening on ws://127.0.0.1:12484
+1669192382240	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofile1tUNYX\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:12484/devtools/browser/16c94dd3-0c4d-458f-8006-53a9fdd853db
+1669192390706	Marionette	INFO	Stopped listening on port 12502
+JavaScript error: resource://gre/modules/Sqlite.sys.mjs, line 1106: Error: Sqlite.jsm has been shutdown. Cannot open connection to: C:\Users\Msi\AppData\Local\Temp\rust_mozprofile1tUNYX\protections.sqlite
+1669192392568	geckodriver	INFO	Listening on 127.0.0.1:12582
+1669192395618	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "--remote-debugging-port" "12583" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofileso375I"
+*** You are running in headless mode.
+1669192395874	Marionette	INFO	Marionette enabled
+1669192395878	Marionette	INFO	Listening on port 1194
+WebDriver BiDi listening on ws://127.0.0.1:12583
+Read port: 1194
+1669192396094	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofileso375I\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:12583/devtools/browser/3095afea-0b3a-4af8-b42d-540ffcc2846e
+1669192404006	Marionette	INFO	Stopped listening on port 1194
+JavaScript error: resource://gre/modules/Sqlite.sys.mjs, line 1106: Error: Sqlite.jsm has been shutdown. Cannot open connection to: C:\Users\Msi\AppData\Local\Temp\rust_mozprofileso375I\protections.sqlite
+1669192411834	geckodriver	INFO	Listening on 127.0.0.1:1276
+1669192414877	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "--remote-debugging-port" "1277" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofile8dKsGX"
+*** You are running in headless mode.
+1669192415147	Marionette	INFO	Marionette enabled
+1669192415150	Marionette	INFO	Listening on port 1291
+WebDriver BiDi listening on ws://127.0.0.1:1277
+Read port: 1291
+1669192415295	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofile8dKsGX\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:1277/devtools/browser/4cd72cac-45fa-4c4b-8e04-1f2381cda364
+1669192424036	Marionette	INFO	Stopped listening on port 1291
+JavaScript error: resource://gre/modules/Sqlite.sys.mjs, line 1106: Error: Sqlite.jsm has been shutdown. Cannot open connection to: C:\Users\Msi\AppData\Local\Temp\rust_mozprofile8dKsGX\protections.sqlite
+1669192425967	geckodriver	INFO	Listening on 127.0.0.1:1375
+1669192429019	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "--remote-debugging-port" "1376" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofile0M4gDR"
+*** You are running in headless mode.
+1669192429506	Marionette	INFO	Marionette enabled
+1669192429509	Marionette	INFO	Listening on port 1391
+WebDriver BiDi listening on ws://127.0.0.1:1376
+1669192444926	geckodriver	INFO	Listening on 127.0.0.1:1427
+1669192447977	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "--remote-debugging-port" "1428" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofileoAzT0m"
+*** You are running in headless mode.
+1669192448351	Marionette	INFO	Marionette enabled
+1669192448355	Marionette	INFO	Listening on port 1443
+Read port: 1443
+WebDriver BiDi listening on ws://127.0.0.1:1428
+1669192448472	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofileoAzT0m\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:1428/devtools/browser/596beae1-456a-49db-903a-7c27d3855190
+1669192456984	Marionette	INFO	Stopped listening on port 1443
+JavaScript error: resource://gre/modules/Sqlite.sys.mjs, line 1106: Error: Sqlite.jsm has been shutdown. Cannot open connection to: C:\Users\Msi\AppData\Local\Temp\rust_mozprofileoAzT0m\protections.sqlite
+1669192462017	geckodriver	INFO	Listening on 127.0.0.1:1517
+1669192488865	geckodriver	INFO	Listening on 127.0.0.1:1582
+1669192491932	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "--remote-debugging-port" "1583" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofilengmVqN"
+*** You are running in headless mode.
+1669192492346	Marionette	INFO	Marionette enabled
+1669192492351	Marionette	INFO	Listening on port 1632
+Read port: 1632
+WebDriver BiDi listening on ws://127.0.0.1:1583
+1669192492445	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofilengmVqN\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:1583/devtools/browser/f628d745-c6ec-4473-bf56-4bc9ef15b6a3
+1669192526365	Marionette	INFO	Stopped listening on port 1632
+JavaScript error: resource://gre/modules/Sqlite.sys.mjs, line 1106: Error: Sqlite.jsm has been shutdown. Cannot open connection to: C:\Users\Msi\AppData\Local\Temp\rust_mozprofilengmVqN\protections.sqlite
+1669192531567	geckodriver	INFO	Listening on 127.0.0.1:1740
+1669192534610	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "--remote-debugging-port" "1741" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofileHoiinB"
+*** You are running in headless mode.
+1669192534973	Marionette	INFO	Marionette enabled
+1669192534976	Marionette	INFO	Listening on port 1756
+WebDriver BiDi listening on ws://127.0.0.1:1741
+Read port: 1756
+1669192535186	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofileHoiinB\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:1741/devtools/browser/a0262207-b733-421c-9831-b90dacfffe2a
+1669192543475	Marionette	INFO	Stopped listening on port 1756
+JavaScript error: resource://gre/modules/Sqlite.sys.mjs, line 1106: Error: Sqlite.jsm has been shutdown. Cannot open connection to: C:\Users\Msi\AppData\Local\Temp\rust_mozprofileHoiinB\protections.sqlite
+1669192545501	geckodriver	INFO	Listening on 127.0.0.1:1820
+1669192548558	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "--remote-debugging-port" "1821" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofileAHf5d7"
+*** You are running in headless mode.
+1669192549018	Marionette	INFO	Marionette enabled
+1669192549022	Marionette	INFO	Listening on port 1834
+Read port: 1834
+WebDriver BiDi listening on ws://127.0.0.1:1821
+1669192549172	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofileAHf5d7\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:1821/devtools/browser/ad32707e-236a-4af4-92e6-12c623aa38bf
+1669192557598	Marionette	INFO	Stopped listening on port 1834
+JavaScript error: resource://gre/modules/Sqlite.sys.mjs, line 1106: Error: Sqlite.jsm has been shutdown. Cannot open connection to: C:\Users\Msi\AppData\Local\Temp\rust_mozprofileAHf5d7\protections.sqlite
+1669192559615	geckodriver	INFO	Listening on 127.0.0.1:1895
+1669192562653	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "--remote-debugging-port" "1896" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofileZdyV5W"
+*** You are running in headless mode.
+1669192562937	Marionette	INFO	Marionette enabled
+1669192562940	Marionette	INFO	Listening on port 1909
+WebDriver BiDi listening on ws://127.0.0.1:1896
+Read port: 1909
+1669192563085	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofileZdyV5W\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:1896/devtools/browser/db5866c9-74ff-4505-ba33-85cd94a71c50
+1669192571080	Marionette	INFO	Stopped listening on port 1909
+JavaScript error: resource://gre/modules/Sqlite.sys.mjs, line 1106: Error: Sqlite.jsm has been shutdown. Cannot open connection to: C:\Users\Msi\AppData\Local\Temp\rust_mozprofileZdyV5W\protections.sqlite
+1669192572918	geckodriver	INFO	Listening on 127.0.0.1:1975
+1669192582122	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "--remote-debugging-port" "1976" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofilegnbqLq"
+*** You are running in headless mode.
+1669192582395	Marionette	INFO	Marionette enabled
+1669192582399	Marionette	INFO	Listening on port 2000
+WebDriver BiDi listening on ws://127.0.0.1:1976
+Read port: 2000
+1669192582483	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofilegnbqLq\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:1976/devtools/browser/7d400ef0-0a6a-479e-9974-4c38027d06e1
+console.error: Region.jsm: "Error fetching region" (new Error("TIMEOUT", "resource://gre/modules/Region.sys.mjs", 763))
+console.error: Region.jsm: "Failed to fetch region" (new Error("TIMEOUT", "resource://gre/modules/Region.sys.mjs", 415))
+1669198367973	geckodriver	INFO	Listening on 127.0.0.1:14207
+1669198371033	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "--remote-debugging-port" "14208" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofileu0oe9h"
+*** You are running in headless mode.
+1669198371292	Marionette	INFO	Marionette enabled
+1669198371295	Marionette	INFO	Listening on port 14219
+WebDriver BiDi listening on ws://127.0.0.1:14208
+Read port: 14219
+1669198371502	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofileu0oe9h\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:14208/devtools/browser/10071408-1153-4eba-bcf4-13a65f58f482
+1669198379753	Marionette	INFO	Stopped listening on port 14219
+JavaScript error: resource://gre/modules/Sqlite.sys.mjs, line 1106: Error: Sqlite.jsm has been shutdown. Cannot open connection to: C:\Users\Msi\AppData\Local\Temp\rust_mozprofileu0oe9h\protections.sqlite
+[Parent 6324, IPC I/O Parent] WARNING: file /builds/worker/checkouts/gecko/ipc/chromium/src/base/process_util_win.cc:167
+1669198384843	geckodriver	INFO	Listening on 127.0.0.1:14286
+1669199273095	geckodriver	INFO	Listening on 127.0.0.1:1544
+1669199276135	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "1545" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofile2kIA0L"
+1669199276384	Marionette	INFO	Marionette enabled
+1669199276387	Marionette	INFO	Listening on port 1556
+WebDriver BiDi listening on ws://127.0.0.1:1545
+Read port: 1556
+1669199276638	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofile2kIA0L\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:1545/devtools/browser/b8380408-0237-47dd-8928-e343333b4d9e
+1669199285925	Marionette	INFO	Stopped listening on port 1556
+[Parent 6180, IPC I/O Parent] WARNING: DuplicateHandle failed for handle 0 in TransferHandles: file /builds/worker/checkouts/gecko/ipc/chromium/src/chrome/common/ipc_channel_win.cc:746
+JavaScript error: resource://gre/modules/Sqlite.sys.mjs, line 1106: Error: Sqlite.jsm has been shutdown. Cannot open connection to: C:\Users\Msi\AppData\Local\Temp\rust_mozprofile2kIA0L\protections.sqlite
+1669199380863	geckodriver	INFO	Listening on 127.0.0.1:1792
+1669199383894	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "1793" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofileaQ1N5l"
+1669199384145	Marionette	INFO	Marionette enabled
+1669199384148	Marionette	INFO	Listening on port 1806
+WebDriver BiDi listening on ws://127.0.0.1:1793
+Read port: 1806
+1669199384363	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofileaQ1N5l\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:1793/devtools/browser/9adcbb3e-88dc-4a9a-a66e-0ace7731e0d2
+1669199393275	Marionette	INFO	Stopped listening on port 1806
+JavaScript error: resource://gre/modules/Sqlite.sys.mjs, line 1106: Error: Sqlite.jsm has been shutdown. Cannot open connection to: C:\Users\Msi\AppData\Local\Temp\rust_mozprofileaQ1N5l\protections.sqlite
+1669199398281	geckodriver	INFO	Listening on 127.0.0.1:1881
+1669199401328	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "1882" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofileL8y6Ki"
+1669199401897	Marionette	INFO	Marionette enabled
+1669199401902	Marionette	INFO	Listening on port 1894
+WebDriver BiDi listening on ws://127.0.0.1:1882
+Read port: 1894
+1669199402181	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofileL8y6Ki\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:1882/devtools/browser/4423ac53-7b0b-4500-b8a1-78c83e728f9d
+1669199423729	Marionette	INFO	Stopped listening on port 1894
+JavaScript error: resource://gre/modules/Sqlite.sys.mjs, line 1106: Error: Sqlite.jsm has been shutdown. Cannot open connection to: C:\Users\Msi\AppData\Local\Temp\rust_mozprofileL8y6Ki\protections.sqlite
+[Parent 9360, IPC I/O Parent] WARNING: file /builds/worker/checkouts/gecko/ipc/chromium/src/base/process_util_win.cc:167
+1669199426120	geckodriver	INFO	Listening on 127.0.0.1:1980
+1669199429153	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "1981" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofilerNjfqL"
+1669199429411	Marionette	INFO	Marionette enabled
+1669199429414	Marionette	INFO	Listening on port 1994
+WebDriver BiDi listening on ws://127.0.0.1:1981
+Read port: 1994
+1669199429572	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofilerNjfqL\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:1981/devtools/browser/06479db5-c73f-4891-b3ce-99ce4b565a6a
+1669199438310	Marionette	INFO	Stopped listening on port 1994
+JavaScript error: resource://gre/modules/Sqlite.sys.mjs, line 1106: Error: Sqlite.jsm has been shutdown. Cannot open connection to: C:\Users\Msi\AppData\Local\Temp\rust_mozprofilerNjfqL\protections.sqlite
+[Parent 13712, IPC I/O Parent] WARNING: file /builds/worker/checkouts/gecko/ipc/chromium/src/base/process_util_win.cc:167
+1669199444255	geckodriver	INFO	Listening on 127.0.0.1:8281
+1669199447303	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "8282" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofilejlo5OA"
+1669199447583	Marionette	INFO	Marionette enabled
+1669199447586	Marionette	INFO	Listening on port 8293
+Read port: 8293
+WebDriver BiDi listening on ws://127.0.0.1:8282
+1669199447671	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofilejlo5OA\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:8282/devtools/browser/df12c034-9801-4579-9c81-b3bcfb40b070
+1669199456649	Marionette	INFO	Stopped listening on port 8293
+JavaScript error: resource://gre/modules/Sqlite.sys.mjs, line 1106: Error: Sqlite.jsm has been shutdown. Cannot open connection to: C:\Users\Msi\AppData\Local\Temp\rust_mozprofilejlo5OA\protections.sqlite
+1669205379962	geckodriver	INFO	Listening on 127.0.0.1:12703
+1669205383027	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "12704" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofileksklZ0"
+1669205383803	Marionette	INFO	Marionette enabled
+1669205383817	Marionette	INFO	Listening on port 12719
+Read port: 12719
+WebDriver BiDi listening on ws://127.0.0.1:12704
+1669205383970	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofileksklZ0\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:12704/devtools/browser/e2a78475-ede7-4df6-b09c-619b63eff65c
+1669205393386	Marionette	INFO	Stopped listening on port 12719
+JavaScript error: resource://gre/modules/Sqlite.sys.mjs, line 1106: Error: Sqlite.jsm has been shutdown. Cannot open connection to: C:\Users\Msi\AppData\Local\Temp\rust_mozprofileksklZ0\protections.sqlite
+1669227653144	geckodriver	INFO	Listening on 127.0.0.1:10513
+1669227656944	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "10514" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofile705aT4"
+1669227657830	Marionette	INFO	Marionette enabled
+1669227657845	Marionette	INFO	Listening on port 10536
+Read port: 10536
+WebDriver BiDi listening on ws://127.0.0.1:10514
+1669227658071	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofile705aT4\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:10514/devtools/browser/5b54978c-d3a9-4ee5-9eea-a90e2a29d83b
+1669227671287	Marionette	INFO	Stopped listening on port 10536
+JavaScript error: resource://gre/modules/Sqlite.sys.mjs, line 1106: Error: Sqlite.jsm has been shutdown. Cannot open connection to: C:\Users\Msi\AppData\Local\Temp\rust_mozprofile705aT4\protections.sqlite
+1669227676655	geckodriver	INFO	Listening on 127.0.0.1:10609
+1669227679699	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "10610" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofileTvFqs4"
+1669227679955	Marionette	INFO	Marionette enabled
+1669227679959	Marionette	INFO	Listening on port 10623
+WebDriver BiDi listening on ws://127.0.0.1:10610
+Read port: 10623
+1669227680233	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofileTvFqs4\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:10610/devtools/browser/f14a34d8-bb97-48cb-9a29-4253d02a9907
+1669227710538	Marionette	INFO	Stopped listening on port 10623
+JavaScript error: resource://gre/modules/Sqlite.sys.mjs, line 1106: Error: Sqlite.jsm has been shutdown. Cannot open connection to: C:\Users\Msi\AppData\Local\Temp\rust_mozprofileTvFqs4\protections.sqlite
+1669227873318	geckodriver	INFO	Listening on 127.0.0.1:4992
+1669227876377	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "4993" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofileAlGRCg"
+1669227876648	Marionette	INFO	Marionette enabled
+1669227876652	Marionette	INFO	Listening on port 5006
+Read port: 5006
+WebDriver BiDi listening on ws://127.0.0.1:4993
+1669227876743	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofileAlGRCg\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:4993/devtools/browser/a6af217e-a249-4ba4-b7fd-44c8c90cb7a8
+1669227888608	Marionette	INFO	Stopped listening on port 5006
+JavaScript error: resource://gre/modules/Sqlite.sys.mjs, line 1106: Error: Sqlite.jsm has been shutdown. Cannot open connection to: C:\Users\Msi\AppData\Local\Temp\rust_mozprofileAlGRCg\protections.sqlite

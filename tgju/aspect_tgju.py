@@ -35,3 +35,19 @@ def internet_on():
         return True
     except:
         return False
+
+
+def done_log(func):
+    def log_it(*args, **kwargs):
+        result = func(*args, **kwargs)
+        print('The program is ending .......')
+        return result
+    return log_it
+
+
+def run_tgju_log(func):
+    def log_it(*args, **kwargs):
+        print('the run_tgju is starting')
+        result = func(*args, **kwargs)
+        return result
+    return log_it
