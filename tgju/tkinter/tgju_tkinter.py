@@ -12,6 +12,7 @@ def exit_tgju():
 
 def thread_tgju_start():
     t1 = threading.Thread(target=run_tgju)
+    t1.daemon = True
     t1.start()
 
 
@@ -19,7 +20,6 @@ def thread_tgju_end():
     t2 = threading.Thread(target=exit_tgju)
     t2.start()
     
-
 
 root = tk.Tk()
 
@@ -32,6 +32,6 @@ label.pack(padx=20, pady=20)
 button = tk.Button(root, text='Click Me!', command=lambda:thread_tgju_start())
 button.pack(padx=10, pady=10)
 
-button = tk.Button(root, text='exit!', command=lambda: thread_tgju_end())
+button = tk.Button(root, text='exit!', command=root.destroy)
 button.pack(padx=10, pady=10)
 root.mainloop()

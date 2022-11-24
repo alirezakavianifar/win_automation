@@ -47,7 +47,8 @@ def run_tgju(done=False):
             if internet_on():
                 try:
                     x = Scrape()
-                    coin, dollar, gold = x.scrape_tgju(path=path)
+                    coin, dollar, gold = x.scrape_tgju(
+                        path=path, headless=True)
                     if compare_prices(coin=int(coin.replace(',', '')), last_coin=int(g_last_coin.replace(',', ''))):
                         g_last_coin, last_gold, last_dollar = coin, gold, dollar
                         eng_date = str(datetime.datetime.now())
