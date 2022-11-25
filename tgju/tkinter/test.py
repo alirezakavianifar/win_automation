@@ -1,29 +1,45 @@
-import tkinter as tk
-
-
-window = tk.Tk()
-window.title('My Window')
-window.geometry('100x100')
+import sys
+import trace
+import threading
+import time
+class thread_with_trace(threading.Thread):
+  def __init__(self, *args, **keywords):
+    threading.Thread.__init__(self, *args, **keywords)
+    self.killed = False
  
-l = tk.Label(window, bg='white', width=20, text='empty')
-l.pack()
+  def start(self):
+    self.__run_backup = self.run
+    self.run = self.__run     
+    threading.Thread.start(self)
  
-def print_selection():
-    if (var1.get() == 1) & (var2.get() == 0):
-        l.config(text='I love Python ')
-    elif (var1.get() == 0) & (var2.get() == 1):
-        l.config(text='I love C++')
-    elif (var1.get() == 0) & (var2.get() == 0):
-        l.config(text='I do not anything')
+  def __run(self):
+    sys.settrace(self.globaltrace)
+    self.__run_backup()
+    self.run = self.__run_backup
+ 
+  def globaltrace(self, frame, event, arg):
+    if event == 'call':
+      return self.localtrace
     else:
-        l.config(text='I love both')
+      return None
  
-var1 = tk.IntVar()
-var2 = tk.IntVar()
-c1 = tk.Checkbutton(window, text='Python',variable=var1, onvalue=1, offvalue=0, command=print_selection)
-c1.pack()
-c2 = tk.Checkbutton(window, text='C++',variable=var2, onvalue=1, offvalue=0, command=print_selection)
-c2.pack()
+  def localtrace(self, frame, event, arg):
+    if self.killed:
+      if event == 'line':
+        raise SystemExit()
+    return self.localtrace
  
-window.mainloop()
-
+  def kill(self):
+    self.killed = True
+ 
+def func():
+  while True:
+    print('thread running')
+ 
+t1 = thread_with_trace(target = func)
+t1.start()
+time.sleep(2)
+t1.kill()
+t1.join()
+if not t1.isAlive():
+  print('thread killed')

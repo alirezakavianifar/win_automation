@@ -37,7 +37,7 @@ def set_done(done=False):
 
 
 @run_tgju_log
-def run_tgju(done=False):
+def run_tgju(done=False, headless=True):
     global g_last_coin
     while not done:
         if get_shared_var():
@@ -48,7 +48,7 @@ def run_tgju(done=False):
                 try:
                     x = Scrape()
                     coin, dollar, gold = x.scrape_tgju(
-                        path=path, headless=True)
+                        path=path, headless=headless)
                     if compare_prices(coin=int(coin.replace(',', '')), last_coin=int(g_last_coin.replace(',', ''))):
                         g_last_coin, last_gold, last_dollar = coin, gold, dollar
                         eng_date = str(datetime.datetime.now())
@@ -85,6 +85,6 @@ def run_tgju(done=False):
 
 if __name__ == '__main__':
     try:
-        run_tgju()
+        run_tgju(headless=True)
     except KeyboardInterrupt:
         set_done(done=True)

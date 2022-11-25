@@ -83,38 +83,41 @@ class Scrape:
         self.driver_type = driver_type
 
     def scrape_tgju(self, path=None, return_df=True, headless=False):
-        self.driver = init_driver(
-            pathsave=path, driver_type=self.driver_type, headless=headless)
-        self.path = path
-        self.driver = login_tgju(self.driver)
-        WebDriverWait(self.driver, 8).until(EC.presence_of_element_located(
-            (By.XPATH, '/html/body/main/div[1]/div[2]/div/ul/li[5]/span[1]/span')))
-        price = self.driver.find_element(
-            By.XPATH, '/html/body/main/div[1]/div[2]/div/ul/li[5]/span[1]/span').text
-        WebDriverWait(self.driver, 540).until(EC.presence_of_element_located(
-            (By.XPATH, '/html/body/div[2]/header/div[2]/div[6]/ul/li/a/img')))
         try:
-            if (self.driver.find_element(
-                    By.XPATH, '/html/body/div[2]/header/div[2]/div[6]/ul/li/a/img')):
-                time.sleep(5)
-                WebDriverWait(self.driver, 8).until(EC.presence_of_element_located(
-                    (By.XPATH, '/html/body/main/div[1]/div[2]/div/ul/li[5]/span[1]/span')))
-                coin = self.driver.find_element(
-                    By.XPATH, '/html/body/main/div[1]/div[2]/div/ul/li[5]/span[1]/span').text
+            self.driver = init_driver(
+                pathsave=path, driver_type=self.driver_type, headless=headless)
+            self.path = path
+            self.driver = login_tgju(self.driver)
+            WebDriverWait(self.driver, 8).until(EC.presence_of_element_located(
+                (By.XPATH, '/html/body/main/div[1]/div[2]/div/ul/li[5]/span[1]/span')))
+            price = self.driver.find_element(
+                By.XPATH, '/html/body/main/div[1]/div[2]/div/ul/li[5]/span[1]/span').text
+            WebDriverWait(self.driver, 540).until(EC.presence_of_element_located(
+                (By.XPATH, '/html/body/div[2]/header/div[2]/div[6]/ul/li/a/img')))
+            try:
+                if (self.driver.find_element(
+                        By.XPATH, '/html/body/div[2]/header/div[2]/div[6]/ul/li/a/img')):
+                    time.sleep(5)
+                    WebDriverWait(self.driver, 8).until(EC.presence_of_element_located(
+                        (By.XPATH, '/html/body/main/div[1]/div[2]/div/ul/li[5]/span[1]/span')))
+                    coin = self.driver.find_element(
+                        By.XPATH, '/html/body/main/div[1]/div[2]/div/ul/li[5]/span[1]/span').text
 
-                WebDriverWait(self.driver, 8).until(EC.presence_of_element_located(
-                    (By.XPATH, '/html/body/main/div[1]/div[2]/div/ul/li[6]/span[1]/span')))
-                dollar = self.driver.find_element(
-                    By.XPATH, '/html/body/main/div[1]/div[2]/div/ul/li[6]/span[1]/span').text
+                    WebDriverWait(self.driver, 8).until(EC.presence_of_element_located(
+                        (By.XPATH, '/html/body/main/div[1]/div[2]/div/ul/li[6]/span[1]/span')))
+                    dollar = self.driver.find_element(
+                        By.XPATH, '/html/body/main/div[1]/div[2]/div/ul/li[6]/span[1]/span').text
 
-                WebDriverWait(self.driver, 8).until(EC.presence_of_element_located(
-                    (By.XPATH, '/html/body/main/div[1]/div[2]/div/ul/li[4]/span[1]/span')))
-                gold = self.driver.find_element(
-                    By.XPATH, '/html/body/main/div[1]/div[2]/div/ul/li[4]/span[1]/span').text
+                    WebDriverWait(self.driver, 8).until(EC.presence_of_element_located(
+                        (By.XPATH, '/html/body/main/div[1]/div[2]/div/ul/li[4]/span[1]/span')))
+                    gold = self.driver.find_element(
+                        By.XPATH, '/html/body/main/div[1]/div[2]/div/ul/li[4]/span[1]/span').text
+            except Exception as e:
+                print(e)
+
+            self.driver.close()
         except Exception as e:
-            print(e)
-
-        self.driver.close()
+            self.driver.close()
 
         return coin, dollar, gold
 
