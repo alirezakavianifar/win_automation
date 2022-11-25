@@ -1,4 +1,6 @@
 import sys
+import os
+import psutil
 sys.path.append(r'D:\projects\win_automation\tgju')
 from tgju import run_tgju
 import multiprocess
@@ -17,11 +19,23 @@ def running_tgju():
         p1 = multiprocess.Process(target=run_tgju, args=(False, False), daemon=True)
         p1.start()
         ALL_PROCESSES['tgju_start'] = p1
-    
+        
+    def kill_proc_tree(pid, including_parent=False):    
+        parent = psutil.Process(pid)
+        children = parent.children(recursive=True)
+        for child in children:
+            child.kill()
+        gone, still_alive = psutil.wait_procs(children, timeout=5)
+        if including_parent:
+            parent.kill()
+            parent.wait(5)
     def thread_tgju_kill():
+        
         global ALL_PROCESSES
         if 'tgju_start' in ALL_PROCESSES.keys():
-            ALL_PROCESSES['tgju_start'].terminate()
+            pid = os.getpid()
+            kill_proc_tree(pid,False)
+            # ALL_PROCESSES['tgju_start'].terminate()
             ALL_PROCESSES.pop('tgju_start', None)
             
     if IND == 0:
