@@ -523,9 +523,9 @@ def init_driver(pathsave=r'D:\projects\win_automation\saved_dir', driver_type='f
         fp.set_preference('browser.download.dir', pathsave)
 
         fp.set_preference('browser.helperApps.neverAsk.openFile',
-                          'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,application/octet-stream')
+                          'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,application/octet-stream,application/excel,application/pdf')
         fp.set_preference('browser.helperApps.neverAsk.saveToDisk',
-                          'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,application/octet-stream;application/excel')
+                          'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,application/octet-stream,application/excel,application/pdf')
         fp.set_preference('browser.helperApps.alwaysAsk.force', False)
         fp.set_preference('browser.download.manager.alertOnEXEOpen', False)
         fp.set_preference('browser.download.manager.focusWhenStarting', False)
@@ -784,6 +784,13 @@ class Login:
 
 def login_tgju(driver):
     driver.get("https://www.tgju.org/")
+    driver.implicitly_wait(20)
+
+    return driver
+
+
+def login_scihub(driver):
+    driver.get("https://sci-hub.ru/")
     driver.implicitly_wait(20)
 
     return driver

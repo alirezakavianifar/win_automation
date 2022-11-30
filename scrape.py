@@ -5,9 +5,10 @@ import os
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support.select import Select
 from selenium.webdriver import ActionChains
+from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support import expected_conditions as EC
 from helpers import login_sanim, login_arzeshafzoodeh, login_tgju,\
-    login_mostaghelat, login_codeghtesadi, login_scholar,\
+    login_mostaghelat, login_codeghtesadi, login_scholar, login_scihub,\
     maybe_make_dir, input_info, merge_multiple_excel_sheets, \
     remove_excel_files, init_driver, \
     log_it, is_updated_to_download, \
@@ -83,8 +84,57 @@ class Scrape:
         self.year = year
         self.driver_type = driver_type
 
+    def scrape_scihub(self, path=None, return_df=True, headless=False, search_term='all'):
+
+        try:
+            self.driver = init_driver(
+                pathsave=path, driver_type=self.driver_type, headless=headless)
+            self.path = path
+            self.driver = login_scihub(self.driver)
+            # Enter the search term
+            WebDriverWait(self.driver, 8).until(EC.presence_of_element_located(
+                (By.NAME, 'request')))
+            self.driver.find_element(
+                By.NAME, 'request').send_keys(search_term)
+            # Enter the search button
+            WebDriverWait(self.driver, 8).until(EC.presence_of_element_located(
+                (By.TAG_NAME, 'button')))
+            self.driver.find_element(
+                By.TAG_NAME, 'button').click()
+            time.sleep(3)
+            # Close ads
+            # if (self.driver.find_element(
+            #         By.ID, 'close').is_displayed()):
+            #     self.driver.find_element(
+            #         By.ID, 'close').click()
+            # time.sleep(0.5)
+
+            # Click the download button
+            WebDriverWait(self.driver, 8).until(EC.presence_of_element_located(
+                (By.XPATH, '/html/body/div[3]/div[1]/button')))
+            self.driver.find_element(
+                By.XPATH, '/html/body/div[3]/div[1]/button').click()
+            time.sleep(5)
+            self.driver.quit()
+            # WebDriverWait(self.driver, 8).until(EC.presence_of_element_located(
+            #     (By.ID, 'download')))
+            # self.driver.find_element(
+            #     By.ID, 'download').click()
+            # time.sleep(5)
+
+            # self.driver.back()
+            # Go back to the start page
+            # WebDriverWait(self.driver, 8).until(EC.presence_of_element_located(
+            #     (By.ID, 'sci')))
+            # self.driver.find_element(
+            #     By.ID, 'sci').click()
+
+        except Exception as e:
+            print(e)
+
     def scrape_scholar(self, path=None, return_df=True, headless=False, search_term='all'):
         lst_cites = []
+        lst_links = []
         try:
 
             self.driver = init_driver(
@@ -123,6 +173,18 @@ class Scrape:
                 cites = self.driver.find_elements(
                     By.CLASS_NAME, 'gs_or_cit')
 
+                # Get links of citations
+                links = self.driver.find_elements(
+                    By.CLASS_NAME, 'gs_ri')
+
+                def get_links(links):
+                    links = [link.find_element(By.TAG_NAME, 'a')
+                             for link in links]
+                    links = [elem.get_attribute('href') for elem in links]
+                    return links
+
+                lst_links.extend(get_links(links))
+
                 def scrape_cites(cites):
                     for index, cite in enumerate(cites):
 
@@ -155,20 +217,30 @@ class Scrape:
                 scrape_cites(cites)
 
                 try:
-
+                    # Go to the next page
+                    time.sleep(1)
+                    WebDriverWait(self.driver, 8).until(EC.presence_of_element_located(
+                        (By.XPATH, '/html/body/div/div[10]/div[2]/div[3]/div[3]/div[2]/center/table/tbody/tr/td[11]/a/b')))
                     while (self.driver.find_element(
-                            By.XPATH, '/html/body/div/div[10]/div[2]/div[3]/div[3]/div[2]/center/table/tbody/tr/td[5]/a/b')):
+                            By.XPATH, '/html/body/div/div[10]/div[2]/div[3]/div[3]/div[2]/center/table/tbody/tr/td[11]/a/b')):
                         self.driver.find_element(
-                            By.XPATH, '/html/body/div/div[10]/div[2]/div[3]/div[3]/div[2]/center/table/tbody/tr/td[5]/a/b').click()
+                            By.XPATH, '/html/body/div/div[10]/div[2]/div[3]/div[3]/div[2]/center/table/tbody/tr/td[11]/a/b').click()
+
+                        # Get links of citations
+                        links = self.driver.find_elements(
+                            By.CLASS_NAME, 'gs_ri')
+                        lst_links.extend(get_links(links))
+                        # Locate citations
                         WebDriverWait(self.driver, 8).until(EC.presence_of_element_located(
                             (By.CLASS_NAME, 'gs_or_cit')))
                         cites = self.driver.find_elements(
                             By.CLASS_NAME, 'gs_or_cit')
+                        # Scrape cites
                         scrape_cites(cites)
                 except Exception as e:
-                    return lst_cites
+                    return lst_cites, lst_links
 
-            return lst_cites
+            return lst_cites, lst_links
 
         except Exception as e:
             print(e)
