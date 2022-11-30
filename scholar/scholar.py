@@ -50,5 +50,8 @@ df = pd.read_excel(
 df_journals = df['links'].loc[df['type'] == 'Journal'].values.tolist()
 
 x = Scrape()
-for item in df_journals[:2]:
-    x.scrape_scihub(path=path, search_term=item)
+for item in df_journals:
+    try:
+        x.scrape_scihub(path=path, search_term=item)
+    except:
+        continue

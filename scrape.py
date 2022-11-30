@@ -101,7 +101,7 @@ class Scrape:
                 (By.TAG_NAME, 'button')))
             self.driver.find_element(
                 By.TAG_NAME, 'button').click()
-            time.sleep(3)
+            time.sleep(9)
             # Close ads
             # if (self.driver.find_element(
             #         By.ID, 'close').is_displayed()):

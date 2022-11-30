@@ -8149,3 +8149,94 @@ console.warn: LoginRecipes: "Falling back to a synchronous message for: file://.
 console.warn: LoginRecipes: "Falling back to a synchronous message for: file://."
 1669830705507	Marionette	INFO	Stopped listening on port 10705
 console.warn: LoginRecipes: "Falling back to a synchronous message for: file://."
+1669830919184	geckodriver	INFO	Listening on 127.0.0.1:13437
+1669830922239	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "13438" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofileR8y2y5"
+1669830922536	Marionette	INFO	Marionette enabled
+1669830922539	Marionette	INFO	Listening on port 13449
+Read port: 13449
+WebDriver BiDi listening on ws://127.0.0.1:13438
+1669830922634	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofileR8y2y5\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:13438/devtools/browser/fbb2324b-aeb2-46e4-9dce-4535f45dfa43
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://sci-hub.ru."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: file://."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: file://."
+1669830944610	Marionette	INFO	Stopped listening on port 13449
+console.warn: LoginRecipes: "Falling back to a synchronous message for: file://."
+1669830947264	geckodriver	INFO	Listening on 127.0.0.1:13505
+1669830950315	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "13506" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofileVG2U4t"
+1669830950580	Marionette	INFO	Marionette enabled
+1669830950583	Marionette	INFO	Listening on port 13524
+Read port: 13524
+WebDriver BiDi listening on ws://127.0.0.1:13506
+1669830950670	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofileVG2U4t\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:13506/devtools/browser/cdddb632-3cfe-48dc-8b1d-63b3cf569c34
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://sci-hub.ru."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: file://."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: file://."
+1669830977094	Marionette	INFO	Stopped listening on port 13524
+console.warn: LoginRecipes: "Falling back to a synchronous message for: file://."
+[Parent 21728, IPC I/O Parent] WARNING: file /builds/worker/checkouts/gecko/ipc/chromium/src/base/process_util_win.cc:167
+1669830979687	geckodriver	INFO	Listening on 127.0.0.1:13585
+1669830982720	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "13586" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofileuAHI3c"
+1669830982993	Marionette	INFO	Marionette enabled
+1669830982996	Marionette	INFO	Listening on port 13599
+Read port: 13599
+WebDriver BiDi listening on ws://127.0.0.1:13586
+1669830983092	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofileuAHI3c\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:13586/devtools/browser/91062737-b06d-4d60-80fc-6e1d9441c965
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://sci-hub.ru."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: file://."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: file://."
+1669831005861	Marionette	INFO	Stopped listening on port 13599
+console.warn: LoginRecipes: "Falling back to a synchronous message for: file://."
+[Parent 9544, IPC I/O Parent] WARNING: DuplicateHandle failed for handle 0 in TransferHandles: file /builds/worker/checkouts/gecko/ipc/chromium/src/chrome/common/ipc_channel_win.cc:746
+1669831008545	geckodriver	INFO	Listening on 127.0.0.1:13284
+1669831011585	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "13285" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofile7hEQWP"
+1669831011850	Marionette	INFO	Marionette enabled
+1669831011854	Marionette	INFO	Listening on port 13296
+WebDriver BiDi listening on ws://127.0.0.1:13285
+Read port: 13296
+1669831012075	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofile7hEQWP\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:13285/devtools/browser/088dac21-9e8f-46a6-abfa-c372730de018
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://sci-hub.ru."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: file://."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: file://."
+1669831033672	Marionette	INFO	Stopped listening on port 13296
+console.warn: LoginRecipes: "Falling back to a synchronous message for: file://."
+1669831036250	geckodriver	INFO	Listening on 127.0.0.1:13351
+1669831039299	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "13352" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofileJYORfd"
+1669831039865	Marionette	INFO	Marionette enabled
+1669831039868	Marionette	INFO	Listening on port 13368
+WebDriver BiDi listening on ws://127.0.0.1:13352
+Read port: 13368
+1669831040103	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofileJYORfd\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:13352/devtools/browser/94019084-df35-42be-99f8-15c017f8531a
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://sci-hub.ru."
+1669831052391	Marionette	INFO	Stopped listening on port 13368
+1669831054983	geckodriver	INFO	Listening on 127.0.0.1:13416
+1669831058025	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "13417" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofile038lUh"
+1669831058603	Marionette	INFO	Marionette enabled
+1669831058606	Marionette	INFO	Listening on port 13439
+WebDriver BiDi listening on ws://127.0.0.1:13417
+Read port: 13439
+1669831058856	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofile038lUh\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:13417/devtools/browser/3f64c959-6f73-4bb1-b8c1-e27a1ed09e35
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://sci-hub.ru."
+1669831098206	geckodriver	INFO	Listening on 127.0.0.1:13540
+1669831101257	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "13541" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofileGEWapy"
+1669831101517	Marionette	INFO	Marionette enabled
+1669831101520	Marionette	INFO	Listening on port 13552
+WebDriver BiDi listening on ws://127.0.0.1:13541
+Read port: 13552
+1669831101741	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Msi\\AppData\\Local\\Temp\\rust_mozprofileGEWapy\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:13541/devtools/browser/e79859a9-905b-4d98-9fb3-1959b3e72aec
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://sci-hub.ru."
+1669831117982	Marionette	INFO	Stopped listening on port 13552
+1669831120533	geckodriver	INFO	Listening on 127.0.0.1:13611
