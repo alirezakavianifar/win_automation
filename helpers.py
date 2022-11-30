@@ -500,7 +500,7 @@ def check_if_col_exists(df, col):
         return False
 
 
-def init_driver(pathsave, driver_type='firefox', headless=False):
+def init_driver(pathsave=r'D:\projects\win_automation\saved_dir', driver_type='firefox', headless=False):
     if driver_type == 'chrome':
         options = Options()
         prefs = {'download.default_directory': pathsave}
@@ -784,6 +784,13 @@ class Login:
 
 def login_tgju(driver):
     driver.get("https://www.tgju.org/")
+    driver.implicitly_wait(20)
+
+    return driver
+
+
+def login_scholar(driver):
+    driver.get("https://scholar.google.com/")
     driver.implicitly_wait(20)
 
     return driver
@@ -1080,7 +1087,8 @@ def drop_into_db(table_name, columns, values, append_to_prev=False, sql_con=get_
         # Creating new table
         sql_create_table = create_sql_table(
             table_name, columns)
-        connect_to_sql(sql_create_table, sql_con=sql_con, connect_type='creating sql table')
+        connect_to_sql(sql_create_table, sql_con=sql_con,
+                       connect_type='creating sql table')
     # Inserting data into table
     sql_query = insert_into(table_name, columns)
     connect_to_sql(sql_query, df_values=values, sql_con=sql_con,

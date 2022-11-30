@@ -43,7 +43,7 @@ def run_tgju(done=False, headless=True):
         if get_shared_var():
             break
         try:
-            time.sleep(1)
+            time.sleep(300)
             if internet_on():
                 try:
                     x = Scrape()

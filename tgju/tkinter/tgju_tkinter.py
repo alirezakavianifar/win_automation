@@ -10,16 +10,19 @@ import customtkinter
 
 IND = 0
 ALL_PROCESSES = {}
+btn_tgju_text_init = 'دریافت اطلاعات سکه'
 
 def running_tgju():
     global IND
     global ALL_PROCESSES
-
+    global btn_tgju_text_init
+    
     def thread_tgju_start():
+        global ALL_PROCESSES
         p1 = multiprocess.Process(target=run_tgju, args=(False, False), daemon=True)
         p1.start()
         ALL_PROCESSES['tgju_start'] = p1
-        
+    
     def kill_proc_tree(pid, including_parent=False):    
         parent = psutil.Process(pid)
         children = parent.children(recursive=True)
@@ -29,21 +32,24 @@ def running_tgju():
         if including_parent:
             parent.kill()
             parent.wait(5)
+        
     def thread_tgju_kill():
         
-        global ALL_PROCESSES
         if 'tgju_start' in ALL_PROCESSES.keys():
             pid = os.getpid()
             kill_proc_tree(pid,False)
             # ALL_PROCESSES['tgju_start'].terminate()
             ALL_PROCESSES.pop('tgju_start', None)
-            
+        
     if IND == 0:
         IND = 1
         thread_tgju_start()
     else:
         thread_tgju_kill()
         IND = 0
+
+        
+
         
     
 
@@ -79,6 +85,10 @@ class App(customtkinter.CTk):
         self.var2 = tkinter.IntVar()
         self.var3 = tkinter.IntVar()
         self.var4 = tkinter.IntVar()
+        
+        # Set btn_tgju text
+        btn_tgju_text = customtkinter.StringVar()
+        btn_tgju_text.set(btn_tgju_text_init)
 
         self.title("CustomTkinter complex_example.py")
         self.geometry(f"{App.WIDTH}x{App.HEIGHT}")
@@ -119,10 +129,9 @@ class App(customtkinter.CTk):
                                               )  # font name and size in px
         self.label_1.grid(row=1, column=0, pady=10, padx=10)
 
-        self.button_1 = customtkinter.CTkButton(master=self.frame_left,
-                                                text="دریافت اطلاعات سکه",
+        self.btn_tgju = customtkinter.CTkButton(master=self.frame_left, textvariable=btn_tgju_text,
                                                 command=lambda: running_tgju(), text_font=('Tahoma', 10))
-        self.button_1.grid(row=2, column=0, pady=10, padx=20)
+        self.btn_tgju.grid(row=2, column=0, pady=10, padx=20)
 
         self.button_2 = customtkinter.CTkButton(master=self.frame_left,
                                                 text="CTkButton",
@@ -289,6 +298,8 @@ class App(customtkinter.CTk):
 
     def on_closing(self, event=0):
         self.destroy()
+        
+
 
 
 if __name__ == "__main__":

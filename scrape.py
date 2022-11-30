@@ -4,9 +4,10 @@ import glob
 import os
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support.select import Select
+from selenium.webdriver import ActionChains
 from selenium.webdriver.support import expected_conditions as EC
 from helpers import login_sanim, login_arzeshafzoodeh, login_tgju,\
-    login_mostaghelat, login_codeghtesadi,\
+    login_mostaghelat, login_codeghtesadi, login_scholar,\
     maybe_make_dir, input_info, merge_multiple_excel_sheets, \
     remove_excel_files, init_driver, \
     log_it, is_updated_to_download, \
@@ -81,6 +82,96 @@ class Scrape:
         self.report_type = report_type
         self.year = year
         self.driver_type = driver_type
+
+    def scrape_scholar(self, path=None, return_df=True, headless=False, search_term='all'):
+        lst_cites = []
+        try:
+
+            self.driver = init_driver(
+                pathsave=path, driver_type=self.driver_type, headless=headless)
+            self.path = path
+            self.driver = login_scholar(self.driver)
+
+            WebDriverWait(self.driver, 8).until(EC.presence_of_element_located(
+                (By.ID, 'gs_hdr_tsi')))
+            self.driver.find_element(
+                By.ID, 'gs_hdr_tsi').send_keys(search_term)
+
+            WebDriverWait(self.driver, 8).until(EC.presence_of_element_located(
+                (By.XPATH, '/html/body/div/div[7]/div[1]/div[2]/form/button/span/span[1]')))
+            self.driver.find_element(
+                By.XPATH, '/html/body/div/div[7]/div[1]/div[2]/form/button/span/span[1]').click()
+
+            # Wait for captcha
+            try:
+                if (self.driver.find_element(
+                        By.ID, 'gs_captcha_f')):
+                    while (self.driver.find_element(
+                            By.ID, 'gs_captcha_f')):
+                        print('waiting for captcha')
+                time.sleep(2)
+            # continue after completing captcha
+            except:
+
+                WebDriverWait(self.driver, 8).until(EC.presence_of_element_located(
+                    (By.XPATH, '/html/body/div/div[10]/div[2]/div[3]/div[2]/div[1]/div[2]/div[3]/a[3]')))
+                self.driver.find_element(
+                    By.XPATH, '/html/body/div/div[10]/div[2]/div[3]/div[2]/div[1]/div[2]/div[3]/a[3]').click()
+
+                WebDriverWait(self.driver, 8).until(EC.presence_of_element_located(
+                    (By.CLASS_NAME, 'gs_or_cit')))
+                cites = self.driver.find_elements(
+                    By.CLASS_NAME, 'gs_or_cit')
+
+                def scrape_cites(cites):
+                    for index, cite in enumerate(cites):
+
+                        WebDriverWait(cite, 8).until(EC.presence_of_element_located(
+                            (By.TAG_NAME, 'span')))
+                        element = cite.find_element(
+                            By.TAG_NAME, 'span')
+                        self.driver.execute_script(
+                            "arguments[0].click();", element)
+
+                        # Get the text of the citation
+                        WebDriverWait(self.driver, 8).until(EC.presence_of_element_located(
+                            (By.XPATH, '/html/body/div/div[4]/div/div[2]/div/div[1]/table/tbody/tr[4]/td/div')))
+                        time.sleep(1)
+                        lst_cites.append(self.driver.find_element(
+                            By.XPATH, '/html/body/div/div[4]/div/div[2]/div/div[1]/table/tbody/tr[4]/td/div').text)
+
+                        # Close openend window
+                        WebDriverWait(self.driver, 8).until(EC.presence_of_element_located(
+                            (By.ID, 'gs_cit-x')))
+
+                        element = self.driver.find_element(
+                            By.ID, 'gs_cit-x')
+                        time.sleep(1)
+                        self.driver.execute_script(
+                            "arguments[0].click();", element)
+
+                        time.sleep(1)
+
+                scrape_cites(cites)
+
+                try:
+
+                    while (self.driver.find_element(
+                            By.XPATH, '/html/body/div/div[10]/div[2]/div[3]/div[3]/div[2]/center/table/tbody/tr/td[5]/a/b')):
+                        self.driver.find_element(
+                            By.XPATH, '/html/body/div/div[10]/div[2]/div[3]/div[3]/div[2]/center/table/tbody/tr/td[5]/a/b').click()
+                        WebDriverWait(self.driver, 8).until(EC.presence_of_element_located(
+                            (By.CLASS_NAME, 'gs_or_cit')))
+                        cites = self.driver.find_elements(
+                            By.CLASS_NAME, 'gs_or_cit')
+                        scrape_cites(cites)
+                except Exception as e:
+                    return lst_cites
+
+            return lst_cites
+
+        except Exception as e:
+            print(e)
 
     def scrape_tgju(self, path=None, return_df=True, headless=False):
         try:
