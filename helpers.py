@@ -1,6 +1,7 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 import time
 import glob
 import numpy as np
@@ -501,6 +502,7 @@ def check_if_col_exists(df, col):
 
 
 def init_driver(pathsave=r'D:\projects\win_automation\saved_dir', driver_type='firefox', headless=False):
+    capabilities = {"normal":"normal", "eager":"eager", 'none':'none'}
     if driver_type == 'chrome':
         options = Options()
         prefs = {'download.default_directory': pathsave}
@@ -518,6 +520,8 @@ def init_driver(pathsave=r'D:\projects\win_automation\saved_dir', driver_type='f
     else:
 
         fp = webdriver.FirefoxProfile()
+        caps = DesiredCapabilities().FIREFOX
+        caps["pageLoadStrategy"] = capabilities['none']
         fp.set_preference('browser.download.folderList', 2)
         fp.set_preference('browser.download.manager.showWhenStarting', False)
         fp.set_preference('browser.download.dir', pathsave)
@@ -526,6 +530,7 @@ def init_driver(pathsave=r'D:\projects\win_automation\saved_dir', driver_type='f
                           'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,application/octet-stream,application/excel,application/pdf')
         fp.set_preference('browser.helperApps.neverAsk.saveToDisk',
                           'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,application/octet-stream,application/excel,application/pdf')
+        fp.set_preference("pdfjs.disabled", True)
         fp.set_preference('browser.helperApps.alwaysAsk.force', False)
         fp.set_preference('browser.download.manager.alertOnEXEOpen', False)
         fp.set_preference('browser.download.manager.focusWhenStarting', False)
@@ -538,9 +543,9 @@ def init_driver(pathsave=r'D:\projects\win_automation\saved_dir', driver_type='f
             options = webdriver.FirefoxOptions()
             options.headless = True
             driver = webdriver.Firefox(
-                fp, executable_path=geck_location(), options=options)
+                fp, executable_path=geck_location(), options=options, desired_capabilities=caps)
         else:
-            driver = webdriver.Firefox(fp, executable_path=geck_location())
+            driver = webdriver.Firefox(fp, executable_path=geck_location(), desired_capabilities=caps)
         driver.window_handles
         driver.switch_to.window(driver.window_handles[0])
 
@@ -784,6 +789,13 @@ class Login:
 
 def login_tgju(driver):
     driver.get("https://www.tgju.org/")
+    driver.implicitly_wait(20)
+
+    return driver
+
+
+def login_nobatdotir(driver):
+    driver.get("https://nobat.ir/doctor/%D8%AF%DA%A9%D8%AA%D8%B1-%D9%85%D9%87%D8%AF%DB%8C-%D8%AA%D8%B1%D8%A7%D8%A8%DB%8C-%D8%B2%D8%A7%D8%AF%D9%87-%D8%A7%D9%87%D9%88%D8%A7%D8%B2/dr-6361/")
     driver.implicitly_wait(20)
 
     return driver

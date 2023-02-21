@@ -15,7 +15,7 @@ class Handler(FileSystemEventHandler):
         print('file was created')
 
 
-def watch_over(path=r'E:\automating_reports_V2\saved_dir\arzeshafzoodeh_sonati'):
+def watch_over(path=r'E:\automating_reports_V2\saved_dir\arzeshafzoodeh_sonati', timeout=None):
     global is_downloaded
 
     event_handler = Handler()
@@ -24,10 +24,15 @@ def watch_over(path=r'E:\automating_reports_V2\saved_dir\arzeshafzoodeh_sonati')
     observer.start()
     try:
         while True:
-            if is_downloaded == True:
-                raise Exception
+            if timeout is None:
+                if is_downloaded == True:
+                    raise Exception
+            else:
+                timeout -= 1
+                if timeout == 0 or is_downloaded == True:
+                    raise Exception
 
-            time.sleep(1)
+            time.sleep(0.25)
             print('waiting')
 
     except:

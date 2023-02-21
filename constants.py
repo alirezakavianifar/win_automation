@@ -294,7 +294,7 @@ def set_gecko_prefs(pathsave):
     return fp
 
 
-def get_sql_con(server='.', database='testdb', username='sa', password='14579Ali'):
+def get_sql_con(server='.', database='testdb', username='sa', password='14579Ali.'):
 
     constr = 'DRIVER={SQL Server};SERVER=' + server + ';DATABASE=' + \
         database + ';UID=' + username + ';PWD=' + password
