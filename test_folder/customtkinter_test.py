@@ -4,13 +4,13 @@ import customtkinter
 import time
 # from helpers import convert_tojson
 from multiprocess_test import run_task
+from helpers import convert_tojson
 import zope.interface
 from observer.observer_pattern import IObserver
 # Modes: "System" (standard), "Dark", "Light"
 customtkinter.set_appearance_mode("System")
 # Themes: "blue" (standard), "green", "dark-blue"
 customtkinter.set_default_color_theme("blue")
-
 
 
 @zope.interface.implementer(IObserver)
@@ -37,10 +37,10 @@ class App(customtkinter.CTk):
             self.sidebar_frame, text="CustomTkinter", font=customtkinter.CTkFont(size=20, weight="bold"))
         self.logo_label.grid(row=0, column=0, padx=20, pady=(20, 10))
         self.sidebar_button_1 = customtkinter.CTkButton(self.sidebar_frame,
-                                                        command=lambda: run_task(data_source.get_value(), 'convert_tojson'))
+                                                        command=lambda: btn_th(self.update_btn))
         self.sidebar_button_1.grid(row=1, column=0, padx=20, pady=10)
         self.sidebar_button_2 = customtkinter.CTkButton(
-            self.sidebar_frame, command=lambda: self.update_btn())
+            self.sidebar_frame, command=lambda: btn_th(self.update_btn))
         self.sidebar_button_2.grid(row=2, column=0, padx=20, pady=10)
         self.sidebar_button_3 = customtkinter.CTkButton(
             self.sidebar_frame, command=self.sidebar_button_event)
@@ -70,10 +70,12 @@ class App(customtkinter.CTk):
             20, 20), pady=(20, 20), sticky="nsew")
 
         # create textbox
-        self.textbox = customtkinter.CTkTextbox(self, width=250)
-        self.textbox.grid(row=0, column=1, padx=(
+        self.textbox_1 = customtkinter.CTkTextbox(self, width=250)
+        self.textbox_1.grid(row=0, column=1, padx=(
             20, 0), pady=(20, 0), sticky="nsew")
-
+        self.textbox_2 = customtkinter.CTkTextbox(self, width=250)
+        self.textbox_2.grid(row=0, column=1, padx=(
+            20, 0), pady=(20, 0), sticky="nsew")
         # create tabview
         self.tabview = customtkinter.CTkTabview(self, width=250)
         self.tabview.grid(row=0, column=2, padx=(
@@ -194,10 +196,10 @@ class App(customtkinter.CTk):
         self.slider_2.configure(command=self.progressbar_3.set)
         self.progressbar_1.configure(mode="indeterminnate")
         self.progressbar_1.start()
-        self.textbox.insert("0.0", self.data_source.get_value())
-        self.seg_button_1.configure(
-            values=["CTkSegmentedButton", "Value 2", "Value 3"])
-        self.seg_button_1.set("Value 2")
+        self.textbox_1.insert("0.0", self.data_source.get_txt1_val())
+        # self.seg_button_1.configure(
+        #     values=["CTkSegmentedButton", "Value 2", "Value 3"])
+        # self.seg_button_1.set("Value 2")
 
     def open_input_dialog_event(self):
         dialog = customtkinter.CTkInputDialog(
@@ -215,19 +217,27 @@ class App(customtkinter.CTk):
         print("sidebar_button click")
 
     def update(self):
-        self.value = self.data_source.get_value()
-        self.textbox.insert("0.0", self.data_source.get_value())
-        
+        # self.value = self.data_source.get_value()
+        self.textbox_1.insert("end", self.data_source.get_txt1_val())
+        # self.textbox_2.insert("end", self.data_source.get_txt2_val())
+        # self.textbox_3.insert("end", self.data_source.get_txt3_val())
+        # self.textbox_4.insert("end", self.data_source.get_txt4_val())
+
     def update_btn(self):
-        self.data_source.set_value('122')
+        convert_tojson(self.data_source)
+
+
+def btn_th(task):
+    import threading
+    t1 = threading.Thread(target=task)
+    t1.start()
+    x = 12
 
 
 if __name__ == "__main__":
-    from helpers import DataSource
+    from observer.observer_pattern import DataSource
     data_source = DataSource()
-    data_source.set_value('0999')
     app = App(data_source)
     data_source.add_observer(app)
-    
+
     app.mainloop()
-            

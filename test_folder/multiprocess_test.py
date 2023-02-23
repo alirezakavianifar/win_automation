@@ -17,9 +17,9 @@ def kill_proc_tree(pid, including_parent=False):
         parent.wait(5)
 
 
-def thread_start(task, name):
+def thread_start(task, args=(), name='None'):
     global ALL_PROCESSES
-    p1 = multiprocess.Process(target=task, daemon=True)
+    p1 = multiprocess.Process(target=task, args=args, daemon=True)
     p1.start()
     ALL_PROCESSES[name] = p1
 
@@ -33,13 +33,13 @@ def thread_kill():
         ALL_PROCESSES.pop('tgju_start', None)
 
 
-def run_task(task, name):
+def run_task(task, args=(), name='None'):
     global IND
     global ALL_PROCESSES
 
     if IND == 0:
         IND = 1
-        thread_start(task, name)
+        thread_start(task, args, name)
         IND = 0
     else:
         thread_kill()

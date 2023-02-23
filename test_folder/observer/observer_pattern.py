@@ -26,15 +26,39 @@ class Observer:
 
 class DataSource(Observer):
     def __init__(self) -> None:
-        self.value = 0
+        self.txt1_val = ''
+        self.txt2_val = ''
+        self.txt3_val = ''
+        self.txt4_val = ''
         self.obs = []
 
-    def set_value(self, value):
-        self.value = value
+    def set_txt1_val(self, value):
+        self.txt1_val = value
         self.notify_observers()
 
-    def get_value(self):
-        return self.value
+    def get_txt1_val(self):
+        return self.txt1_val
+
+    def set_txt2_val(self, value):
+        self.txt2_val = value
+        self.notify_observers()
+
+    def get_txt2_val(self):
+        return self.txt2_val
+
+    def set_txt3_val(self, value):
+        self.txt3_val = value
+        self.notify_observers()
+
+    def get_txt3_val(self):
+        return self.txt3_val
+
+    def set_txt4_val(self, value):
+        self.txt4_val = value
+        self.notify_observers()
+
+    def get_txt4_val(self):
+        return self.txt4_val
 
 
 @zope.interface.implementer(IObserver)
