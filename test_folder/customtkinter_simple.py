@@ -61,15 +61,19 @@ class App(customtkinter.CTk):
 
     # add methods to app
     def update_btn1(self):
+        self.textbox_1.delete('1.0', 'end')
         convert_tojson(self.data_source.set_txt1_val)
 
     def update_btn2(self):
+        self.textbox_2.delete('1.0', 'end')
         convert_tojson2(self.data_source.set_txt2_val)
 
     def update_btn3(self):
+        self.textbox_3.delete('1.0', 'end')
         convert_tojson3(self.data_source.set_txt3_val)
 
     def update_btn4(self):
+        self.textbox_4.delete('1.0', 'end')
         convert_tojson4(self.data_source.set_txt4_val)
 
 
