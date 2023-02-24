@@ -38,30 +38,41 @@ class App(customtkinter.CTk):
         self.textbox_4 = customtkinter.CTkTextbox(self, width=250, height=100)
         self.textbox_4.grid(row=3, column=1, padx=(
             20, 0), pady=(20, 0), sticky="nsew")
-        
+
         # Set default values
         self.textbox_1.insert("0.0", self.data_source.get_txt1_val())
         self.textbox_2.insert("0.0", self.data_source.get_txt2_val())
         self.textbox_3.insert("0.0", self.data_source.get_txt3_val())
         self.textbox_4.insert("0.0", self.data_source.get_txt4_val())
-        
-    def update(self, filed):
+
+    def update(self, filed, fieldname):
         # self.value = self.data_source.get_value()
-        self.textbox_1.insert("end", self.data_source.get_txt1_val())
-        self.textbox_2.insert("end", self.data_source.get_txt2_val())
-        self.textbox_3.insert("end", self.data_source.get_txt3_val())
-        self.textbox_4.insert("end", self.data_source.get_txt4_val())
+        if fieldname == '1':
+            filed.insert("end", self.data_source.get_txt1_val())
+
+        if fieldname == '2':
+            filed.insert("end", self.data_source.get_txt2_val())
+
+        if fieldname == '3':
+            filed.insert("end", self.data_source.get_txt3_val())
+
+        if fieldname == '4':
+            filed.insert("end", self.data_source.get_txt4_val())
 
     # add methods to app
     def update_btn1(self):
         convert_tojson(self.data_source.set_txt1_val)
+
     def update_btn2(self):
         convert_tojson2(self.data_source.set_txt2_val)
+
     def update_btn3(self):
         convert_tojson3(self.data_source.set_txt3_val)
+
     def update_btn4(self):
         convert_tojson4(self.data_source.set_txt4_val)
-        
+
+
 def btn_th(task):
     import threading
     t1 = threading.Thread(target=task)

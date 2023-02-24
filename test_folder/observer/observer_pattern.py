@@ -19,9 +19,9 @@ class Observer:
     def remove_observer(self, obs):
         self.obs.pop(obs)
 
-    def notify_observers(self, field=None):
+    def notify_observers(self, field=None, fieldname=None):
         for item in self.obs:
-            item.update(field)
+            item.update(field, fieldname)
 
 
 class DataSource(Observer):
@@ -34,28 +34,28 @@ class DataSource(Observer):
 
     def set_txt1_val(self, value):
         self.txt1_val = value
-        self.notify_observers(self.txt1_val)
+        self.notify_observers(self.obs[0].textbox_1, '1')
 
     def get_txt1_val(self):
         return self.txt1_val
 
     def set_txt2_val(self, value):
         self.txt2_val = value
-        self.notify_observers(self.txt2_val)
+        self.notify_observers(self.obs[0].textbox_2, '2')
 
     def get_txt2_val(self):
         return self.txt2_val
 
     def set_txt3_val(self, value):
         self.txt3_val = value
-        self.notify_observers(self.txt3_val)
+        self.notify_observers(self.obs[0].textbox_3, '3')
 
     def get_txt3_val(self):
         return self.txt3_val
 
     def set_txt4_val(self, value):
         self.txt4_val = value
-        self.notify_observers(self.txt4_val)
+        self.notify_observers(self.obs[0].textbox_4, '4')
 
     def get_txt4_val(self):
         return self.txt4_val
